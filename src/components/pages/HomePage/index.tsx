@@ -1,10 +1,11 @@
+import Navbar from "../../organisms/Navbar"
 
 
 const HomePage = () => {
   return (
-    <div>
-      <p>dfghjk</p>
-    </div>
+    <>
+    <Navbar/>
+    </>
   )
 }
 
