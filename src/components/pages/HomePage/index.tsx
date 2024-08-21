@@ -4,6 +4,7 @@ import IconText from "../../higherOrderComponents/ImageText";
 import ImageCarousel from "../../organisms/ImageCarousel";
 import Image1 from "../../../assets/images/ImageCarousel/image1.jpg";
 import Image2 from "../../../assets/images/ImageCarousel/image2.jpg";
+import Navbar from "../../organisms/Navbar";
 
 const HomePage: React.FC = () => {
   const items = [
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => {
 
   return (
     <>
+      <Navbar />
       <WovenImageList />
       <IconText />
       <ImageCarousel items={items} topic="Why choose us ?" />
