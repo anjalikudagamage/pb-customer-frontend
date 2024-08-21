@@ -1,11 +1,11 @@
-import Navbar from "../../organisms/Navbar"
+import Footer from "../../atoms/Footer"
 
 
 const HomePage = () => {
   return (
-    <>
-    <Navbar/>
-    </>
+  <>
+  <Footer/>
+  </>
   )
 }
 
