@@ -30,7 +30,7 @@ interface IImageCarouselProps {
   topic: string;
 }
 
-const ImageCarousel: FC<IImageCarouselProps> = ({ items, topic }) => {
+const WhyWeChoose: FC<IImageCarouselProps> = ({ items, topic }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const theme = useTheme();
@@ -106,4 +106,4 @@ const ImageCarousel: FC<IImageCarouselProps> = ({ items, topic }) => {
   );
 };
 
-export default ImageCarousel;
+export default WhyWeChoose;
