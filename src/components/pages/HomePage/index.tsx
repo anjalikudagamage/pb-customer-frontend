@@ -1,10 +1,11 @@
+import Footer from "../../atoms/Footer"
 
 
 const HomePage = () => {
   return (
-    <div>
-      <p>dfghjk</p>
-    </div>
+  <>
+  <Footer/>
+  </>
   )
 }
 
