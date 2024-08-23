@@ -1,12 +1,12 @@
-import React from 'react';
-import { Box, Typography, Button, Grid } from '@mui/material';
+import React from "react";
+import { Box, Typography, Button, Grid } from "@mui/material";
 import {
   cardContainer,
   imageStyle,
   contentStyle,
   titleStyle,
   locationStyle,
-  roomTypeStyle,
+  packageStyle,
   featuresContainerStyle,
   featureStyle,
   availabilityStyle,
@@ -14,14 +14,14 @@ import {
   priceStyle,
   ratingStyle,
   buttonStyle,
-} from './styles';
+} from "./styles";
 
 interface IPhotographerCardProps {
   imageUrl: string;
-  title: string;
+  photographerName: string;
+  studioName: string;
   location: string;
-  distance: string;
-  roomType: string;
+  packageType: string;
   features: string[];
   price: string;
   availability: string;
@@ -31,10 +31,10 @@ interface IPhotographerCardProps {
 
 const PhotographerCard: React.FC<IPhotographerCardProps> = ({
   imageUrl,
-  title,
+  photographerName,
+  studioName,
   location,
-  distance,
-  roomType,
+  packageType,
   features,
   price,
   availability,
@@ -48,24 +48,19 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
           <Box
             component="img"
             src={imageUrl}
-            alt={title}
+            alt={photographerName}
             sx={imageStyle}
           />
         </Grid>
         <Grid item xs={8}>
           <Box sx={contentStyle}>
             <Typography variant="h6" sx={titleStyle}>
-              {title}
+              {photographerName}
             </Typography>
             <Typography sx={locationStyle}>
-              <a href="#" style={{ textDecoration: 'none', color: 'inherit' }}>
-                {location}
-              </a> 
-              • {distance}
+              {studioName} • {location}
             </Typography>
-            <Typography sx={roomTypeStyle}>
-              {roomType}
-            </Typography>
+            <Typography sx={packageStyle}>{packageType}</Typography>
             <Box sx={featuresContainerStyle}>
               {features.map((feature, index) => (
                 <Typography key={index} sx={featureStyle}>
@@ -73,22 +68,18 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
                 </Typography>
               ))}
             </Box>
-            <Typography sx={availabilityStyle}>
-              {availability}
-            </Typography>
+            <Typography sx={availabilityStyle}>{availability}</Typography>
           </Box>
           <Box sx={priceContainerStyle}>
-            <Typography sx={priceStyle}>
-              {price}
-            </Typography>
             <Typography sx={ratingStyle}>
-              {rating} 
-              <span style={{ marginLeft: '0.5rem', fontSize: '0.875rem' }}>
+              {rating}
+              <span style={{ marginLeft: "0.5rem", fontSize: "0.875rem" }}>
                 {reviews} reviews
               </span>
             </Typography>
+            <Typography sx={priceStyle}>{price}</Typography>
             <Button variant="contained" sx={buttonStyle}>
-              See availability
+              Check availability
             </Button>
           </Box>
         </Grid>
