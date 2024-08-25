@@ -59,13 +59,13 @@ export const inputFieldStyle: SxProps<Theme> = {
     },
   },
   "& .MuiInputLabel-root": {
-    color: "#fff", 
+    color: "#fff",
   },
   "& .MuiInputBase-input": {
-    color: "#fff", 
+    color: "#fff",
   },
   "& .MuiInputBase-input::placeholder": {
-    color: "#fff", 
+    color: "#fff",
   },
 };
 
@@ -79,5 +79,23 @@ export const signUpButtonStyle: SxProps<Theme> = {
   borderRadius: "25px",
   "&:hover": {
     backgroundColor: "#FF4757",
+  },
+};
+
+export const headingStyle: SxProps<Theme> = {
+  fontWeight: 700,
+  mb: 2,
+};
+
+export const bodyStyle: SxProps<Theme> = {
+  mb: 10,
+};
+
+export const linkStyle: SxProps<Theme> = {
+  color: "#FF6B6B",
+  textDecoration: "none",
+  fontWeight: "bold",
+  "&:hover": {
+    color: "#FF4757",
   },
 };
