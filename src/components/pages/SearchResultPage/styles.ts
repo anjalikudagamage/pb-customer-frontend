@@ -10,6 +10,6 @@ export const filterSidebarGridItemStyle: SxProps<Theme> = {
 };
 
 export const imageCarouselTitleStyleOverride: SxProps<Theme> = {
-  color: "blue",
+  color: "#55679C",
   fontSize: "1.5rem",
 };
