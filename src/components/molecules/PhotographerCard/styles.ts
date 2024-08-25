@@ -8,7 +8,7 @@ export const cardContainer: SxProps<Theme> = {
   boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
   backgroundColor: "#fff",
   width: "95%",
-  maxWidth: "1000px",
+  maxWidth: "800px",
   padding: 2,
   marginY: 2,
 };
