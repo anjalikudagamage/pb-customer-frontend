@@ -1,8 +1,8 @@
 import React from "react";
-import PackagesTable from "../../higherOrderComponents/PackageTable";
-import ReviewsSection from "../../higherOrderComponents/ReviewSection";
 import FAQSection from "../../higherOrderComponents/FAQSection";
 import QuiltedImageList from "../../higherOrderComponents/PhotographerGallery";
+import PackageTable from "../../higherOrderComponents/PackageTable";
+import ReviewSection from "../../higherOrderComponents/ReviewSection";
 
 const PhotographerDetailsPage: React.FC = () => {
   const photographer = {
@@ -43,9 +43,9 @@ const PhotographerDetailsPage: React.FC = () => {
       <QuiltedImageList/>
       <h2>About the Photographer</h2>
       <p>{photographer.details}</p>
-      <PackagesTable packages={photographer.packages} />
-      <ReviewsSection reviews={photographer.reviews} />
-      <FAQSection faqs={photographer.faqs} />
+      <PackageTable />
+      <ReviewSection />
+      <FAQSection />
     </div>
   );
 };
