@@ -67,9 +67,7 @@ export const arrowButton = (position: "left" | "right"): SxProps<Theme> => ({
   transform: "translateY(-50%)",
   zIndex: 2,
   color: "white",
-  backgroundColor: "rgba(0, 0, 0, 0.5)",
   "&:hover": {
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
     cursor: "pointer",
   },
 });
@@ -82,12 +80,12 @@ export const topicContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
   width: "80%",
   textAlign: "center",
   zIndex: 1,
-  padding: isSmallScreen ? "0 1rem" : "0 2rem",
+  padding: isSmallScreen ? "0 5rem" : "0 5rem",
 });
 
 export const topicStyle: SxProps<Theme> = {
-  color: "black",
-  backgroundColor: "rgba(255, 255, 255, 0.7)", // transparent white
-  padding: "0.5rem 1rem",
+  color: "white",
+  fontSize: "60px",
+  padding: "0.5rem 0rem 20em 0em",
   borderRadius: "5px",
 };

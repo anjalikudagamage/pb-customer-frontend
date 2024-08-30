@@ -1,12 +1,12 @@
 import React from "react";
 import WovenImageList from "../../higherOrderComponents/WovenImageList";
-import IconText from "../../higherOrderComponents/ImageText";
 import Image1 from "../../../assets/images/ImageCarousel/image1.jpg";
 import Image2 from "../../../assets/images/ImageCarousel/image2.jpg";
 import Navbar from "../../organisms/Navbar";
 import Footer from "../../atoms/Footer";
 import HomeImage from "../../higherOrderComponents/HomeImage";
 import WhyWeChoose from "../../organisms/WhyWeChoose";
+import ReviewSection from "../../higherOrderComponents/HomePageReviewSection";
 
 const HomePage: React.FC = () => {
   const items = [
@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
       <Navbar />
       <HomeImage/>
       <WovenImageList />
-      <IconText />
+      <ReviewSection/>
       <WhyWeChoose items={items} topic="Why choose us ?" />
       <Footer/>
     </>

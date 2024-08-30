@@ -43,7 +43,7 @@ const WhyWeChoose: FC<IImageCarouselProps> = ({ items, topic }) => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
         setIsTransitioning(false);
       }, 1000); // transition duration should match the CSS transition
-    }, 4000);
+    }, 6000);
     return () => clearInterval(intervalId);
   }, [items.length]);
 
