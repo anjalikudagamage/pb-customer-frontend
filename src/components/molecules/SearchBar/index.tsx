@@ -3,17 +3,9 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextButton from "../../atoms/TextButton";
 import { searchBarContainer, searchBarItem } from "./styles";
-import Dropdown from "../../atoms/Dropdown";
 import CustomDatePicker from "../../atoms/DatePicker";
 import LocationSearch from "../../atoms/CustomTextField";
-
-const names = [
-  "Wedding Packages",
-  "Portrait Packages",
-  "Event Packages",
-  "Commercial Packages",
-  "Family Packages",
-];
+import PackageDropdown from "../../atoms/Dropdown";
 
 const SearchBar: React.FC = () => {
   return (
@@ -26,11 +18,7 @@ const SearchBar: React.FC = () => {
           <CustomDatePicker/>
         </Grid>
         <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
-          <Dropdown
-            placeholder="Select items"
-            disabledPlaceholder="Select items"
-            names={names}
-          />
+          <PackageDropdown/>
         </Grid>
         <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
           <TextButton text="Search" />

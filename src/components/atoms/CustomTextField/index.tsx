@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Select from "react-select";
 import { useJsApiLoader } from "@react-google-maps/api";
+import { locationSelectStyles } from "./styles";
 
 const libraries: Array<"places"> = ["places"];
 
@@ -40,8 +41,6 @@ const LocationSearch: React.FC = () => {
 
   useEffect(() => {
     if (!isLoaded) return;
-
-    //add more logic here if needed.
   }, [isLoaded]);
 
   const handleChange = (selectedOption: any) => {
@@ -70,18 +69,7 @@ const LocationSearch: React.FC = () => {
           onInputChange={(inputValue) => fetchPredictions(inputValue)}
           onChange={handleChange}
           placeholder="Search for a location"
-          styles={{
-            control: (base) => ({
-              ...base,
-              width: "250px",
-              borderRadius: "4px",
-              borderColor: "#ccc",
-            }),
-            menu: (base) => ({
-              ...base,
-              width: "250px",
-            }),
-          }}
+          styles={locationSelectStyles}
         />
       ) : (
         <p>Loading...</p>

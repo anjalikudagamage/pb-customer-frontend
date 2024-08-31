@@ -1,8 +1,13 @@
-import React, { forwardRef, useState } from 'react';
-import DatePicker, { CalendarContainer } from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { Button, Box, InputBase } from '@mui/material';
-import { CalendarToday as CalendarIcon } from '@mui/icons-material';
+import React, { forwardRef, useState } from "react";
+import DatePicker, { CalendarContainer } from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { Button, Box, InputBase } from "@mui/material";
+import { CalendarToday as CalendarIcon } from "@mui/icons-material";
+import {
+  customDateButtonStyle,
+  calendarIconStyle,
+  inputBaseStyle,
+} from "./styles";
 
 interface CustomDateInputProps extends React.HTMLProps<HTMLButtonElement> {
   value?: string;
@@ -25,25 +30,16 @@ const CustomDatePicker: React.FC = () => {
           ref={ref}
           onClick={handleClick}
           sx={{
-            borderColor: isClicked ? '#ABEFC6' : '#D0D5DD',
-            backgroundColor: isClicked ? '#ECFDF3' : 'white',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '8px 16px',
-            borderRadius: '4px',
-            borderWidth: '1px',
-            borderStyle: 'solid',
+            ...customDateButtonStyle,
+            borderColor: isClicked ? "#ABEFC6" : "#D0D5DD",
+            backgroundColor: isClicked ? "#ECFDF3" : "#ECFDF3",
           }}
         >
-          <CalendarIcon sx={{ color: isClicked ? '#17B26A' : '#667085', marginRight: '8px' }} />
+          <CalendarIcon sx={calendarIconStyle(isClicked)} />
           <InputBase
             placeholder="Select Date"
-            value={selectedDate ? selectedDate.toLocaleDateString() : ''}
-            sx={{
-              color: isClicked ? '#17B26A' : '#344054',
-              fontWeight: 600,
-              flexGrow: 1,
-            }}
+            value={selectedDate ? selectedDate.toLocaleDateString() : ""}
+            sx={inputBaseStyle(isClicked)}
             readOnly
           />
         </Button>
@@ -51,8 +47,12 @@ const CustomDatePicker: React.FC = () => {
     }
   );
 
-  const CustomCalendarContainer = ({ children }: { children: React.ReactNode }) => (
-    <Box sx={{ position: 'relative', zIndex: 1000 }}>
+  const CustomCalendarContainer = ({
+    children,
+  }: {
+    children: React.ReactNode;
+  }) => (
+    <Box sx={{ position: "relative", zIndex: 1000 }}>
       <CalendarContainer>{children}</CalendarContainer>
     </Box>
   );
