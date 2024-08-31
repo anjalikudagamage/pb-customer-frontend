@@ -1,29 +1,81 @@
-import React from "react";
-import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import { textFieldStyle } from "./styles";
+import React, { useState, useEffect, useCallback } from 'react';
+import Select from 'react-select';
+import { useJsApiLoader } from '@react-google-maps/api';
 
-interface ITextFieldProps {
-  placeholder: string;
-}
+const libraries: Array<'places'> = ['places'];
 
-const CustomTextField: React.FC<ITextFieldProps> = ({ placeholder }) => {
+const LocationSearch: React.FC = () => {
+  const [options, setOptions] = useState<{ label: string; value: string }[]>([]);
+  const [selectedLocation, setSelectedLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const { isLoaded } = useJsApiLoader({
+    googleMapsApiKey: 'YOUR_API_KEY',
+    libraries,
+  });
+
+  const fetchPredictions = useCallback((input: string) => {
+    if (!isLoaded) return;
+    const autocomplete = new google.maps.places.AutocompleteService();
+    autocomplete.getPlacePredictions({ input }, (predictions, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK && predictions) {
+        setOptions(predictions.map((p) => ({ label: p.description, value: p.place_id })));
+      }
+    });
+  }, [isLoaded]);
+
+  useEffect(() => {
+    if (!isLoaded) return;
+
+    //add more logic here if needed.
+  }, [isLoaded]);
+
+  const handleChange = (selectedOption: any) => {
+    if (selectedOption) {
+      const placeId = selectedOption.value;
+
+      const placeService = new google.maps.places.PlacesService(document.createElement('div'));
+      placeService.getDetails({ placeId }, (place, status) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK && place) {
+          setSelectedLocation({
+            lat: place.geometry?.location?.lat() || 0,
+            lng: place.geometry?.location?.lng() || 0,
+          });
+        }
+      });
+    }
+  };
+
   return (
-    <TextField
-      fullWidth
-      variant="outlined"
-      placeholder={placeholder}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <LocationOnIcon />
-          </InputAdornment>
-        ),
-      }}
-      sx={textFieldStyle}
-    />
+    <div>
+      {isLoaded ? (
+        <Select
+          options={options}
+          onInputChange={(inputValue) => fetchPredictions(inputValue)}
+          onChange={handleChange}
+          placeholder="Search for a location"
+          styles={{
+            control: (base) => ({
+              ...base,
+              width: '300px',
+              borderRadius: '4px',
+              borderColor: '#ccc',
+            }),
+            menu: (base) => ({
+              ...base,
+              width: '300px',
+            }),
+          }}
+        />
+      ) : (
+        <p>Loading...</p>
+      )}
+      {selectedLocation && (
+        <div>
+          <p>Latitude: {selectedLocation.lat}</p>
+          <p>Longitude: {selectedLocation.lng}</p>
+        </div>
+      )}
+    </div>
   );
 };
 
-export default CustomTextField;
+export default LocationSearch;
