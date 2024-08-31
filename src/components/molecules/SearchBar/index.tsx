@@ -19,10 +19,10 @@ const SearchBar: React.FC = () => {
   return (
     <Box sx={searchBarContainer}>
       <Grid container spacing={1}>
-        <Grid item xs={12} sm={6} md={4} sx={searchBarItem}>
+        <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
           <LocationSearch/>
         </Grid>
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
           <CustomDatePicker/>
         </Grid>
         <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
@@ -32,7 +32,7 @@ const SearchBar: React.FC = () => {
             names={names}
           />
         </Grid>
-        <Grid item xs={12} sm={6} md={2} sx={searchBarItem}>
+        <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
           <TextButton text="Search" />
         </Grid>
       </Grid>

@@ -1,26 +1,42 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Select from 'react-select';
-import { useJsApiLoader } from '@react-google-maps/api';
+import React, { useState, useEffect, useCallback } from "react";
+import Select from "react-select";
+import { useJsApiLoader } from "@react-google-maps/api";
 
-const libraries: Array<'places'> = ['places'];
+const libraries: Array<"places"> = ["places"];
 
 const LocationSearch: React.FC = () => {
-  const [options, setOptions] = useState<{ label: string; value: string }[]>([]);
-  const [selectedLocation, setSelectedLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [options, setOptions] = useState<{ label: string; value: string }[]>(
+    []
+  );
+  const [selectedLocation, setSelectedLocation] = useState<{
+    lat: number;
+    lng: number;
+  } | null>(null);
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: 'YOUR_API_KEY',
+    googleMapsApiKey: "YOUR_API_KEY",
     libraries,
   });
 
-  const fetchPredictions = useCallback((input: string) => {
-    if (!isLoaded) return;
-    const autocomplete = new google.maps.places.AutocompleteService();
-    autocomplete.getPlacePredictions({ input }, (predictions, status) => {
-      if (status === google.maps.places.PlacesServiceStatus.OK && predictions) {
-        setOptions(predictions.map((p) => ({ label: p.description, value: p.place_id })));
-      }
-    });
-  }, [isLoaded]);
+  const fetchPredictions = useCallback(
+    (input: string) => {
+      if (!isLoaded) return;
+      const autocomplete = new google.maps.places.AutocompleteService();
+      autocomplete.getPlacePredictions({ input }, (predictions, status) => {
+        if (
+          status === google.maps.places.PlacesServiceStatus.OK &&
+          predictions
+        ) {
+          setOptions(
+            predictions.map((p) => ({
+              label: p.description,
+              value: p.place_id,
+            }))
+          );
+        }
+      });
+    },
+    [isLoaded]
+  );
 
   useEffect(() => {
     if (!isLoaded) return;
@@ -32,7 +48,9 @@ const LocationSearch: React.FC = () => {
     if (selectedOption) {
       const placeId = selectedOption.value;
 
-      const placeService = new google.maps.places.PlacesService(document.createElement('div'));
+      const placeService = new google.maps.places.PlacesService(
+        document.createElement("div")
+      );
       placeService.getDetails({ placeId }, (place, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK && place) {
           setSelectedLocation({
@@ -55,13 +73,13 @@ const LocationSearch: React.FC = () => {
           styles={{
             control: (base) => ({
               ...base,
-              width: '300px',
-              borderRadius: '4px',
-              borderColor: '#ccc',
+              width: "250px",
+              borderRadius: "4px",
+              borderColor: "#ccc",
             }),
             menu: (base) => ({
               ...base,
-              width: '300px',
+              width: "250px",
             }),
           }}
         />
