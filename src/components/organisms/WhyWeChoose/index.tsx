@@ -1,109 +1,61 @@
-import { FC, useEffect, useState } from "react";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import React, { useState } from "react";
+import { Box, Typography, IconButton } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import {
-  carouselContainer,
-  imageWrapper,
-  carouselImage,
-  titleContainer,
-  titleStyle,
-  textContainer,
-  textStyle,
-  arrowButton,
-  topicContainer,
-  topicStyle,
-} from "./styles";
+import image1 from "../../../assets/images/ImageCarousel/image1.jpg";
+import image2 from "../../../assets/images/ImageCarousel/image2.jpg";
+import { useStyles } from "./styles";
 
-interface ICarouselItem {
-  image: string;
-  title: string;
-  text: string;
-}
+const slides = [
+  {
+    title: "Slide one",
+    description: "Description by first slide",
+    imageUrl: image1,
+  },
+  {
+    title: "Slide two",
+    description: "Description by second slide",
+    imageUrl: image2,
+  },
+];
 
-interface IImageCarouselProps {
-  items: ICarouselItem[];
-  topic: string;
-}
+const ImageSlider: React.FC = () => {
+  const classes = useStyles();
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-const WhyWeChoose: FC<IImageCarouselProps> = ({ items, topic }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-        setIsTransitioning(false);
-      }, 1000); // transition duration should match the CSS transition
-    }, 6000);
-    return () => clearInterval(intervalId);
-  }, [items.length]);
-
-  const handlePrev = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? items.length - 1 : prevIndex - 1
-      );
-      setIsTransitioning(false);
-    }, 1000);
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
   };
 
-  const handleNext = () => {
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-      setIsTransitioning(false);
-    }, 1000);
+  const prevSlide = () => {
+    setCurrentSlide(
+      (prevSlide) => (prevSlide - 1 + slides.length) % slides.length
+    );
   };
 
   return (
-    <Grid container justifyContent="center" alignItems="center">
-      <Grid item xs={12}>
-        <Box sx={carouselContainer(isSmallScreen)}>
-          <Box sx={topicContainer(isSmallScreen)}>
-            <Typography variant="h5" sx={topicStyle}>
-              {topic}
-            </Typography>
-          </Box>
-          <Box sx={imageWrapper(isTransitioning)}>
-            <Box
-              component="img"
-              src={items[currentIndex].image}
-              alt="Carousel"
-              sx={carouselImage}
-            />
-          </Box>
-          <Box sx={titleContainer(isSmallScreen)}>
-            <Typography variant="h4" sx={titleStyle}>
-              {items[currentIndex].title}
-            </Typography>
-          </Box>
-          <Box sx={textContainer(isSmallScreen)}>
-            <Typography variant="body1" sx={textStyle}>
-              {items[currentIndex].text}
-            </Typography>
-          </Box>
-          <ArrowBackIosIcon
-            sx={arrowButton("left")}
-            onClick={handlePrev}
-          />
-          <ArrowForwardIosIcon
-            sx={arrowButton("right")}
-            onClick={handleNext}
-          />
-        </Box>
-      </Grid>
-    </Grid>
+    <Box sx={classes.sliderContainer}>
+      <IconButton onClick={prevSlide} sx={classes.arrowButton}>
+        <ArrowBackIosIcon />
+      </IconButton>
+      <Box
+        sx={{
+          ...classes.slide,
+          backgroundImage: `url(${slides[currentSlide].imageUrl})`,
+        }}
+      >
+        <Typography variant="h4" sx={classes.title}>
+          {slides[currentSlide].title}
+        </Typography>
+        <Typography variant="subtitle1" sx={classes.description}>
+          {slides[currentSlide].description}
+        </Typography>
+      </Box>
+      <IconButton onClick={nextSlide} sx={classes.arrowButton}>
+        <ArrowForwardIosIcon />
+      </IconButton>
+    </Box>
   );
 };
 
-export default WhyWeChoose;
+export default ImageSlider;

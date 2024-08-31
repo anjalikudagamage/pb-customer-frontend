@@ -1,91 +1,40 @@
-import { SxProps, Theme } from "@mui/material/styles";
-
-export const carouselContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
-  position: "relative",
-  width: "100%",
-  height: isSmallScreen ? "60vw" : "40rem",
-  overflow: "hidden",
-  backgroundColor: "white", // Set the background color to white
-});
-
-export const imageWrapper = (isTransitioning: boolean): SxProps<Theme> => ({
-  position: "absolute",
-  top: 0,
-  left: isTransitioning ? "-100%" : "0",
-  width: "200%", // to hold both images
-  height: "100%",
-  display: "flex",
-  transition: "left 1s ease-in-out",
-});
-
-export const carouselImage: SxProps<Theme> = {
-  width: "100%",
-  height: "100%",
-  objectFit: "cover",
-};
-
-export const titleContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
-  position: "absolute",
-  top: "30%",
-  left: "10%",
-  transform: "translateY(-50%)",
-  width: "80%",
-  textAlign: "left",
-  zIndex: 1,
-  padding: isSmallScreen ? "0 1rem" : "0 2rem",
-});
-
-export const titleStyle: SxProps<Theme> = {
-  color: "black",
-  backgroundColor: "rgba(255, 255, 255, 0.7)", // transparent white
-  padding: "0.5rem 1rem",
-  borderRadius: "5px",
-};
-
-export const textContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
-  position: "absolute",
-  top: "40%",
-  left: "10%",
-  transform: "translateY(-50%)",
-  width: "80%",
-  textAlign: "left",
-  zIndex: 1,
-  padding: isSmallScreen ? "0 1rem" : "0 2rem",
-});
-
-export const textStyle: SxProps<Theme> = {
-  color: "black",
-  backgroundColor: "rgba(255, 255, 255, 0.7)", // transparent white
-  padding: "0.5rem 1rem",
-  borderRadius: "5px",
-};
-
-export const arrowButton = (position: "left" | "right"): SxProps<Theme> => ({
-  position: "absolute",
-  top: "50%",
-  [position]: "1rem",
-  transform: "translateY(-50%)",
-  zIndex: 2,
-  color: "white",
-  "&:hover": {
-    cursor: "pointer",
+export const useStyles = () => ({
+  sliderContainer: {
+      width: '100%',
+      height: '400px',
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+  },
+  slide: {
+      width: '100%',
+      height: '100%',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'column',
+      textAlign: 'center',
+      color: '#fff',
+  },
+  arrowButton: {
+      position: 'absolute',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      color: '#fff',
+      '&:first-of-type': {
+          left: '10px',
+      },
+      '&:last-of-type': {
+          right: '10px',
+      },
+  },
+  title: {
+      fontWeight: 'bold',
+  },
+  description: {
+      marginTop: '10px',
   },
 });
-
-export const topicContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
-  position: "absolute",
-  top: "10%",
-  left: "50%",
-  transform: "translateX(-50%)",
-  width: "80%",
-  textAlign: "center",
-  zIndex: 1,
-  padding: isSmallScreen ? "0 5rem" : "0 5rem",
-});
-
-export const topicStyle: SxProps<Theme> = {
-  color: "white",
-  fontSize: "60px",
-  padding: "0.5rem 0rem 20em 0em",
-  borderRadius: "5px",
-};

@@ -1,7 +1,7 @@
 import { SxProps, Theme } from "@mui/material";
 
 export const ButtonStyle: SxProps<Theme> = {
-  height: "54px",
+  height: "50px",
   width: "240px",
   backgroundImage:
     "linear-gradient(to right, #000000 0%, #53346D 51%, #000000 100%)",
