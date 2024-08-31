@@ -52,7 +52,7 @@ const CustomDatePicker: React.FC = () => {
   }: {
     children: React.ReactNode;
   }) => (
-    <Box sx={{ position: "relative", zIndex: 1000 }}>
+    <Box sx={{ position: "relative", zIndex: 1000}}>
       <CalendarContainer>{children}</CalendarContainer>
     </Box>
   );

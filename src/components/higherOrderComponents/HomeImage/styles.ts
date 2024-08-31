@@ -19,6 +19,6 @@ export const websiteNameStyle: SxProps<Theme> = {
   fontSize: "50px",
   color: "white",
   fontWeight: "600",
-  marginBottom: "80px",
+  marginBottom: "60px",
   textAlign: "center",
 };

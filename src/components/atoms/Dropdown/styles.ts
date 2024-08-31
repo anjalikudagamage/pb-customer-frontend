@@ -18,13 +18,11 @@ const commonSelectStyles: StylesConfig<any, false> = {
     width: "300px",
     borderRadius: "15px",
     boxShadow: "0 0 5px #eee",
-    backgroundColor: "rgb(236, 255, 230)",
   }),
   option: (base) => ({
     ...base,
     backgroundColor: "rgb(236, 255, 230)",
     "&:hover": {
-      backgroundColor: "#ECFDF3",
       color: "#17B26A",
     },
   }),
