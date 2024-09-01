@@ -1,12 +1,5 @@
 import { SxProps } from "@mui/material";
 
-export const photographerNameStyle: SxProps = {
-  fontSize: "24px",
-  fontWeight: "bold",
-  marginTop: "100px",
-  color: "black",
-};
-
 export const sectionTitleStyle: SxProps = {
   fontSize: "20px",
   fontWeight: "medium",

@@ -5,15 +5,15 @@ import PackageTable from "../../higherOrderComponents/PackageTable";
 import ReviewSection from "../../higherOrderComponents/ReviewSection";
 import Navbar from "../../organisms/Navbar";
 import { Typography } from "@mui/material";
+import Img from "../../../assets/images/photographer/image.jpg"
 import {
-  photographerNameStyle,
   sectionTitleStyle,
   photographerDetailsStyle,
 } from "./styles";
+import PhotographerImage from "../../organisms/PhotographerImage";
 
 const PhotographerDetailsPage: React.FC = () => {
   const photographer = {
-    name: "John Doe",
     details:
       "John Doe is a professional photographer with over 10 years of experience...",
     packages: [
@@ -47,7 +47,7 @@ const PhotographerDetailsPage: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <Typography sx={photographerNameStyle}>{photographer.name}</Typography>
+      <PhotographerImage imageUrl={Img}/>
       <QuiltedImageList />
       <Typography sx={sectionTitleStyle}>About the Photographer</Typography>
       <Typography sx={photographerDetailsStyle}>
