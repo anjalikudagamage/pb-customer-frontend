@@ -1,17 +1,20 @@
 export const useStyles = () => ({
   container: {
-    padding: "2rem 0",
+    padding: "8rem 0",
   },
   faqHeader: {
     textAlign: "center",
     marginBottom: "2rem",
   },
   title: {
+    color: "#1A4870",
     fontWeight: "bold",
-    marginBottom: "0.5rem",
+    marginBottom: "1rem",
   },
   description: {
     color: "#6c757d",
+    padding: "0 15rem",
+    marginBottom: "5rem",
   },
   gridContainer: {
     display: "flex",
@@ -26,10 +29,10 @@ export const useStyles = () => ({
   link: {
     display: "block",
     marginBottom: "1rem",
-    color: "#007bff",
+    color: "#536493",
     textDecoration: "none",
     "&:hover": {
-      textDecoration: "underline",
+      fontWeight: "bold",
     },
   },
   faqCategory: {
@@ -41,7 +44,7 @@ export const useStyles = () => ({
   },
   accordion: {
     boxShadow: "none",
-    border: "1px solid #ddd",
+    border: "none",
     "&:not(:last-child)": {
       borderBottom: "none",
     },

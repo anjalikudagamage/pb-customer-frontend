@@ -13,7 +13,7 @@ export const containerStyles: SxProps<Theme> = {
 
 export const topicStyles: SxProps<Theme> = {
   color: "#1A4870",
-  fontSize: "40px",
+  fontSize: "50px",
   fontWeight: "600",
   marginBottom: "25px",
   marginTop: "50px",

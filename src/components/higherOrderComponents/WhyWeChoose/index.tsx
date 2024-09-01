@@ -8,12 +8,12 @@ import { useStyles } from "./styles";
 
 const slides = [
   {
-    title: "Slide one",
-    description: "Description by first slide",
+    title: "Why choose us?",
+    description: "As a photographer, your focus should be on capturing beautiful moments, not on managing the complexities of bookings, payments, and client communication. Our website offers an all-in-one solution tailored to photographers, simplifying your business operations with an intuitive booking system, a customizable portfolio to showcase your work, and secure payment processing. Gain greater visibility, manage your client relationships seamlessly, and grow your business with data-driven insights—all while maintaining a professional online presence 24/7. Elevate your photography business with us and spend more time doing what you love: capturing stunning images.",
     imageUrl: image1,
   },
   {
-    title: "Slide two",
+    title: "Why choose us?",
     description: "Description by second slide",
     imageUrl: image2,
   },
