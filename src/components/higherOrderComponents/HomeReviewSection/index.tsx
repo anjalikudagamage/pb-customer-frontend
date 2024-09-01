@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
 import ReviewCard from "../../atoms/HomeReviewCard";
-import {ButtonStyle} from "./styles"
+import { ButtonStyle } from "./styles";
 
 const reviews = [
   {
@@ -31,7 +31,7 @@ const reviews = [
   // Add more reviews as needed
 ];
 
-const ReviewSection: React.FC = () => {
+const HomeReviewSection: React.FC = () => {
   return (
     <Box
       sx={{ padding: "40px", backgroundColor: "#e53935", textAlign: "center" }}
@@ -64,15 +64,11 @@ const ReviewSection: React.FC = () => {
           />
         ))}
       </Box>
-      <Button
-        variant="contained"
-        color="primary"
-        sx={ButtonStyle}
-      >
+      <Button variant="contained" color="primary" sx={ButtonStyle}>
         SEE MORE
       </Button>
     </Box>
   );
 };
 
-export default ReviewSection;
+export default HomeReviewSection;

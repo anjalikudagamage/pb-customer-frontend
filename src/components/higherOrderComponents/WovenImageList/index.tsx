@@ -12,8 +12,8 @@ import {
 } from "./styles";
 
 interface ItemData {
-  img: string; 
-  title: string; 
+  img: string;
+  title: string;
 }
 
 const itemData: ItemData[] = [
