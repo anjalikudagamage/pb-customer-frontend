@@ -28,7 +28,7 @@ const reviews: Review[] = [
 const ReviewSection: React.FC = () => {
     return (
         <Container>
-            <Grid container spacing={4} justifyContent="center">
+            <Grid container spacing={4} justifyContent="center" padding="100px 0">
                 {reviews.map((review, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index} textAlign="center">
                         <Avatar

@@ -1,8 +1,8 @@
 import React from "react";
-import FAQSection from "../../higherOrderComponents/FAQSection";
+import FAQSection from "../../organisms/FAQSection";
 import QuiltedImageList from "../../organisms/PhotographerGallery";
 import PackageTable from "../../higherOrderComponents/PackageTable";
-import ReviewSection from "../../higherOrderComponents/ReviewSection";
+import ReviewSection from "../../organisms/ReviewSection";
 import Navbar from "../../organisms/Navbar";
 import { Typography } from "@mui/material";
 import Img from "../../../assets/images/photographer/image.jpg"
@@ -11,11 +11,12 @@ import {
   photographerDetailsStyle,
 } from "./styles";
 import PhotographerImage from "../../organisms/PhotographerImage";
+import Footer from "../../atoms/Footer";
 
 const PhotographerDetailsPage: React.FC = () => {
   const photographer = {
     details:
-      "John Doe is a professional photographer with over 10 years of experience...",
+      "Eternal Moments Photography is a modern photography studio specializing in capturing life's most precious moments with a creative and personalized touch. Founded in 2012, our studio has quickly become a go-to destination for clients seeking high-quality photography for weddings, engagements, portraits, and commercial projects. Nestled in the heart of the city, Sunset Studio features a state-of-the-art facility equipped with the latest camera technology, professional lighting setups, and a variety of customizable backdrops. Our team of skilled photographers and editors is passionate about storytelling through images, and we pride ourselves on creating a relaxed, fun environment where every client feels comfortable and confident in front of the camera. Whether it's a romantic couple's shoot, a lively family portrait, or a sleek corporate headshot, we are dedicated to delivering stunning results that exceed expectations.",
     packages: [
       {
         name: "Wedding Package",
@@ -56,6 +57,7 @@ const PhotographerDetailsPage: React.FC = () => {
       <PackageTable />
       <ReviewSection />
       <FAQSection />
+      <Footer/>
     </div>
   );
 };

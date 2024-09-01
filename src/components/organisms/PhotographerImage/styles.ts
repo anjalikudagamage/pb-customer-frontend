@@ -20,6 +20,6 @@ export const title: SxProps = {
 };
 
 export const subtitle: SxProps = {
-  maxWidth: "600px",
+  maxWidth: "800px",
   textShadow: "1px 1px 3px rgba(0, 0, 0, 0.7)",
 };

@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import Image1 from "../../../assets/images/photographerCard/image1.jpg";
 import PhotographerCard from "../../molecules/PhotographerCard";
+import { photographerCardListContainer } from "./styles";
 
 const photographerData = [
   {
@@ -44,7 +45,7 @@ const photographerData = [
 
 const PhotographerCardList: React.FC = () => {
   return (
-    <Box>
+    <Box sx={photographerCardListContainer}>
       {photographerData.map((photographer, index) => (
         <PhotographerCard
           key={index}

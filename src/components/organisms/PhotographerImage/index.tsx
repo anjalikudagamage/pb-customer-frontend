@@ -13,7 +13,7 @@ const PhotographerImage: React.FC<PhotographerImageProps> = ({ imageUrl }) => {
                 ETERNAL MOMENTS PHOTOGRAPHY
             </Typography>
             <Typography variant="h6" sx={subtitle}>
-                At Eternal Moments Photography Studio, we specialize in capturing life's most cherished moments with elegance and authenticity. With a passion for storytelling through the lens, our award-winning team ensures every photo is a timeless reflection of your most treasured memories. Let us turn your special moments into lasting works of art.
+                At Eternal Moments Photography Studio, we specialize in capturing life's most cherished moments with elegance and authenticity.
             </Typography>
         </Box>
     );
