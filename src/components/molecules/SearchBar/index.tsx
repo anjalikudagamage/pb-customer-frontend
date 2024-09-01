@@ -3,9 +3,9 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextButton from "../../atoms/TextButton";
 import { searchBarContainer, searchBarItem } from "./styles";
-import CustomDatePicker from "../../atoms/DatePicker";
-import LocationSearch from "../../atoms/CustomTextField";
-import PackageDropdown from "../../atoms/Dropdown";
+import CustomDatePicker from "../../atoms/CustomDatePicker";
+import LocationSearch from "../../atoms/LocationSearch";
+import PackageDropdown from "../../atoms/PackageDropdown";
 
 const SearchBar: React.FC = () => {
   return (

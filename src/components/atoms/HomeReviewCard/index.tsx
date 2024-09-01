@@ -9,7 +9,7 @@ interface ReviewCardProps {
   reviewerImageUrl: string;
 }
 
-const ReviewCard: React.FC<ReviewCardProps> = ({ logoUrl, reviewText, reviewerName, reviewerRole, reviewerImageUrl }) => {
+const HomeReviewCard: React.FC<ReviewCardProps> = ({ logoUrl, reviewText, reviewerName, reviewerRole, reviewerImageUrl }) => {
   return (
     <Box sx={{ padding: '20px', backgroundColor: '#fff', borderRadius: '8px', textAlign: 'center', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
       <img src={logoUrl} alt="Company Logo" style={{ maxHeight: '40px', marginBottom: '20px' }} />
@@ -27,5 +27,5 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ logoUrl, reviewText, reviewerNa
   );
 };
 
-export default ReviewCard;
+export default HomeReviewCard;
 
