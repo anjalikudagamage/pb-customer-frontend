@@ -1,7 +1,13 @@
-import React from 'react';
-import { Box, Typography, Link, Grid } from '@mui/material';
-import { Facebook, Twitter, RssFeed, Google, GitHub } from '@mui/icons-material';
-import Img from "../../../assets/logo.png"
+import React from "react";
+import { Box, Typography, Link, Grid } from "@mui/material";
+import {
+  Facebook,
+  Twitter,
+  RssFeed,
+  Google,
+  GitHub,
+} from "@mui/icons-material";
+import Img from "../../../assets/logo.png";
 import {
   footerContainer,
   logo,
@@ -13,7 +19,7 @@ import {
   icon,
   copyright,
   logoImage,
-} from './styles';
+} from "./styles";
 
 const Footer: React.FC = () => {
   return (
@@ -94,4 +100,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-
