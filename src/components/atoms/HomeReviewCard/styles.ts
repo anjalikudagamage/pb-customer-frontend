@@ -35,29 +35,3 @@ export const reviewerNameStyles: SxProps<Theme> = {
 };
 
 export const reviewerRoleStyles: SxProps<Theme> = {};
-
-export const reviewSectionContainerStyles: SxProps<Theme> = {
-  padding: "100px 50px",
-  backgroundColor: "#0F67B1",
-  textAlign: "center",
-  borderRadius: "10px",
-  mb: 5,
-};
-
-export const sectionTitleStyles: SxProps<Theme> = {
-  color: "#fff",
-  fontWeight: "bold",
-  marginBottom: "10px",
-};
-
-export const sectionSubtitleStyles: SxProps<Theme> = {
-  color: "#fff",
-  marginBottom: "50px",
-};
-
-export const reviewsContainerStyles: SxProps<Theme> = {
-  display: "flex",
-  justifyContent: "center",
-  gap: "30px",
-  marginBottom: "50px",
-};

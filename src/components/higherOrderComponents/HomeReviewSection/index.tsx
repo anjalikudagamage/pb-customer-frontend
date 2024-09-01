@@ -1,8 +1,14 @@
 import React from "react";
-import { Box, Typography} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import ReviewCard from "../../atoms/HomeReviewCard";
 import TextButton from "../../atoms/TextButton";
-import logo from "../../../assets/logo.png"
+import logo from "../../../assets/logo.png";
+import {
+  reviewSectionContainerStyles,
+  sectionTitleStyles,
+  sectionSubtitleStyles,
+  reviewsContainerStyles,
+} from "./styles"; 
 
 const reviews = [
   {
@@ -34,26 +40,14 @@ const reviews = [
 
 const HomeReviewSection: React.FC = () => {
   return (
-    <Box
-      sx={{ padding: "100px 50px", backgroundColor: "#0F67B1", textAlign: "center", borderRadius: "10px", mb: 5, }}
-    >
-      <Typography
-        variant="h4"
-        sx={{ color: "#fff", fontWeight: "bold", marginBottom: "10px",  }}
-      >
+    <Box sx={reviewSectionContainerStyles}>
+      <Typography variant="h4" sx={sectionTitleStyles}>
         THEY TRUSTED US
       </Typography>
-      <Typography variant="body1" sx={{ color: "#fff", marginBottom: "50px" }}>
+      <Typography variant="body1" sx={sectionSubtitleStyles}>
         We are very happy because we have happy customers.
       </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "30px",
-          marginBottom: "50px",
-        }}
-      >
+      <Box sx={reviewsContainerStyles}>
         {reviews.map((review, index) => (
           <ReviewCard
             key={index}
@@ -65,7 +59,7 @@ const HomeReviewSection: React.FC = () => {
           />
         ))}
       </Box>
-      <TextButton text="SEE MORE"/>
+      <TextButton text="SEE MORE" />
     </Box>
   );
 };

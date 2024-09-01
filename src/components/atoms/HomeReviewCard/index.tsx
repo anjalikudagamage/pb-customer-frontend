@@ -1,5 +1,14 @@
 import React from "react";
 import { Box, Typography, Avatar } from "@mui/material";
+import {
+  containerStyles,
+  logoStyles,
+  reviewTextStyles,
+  reviewerContainerStyles,
+  avatarStyles,
+  reviewerNameStyles,
+  reviewerRoleStyles,
+} from "./styles"; // Adjust the import path as necessary
 
 interface ReviewCardProps {
   logoUrl: string;
@@ -17,44 +26,20 @@ const HomeReviewCard: React.FC<ReviewCardProps> = ({
   reviewerImageUrl,
 }) => {
   return (
-    <Box
-      sx={{
-        padding: "20px",
-        backgroundColor: "#fff",
-        borderRadius: "8px",
-        textAlign: "center",
-        boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
-      }}
-    >
-      <img
-        src={logoUrl}
-        alt="Company Logo"
-        style={{ maxHeight: "40px", marginBottom: "20px" }}
-      />
-      <Typography
-        variant="body1"
-        sx={{ fontStyle: "italic", marginBottom: "20px" }}
-      >
+    <Box sx={containerStyles}>
+      <img src={logoUrl} alt="Company Logo" style={logoStyles} />
+      <Typography variant="body1" sx={reviewTextStyles}>
         "{reviewText}"
       </Typography>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "10px",
-        }}
-      >
-        <Avatar
-          src={reviewerImageUrl}
-          alt={reviewerName}
-          sx={{ width: 56, height: 56 }}
-        />
+      <Box sx={reviewerContainerStyles}>
+        <Avatar src={reviewerImageUrl} alt={reviewerName} sx={avatarStyles} />
         <Box>
-          <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+          <Typography variant="subtitle1" sx={reviewerNameStyles}>
             {reviewerName}
           </Typography>
-          <Typography variant="body2">{reviewerRole}</Typography>
+          <Typography variant="body2" sx={reviewerRoleStyles}>
+            {reviewerRole}
+          </Typography>
         </Box>
       </Box>
     </Box>
