@@ -1,76 +1,101 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
-import { Home, HelpOutline, Info, Gavel } from "@mui/icons-material";
+import { Box, Typography, Link, Grid } from "@mui/material";
+import {
+  Facebook,
+  Twitter,
+  RssFeed,
+  Google,
+  GitHub,
+} from "@mui/icons-material";
+import Img from "../../../assets/logo.png";
 import {
   footerContainer,
-  footerContent,
-  leftColumn,
-  headerContentWrapper,
-  rightColumn,
-  siteName,
-  sectionHeader,
-  sectionContent,
-  paragraph,
+  logo,
+  companyName,
+  linkSection,
+  link,
+  horizontalLine,
+  iconSection,
   icon,
   copyright,
+  logoImage,
 } from "./styles";
 
 const Footer: React.FC = () => {
   return (
-    <Grid container sx={footerContainer}>
-      <Grid container sx={footerContent}>
-        {/* Left Column */}
-        <Grid item xs={12} md={4} sx={leftColumn}>
-          <Typography sx={siteName}>ClickBooker</Typography>
-          <Typography sx={paragraph}>
-            ClickBooker is your go-to platform for finding and booking the best
-            photographers. We offer a wide range of services to cater to all
-            your photography needs.
+    <Box sx={footerContainer}>
+      <Grid container spacing={4} sx={linkSection}>
+        <Grid item xs={12} sm={4}>
+          <Box sx={logo}>
+            <img src={Img} alt="Photobook Logo" style={logoImage} />
+          </Box>
+          <Typography variant="body2" sx={companyName}>
+            CAPTURE YOUR MOMENTS
           </Typography>
-          <Typography sx={copyright}>© 2024 - Copyright</Typography>
         </Grid>
-        {/* Right Column */}
-        <Grid item xs={12} md={8} sx={rightColumn}>
-          <Grid container spacing={2}>
-            <Grid item xs={6} sm={3} sx={headerContentWrapper}>
-              <Typography sx={sectionHeader}>
-                <Home sx={icon} />
-                Service
-              </Typography>
-              <Typography sx={sectionContent}>Pricing</Typography>
-              <Typography sx={sectionContent}>Full Setup Help</Typography>
-              <Typography sx={sectionContent}>
-                All Service Businesses
-              </Typography>
-            </Grid>
-            <Grid item xs={6} sm={3} sx={headerContentWrapper}>
-              <Typography sx={sectionHeader}>
-                <HelpOutline sx={icon} />
-                Help
-              </Typography>
-              <Typography sx={sectionContent}>Help Center</Typography>
-              <Typography sx={sectionContent}>FAQ</Typography>
-            </Grid>
-            <Grid item xs={6} sm={3} sx={headerContentWrapper}>
-              <Typography sx={sectionHeader}>
-                <Info sx={icon} />
-                About
-              </Typography>
-              <Typography sx={sectionContent}>About us</Typography>
-              <Typography sx={sectionContent}>Contacts</Typography>
-            </Grid>
-            <Grid item xs={6} sm={3} sx={headerContentWrapper}>
-              <Typography sx={sectionHeader}>
-                <Gavel sx={icon} />
-                Legal
-              </Typography>
-              <Typography sx={sectionContent}>Privacy Policy</Typography>
-              <Typography sx={sectionContent}>Terms and Conditions</Typography>
-            </Grid>
+        <Grid item xs={12} sm={8} container spacing={2}>
+          <Grid item xs={12} sm={3}>
+            <Link href="#" sx={link}>
+              PACKAGES
+            </Link>
+            <Link href="#" sx={link}>
+              BOOK A SESSION
+            </Link>
+            <Link href="#" sx={link}>
+              FAQs
+            </Link>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <Link href="#" sx={link}>
+              OUR PHOTOGRAPHERS
+            </Link>
+            <Link href="#" sx={link}>
+              PORTFOLIO
+            </Link>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <Link href="#" sx={link}>
+              BLOG
+            </Link>
+            <Link href="#" sx={link}>
+              TESTIMONIALS
+            </Link>
+            <Link href="#" sx={link}>
+              SUPPORT
+            </Link>
+          </Grid>
+          <Grid item xs={12} sm={3}>
+            <Link href="#" sx={link}>
+              ABOUT US
+            </Link>
+            <Link href="#" sx={link}>
+              CONTACT US
+            </Link>
+            <Link href="#" sx={link}>
+              TERMS OF SERVICE
+            </Link>
+            <Link href="#" sx={link}>
+              PRIVACY POLICY
+            </Link>
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+
+      {/* Horizontal Line */}
+      <Box sx={horizontalLine}></Box>
+
+      <Box sx={iconSection}>
+        <Facebook sx={icon} />
+        <Twitter sx={icon} />
+        <RssFeed sx={icon} />
+        <Google sx={icon} />
+        <GitHub sx={icon} />
+      </Box>
+
+      <Typography variant="body2" sx={copyright}>
+        ©2024 PHOTOBOOK. All rights reserved.
+      </Typography>
+    </Box>
   );
 };
 
