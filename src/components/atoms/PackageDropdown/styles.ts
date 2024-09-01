@@ -1,6 +1,11 @@
 import { StylesConfig } from "react-select";
 
-const commonSelectStyles: StylesConfig<any, false> = {
+interface SelectOption {
+  label: string;
+  value: string;
+}
+
+const commonSelectStyles: StylesConfig<SelectOption, false> = {
   control: (base) => ({
     ...base,
     width: "300px",
@@ -35,6 +40,6 @@ const commonSelectStyles: StylesConfig<any, false> = {
   }),
 };
 
-export const packageSelectStyles: StylesConfig<any, false> = {
+export const packageSelectStyles: StylesConfig<SelectOption, false> = {
   ...commonSelectStyles,
 };

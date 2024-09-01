@@ -6,13 +6,8 @@ import { locationSelectStyles } from "./styles";
 const libraries: Array<"places"> = ["places"];
 
 const LocationSearch: React.FC = () => {
-  const [options, setOptions] = useState<{ label: string; value: string }[]>(
-    []
-  );
-  const [selectedLocation, setSelectedLocation] = useState<{
-    lat: number;
-    lng: number;
-  } | null>(null);
+  const [options, setOptions] = useState<{ label: string; value: string }[]>([]);
+  const [selectedLocation, setSelectedLocation] = useState<{ lat: number; lng: number } | null>(null);
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: "YOUR_API_KEY",
     libraries,
@@ -23,10 +18,7 @@ const LocationSearch: React.FC = () => {
       if (!isLoaded) return;
       const autocomplete = new google.maps.places.AutocompleteService();
       autocomplete.getPlacePredictions({ input }, (predictions, status) => {
-        if (
-          status === google.maps.places.PlacesServiceStatus.OK &&
-          predictions
-        ) {
+        if (status === google.maps.places.PlacesServiceStatus.OK && predictions) {
           setOptions(
             predictions.map((p) => ({
               label: p.description,
@@ -43,13 +35,11 @@ const LocationSearch: React.FC = () => {
     if (!isLoaded) return;
   }, [isLoaded]);
 
-  const handleChange = (selectedOption: any) => {
+  const handleChange = (selectedOption: { label: string; value: string } | null) => {
     if (selectedOption) {
       const placeId = selectedOption.value;
 
-      const placeService = new google.maps.places.PlacesService(
-        document.createElement("div")
-      );
+      const placeService = new google.maps.places.PlacesService(document.createElement("div"));
       placeService.getDetails({ placeId }, (place, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK && place) {
           setSelectedLocation({

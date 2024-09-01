@@ -1,7 +1,12 @@
 import { SxProps } from "@mui/material";
 import { StylesConfig } from "react-select";
 
-const commonSelectStyles: StylesConfig<any, false> = {
+interface SelectOption {
+  label: string;
+  value: string;
+}
+
+const commonSelectStyles: StylesConfig<SelectOption, false> = {
   control: (base) => ({
     ...base,
     width: "300px",
@@ -22,6 +27,11 @@ const commonSelectStyles: StylesConfig<any, false> = {
   }),
   option: (base) => ({
     ...base,
+    fontFamily: "Arial, sans-serif",
+    fontSize: "14px",
+    fontWeight: 600,
+    backgroundColor: "#ECFDF3",
+    color: "#344054",
     "&:hover": {
       backgroundColor: "#ECFDF3",
       color: "#17B26A",
@@ -36,11 +46,11 @@ const commonSelectStyles: StylesConfig<any, false> = {
   }),
 };
 
-export const locationSelectStyles: StylesConfig<any, false> = {
+export const locationSelectStyles: StylesConfig<SelectOption, false> = {
   ...commonSelectStyles,
 };
 
-export const packageSelectStyles: StylesConfig<any, false> = {
+export const packageSelectStyles: StylesConfig<SelectOption, false> = {
   ...commonSelectStyles,
 };
 
@@ -63,9 +73,6 @@ export const customDateButtonStyle: SxProps = {
       border: "none",
     },
     "&.Mui-focused fieldset": {
-      border: "none",
-    },
-    "&.MuiOutlinedInput-notchedOutline": {
       border: "none",
     },
   },
