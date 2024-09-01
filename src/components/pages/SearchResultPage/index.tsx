@@ -12,11 +12,14 @@ import {
   imageCarouselTitleStyleOverride,
 } from "./styles";
 
+import Navbar from "../../organisms/Navbar";
+
 const imageUrls = [Image1, Image2];
 
 const SearchResult: React.FC = () => {
   return (
-    <div>
+    <>
+    <Navbar/>
       <ImageCarousel
         images={imageUrls}
         title="Wedding Basic Package:  21 photographers found"
@@ -33,7 +36,7 @@ const SearchResult: React.FC = () => {
         </Grid>
       </Box>
       <Footer />
-    </div>
+      </>
   );
 };
 

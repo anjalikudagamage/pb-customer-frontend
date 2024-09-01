@@ -5,6 +5,7 @@ export const carouselContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
   width: "100%",
   height: isSmallScreen ? "30vw" : "10rem",
   overflow: "hidden",
+  marginTop: "60px"
 });
 
 export const carouselImage: SxProps<Theme> = {
