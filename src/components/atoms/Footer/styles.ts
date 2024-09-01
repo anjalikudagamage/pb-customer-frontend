@@ -22,10 +22,10 @@ export const linkSection = {
 export const link = {
   display: "block",
   color: "#fff",
-  margin: "4px 0",
+  margin: "10px 0",
   textDecoration: "none",
   "&:hover": {
-    textDecoration: "underline",
+    fontWeight: "bold",
   },
 };
 
@@ -56,6 +56,6 @@ export const copyright = {
 };
 
 export const logoImage = {
-  width: "150px",
+  width: "250px",
   height: "auto",
 };
