@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import ReviewCard from "../../atoms/HomeReviewCard";
 import TextButton from "../../atoms/TextButton";
-import logo from "../../../assets/logo.png";
+import logo from "../../../assets/logo2.png";
 import {
   reviewSectionContainerStyles,
   sectionTitleStyles,
