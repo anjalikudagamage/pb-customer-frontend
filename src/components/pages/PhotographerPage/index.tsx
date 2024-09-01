@@ -1,8 +1,15 @@
 import React from "react";
 import FAQSection from "../../higherOrderComponents/FAQSection";
-import QuiltedImageList from "../../higherOrderComponents/PhotographerGallery";
+import QuiltedImageList from "../../organisms/PhotographerGallery";
 import PackageTable from "../../higherOrderComponents/PackageTable";
 import ReviewSection from "../../higherOrderComponents/ReviewSection";
+import Navbar from "../../organisms/Navbar";
+import { Typography } from "@mui/material";
+import {
+  photographerNameStyle,
+  sectionTitleStyle,
+  photographerDetailsStyle,
+} from "./styles";
 
 const PhotographerDetailsPage: React.FC = () => {
   const photographer = {
@@ -39,10 +46,13 @@ const PhotographerDetailsPage: React.FC = () => {
 
   return (
     <div>
-      <h1>{photographer.name}</h1>
-      <QuiltedImageList/>
-      <h2>About the Photographer</h2>
-      <p>{photographer.details}</p>
+      <Navbar />
+      <Typography sx={photographerNameStyle}>{photographer.name}</Typography>
+      <QuiltedImageList />
+      <Typography sx={sectionTitleStyle}>About the Photographer</Typography>
+      <Typography sx={photographerDetailsStyle}>
+        {photographer.details}
+      </Typography>
       <PackageTable />
       <ReviewSection />
       <FAQSection />

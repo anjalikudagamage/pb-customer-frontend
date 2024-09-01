@@ -9,6 +9,7 @@ import { ROUTES } from "../constants/routeConstants.ts";
 import LoginPage from "../components/pages/LoginPage/index.tsx";
 import HomePage from "../components/pages/HomePage/index.tsx";
 import PhotographerDetailsPage from "../components/pages/PhotographerPage/index.tsx";
+import SearchResult from "../components/pages/SearchResultPage/index.tsx";
 
 const AppRouter: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const AppRouter: React.FC = () => {
           path={ROUTES.PHOTOGRAPHER}
           element={<PhotographerDetailsPage />}
         />
+        <Route path={ROUTES.SEARCHRESULTPAGE} element={<SearchResult />}/>
       </Routes>
     </Router>
   );
