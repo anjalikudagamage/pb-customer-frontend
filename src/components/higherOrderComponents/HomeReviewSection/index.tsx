@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography} from "@mui/material";
 import ReviewCard from "../../atoms/HomeReviewCard";
-import { ButtonStyle } from "./styles";
+import TextButton from "../../atoms/TextButton";
+import logo from "../../../assets/logo.png"
 
 const reviews = [
   {
-    logoUrl: "path_to_walmart_logo",
+    logoUrl: logo,
     reviewText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     reviewerName: "Nikhil Anantharaman",
@@ -13,7 +14,7 @@ const reviews = [
     reviewerImageUrl: "path_to_reviewer_image",
   },
   {
-    logoUrl: "path_to_walmart_logo",
+    logoUrl: logo,
     reviewText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     reviewerName: "Nikhil Anantharaman",
@@ -21,7 +22,7 @@ const reviews = [
     reviewerImageUrl: "path_to_reviewer_image",
   },
   {
-    logoUrl: "path_to_walmart_logo",
+    logoUrl: logo,
     reviewText:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     reviewerName: "Nikhil Anantharaman",
@@ -34,15 +35,15 @@ const reviews = [
 const HomeReviewSection: React.FC = () => {
   return (
     <Box
-      sx={{ padding: "40px", backgroundColor: "#e53935", textAlign: "center" }}
+      sx={{ padding: "100px 50px", backgroundColor: "#0F67B1", textAlign: "center", borderRadius: "10px", mb: 5, }}
     >
       <Typography
         variant="h4"
-        sx={{ color: "#fff", fontWeight: "bold", marginBottom: "10px" }}
+        sx={{ color: "#fff", fontWeight: "bold", marginBottom: "10px",  }}
       >
         THEY TRUSTED US
       </Typography>
-      <Typography variant="body1" sx={{ color: "#fff", marginBottom: "30px" }}>
+      <Typography variant="body1" sx={{ color: "#fff", marginBottom: "50px" }}>
         We are very happy because we have happy customers.
       </Typography>
       <Box
@@ -50,7 +51,7 @@ const HomeReviewSection: React.FC = () => {
           display: "flex",
           justifyContent: "center",
           gap: "30px",
-          marginBottom: "30px",
+          marginBottom: "50px",
         }}
       >
         {reviews.map((review, index) => (
@@ -64,9 +65,7 @@ const HomeReviewSection: React.FC = () => {
           />
         ))}
       </Box>
-      <Button variant="contained" color="primary" sx={ButtonStyle}>
-        SEE MORE
-      </Button>
+      <TextButton text="SEE MORE"/>
     </Box>
   );
 };
