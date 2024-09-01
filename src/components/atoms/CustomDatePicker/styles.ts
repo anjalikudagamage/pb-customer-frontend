@@ -1,6 +1,11 @@
 import { SxProps } from "@mui/material";
 import { StylesConfig } from "react-select";
 
+interface SelectOption {
+  label: string;
+  value: string;
+}
+
 export const customDateButtonStyle: SxProps = {
   display: "flex",
   alignItems: "center",
@@ -106,7 +111,8 @@ export const customCalendarContainerStyle: SxProps = {
   transition: "none",
 };
 
-export const locationSelectStyles: StylesConfig<any, false> = {
+// Apply the specific type for the select component
+export const locationSelectStyles: StylesConfig<SelectOption, false> = {
   control: (base) => ({
     ...base,
     width: "300px",
