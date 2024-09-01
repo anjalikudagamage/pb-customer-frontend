@@ -6,7 +6,7 @@ export const ButtonStyle: SxProps<Theme> = {
   backgroundImage:
     "linear-gradient(to right, #000000 0%, #53346D 51%, #000000 100%)",
   color: "white",
-  
+
   padding: "15px 45px",
   textAlign: "center",
   textTransform: "uppercase",
