@@ -14,7 +14,7 @@ import {
   linkStyle,
 } from "./styles";
 
-const LoginPage: React.FC = () => {
+const SignUpPage: React.FC = () => {
   return (
     <Box sx={containerStyle}>
       <Box
@@ -24,21 +24,35 @@ const LoginPage: React.FC = () => {
         }}
       >
         <Typography variant="h3" sx={headingStyle}>
-          WELCOME BACK TO CLICKBOOKER
+          CLICKBOOKER
         </Typography>
         <Typography variant="body1" sx={bodyStyle}>
-          New here? <Link href="/signup" sx={linkStyle}>Create an account</Link>
+          Already have an account?{" "}
+          <Link href="/login" sx={linkStyle}>
+            Login here
+          </Link>
         </Typography>
         <Typography variant="body2" sx={bodyStyle}>
-          Log in to your account to access all the features of our platform. Connect with photographers, book your next session, or manage your profile—all in one place.
+          Sign up today and start connecting with top photographers in your
+          area! Whether you’re a photographer looking to grow your business or
+          someone searching for a professional to capture your special moments,
+          ClickBooker is the perfect place to begin. Create your account now and
+          unlock the full potential of our community.
         </Typography>
         <Button sx={buttonStyle}>Learn More</Button>
       </Box>
 
       <Box sx={formBoxStyle}>
         <Typography variant="h4" sx={titleStyle}>
-          Login to Your Account
+          Create Your Account
         </Typography>
+        <TextField
+          label="Name"
+          fullWidth
+          margin="normal"
+          variant="outlined"
+          sx={inputFieldStyle}
+        />
         <TextField
           label="Email"
           fullWidth
@@ -54,13 +68,10 @@ const LoginPage: React.FC = () => {
           variant="outlined"
           sx={inputFieldStyle}
         />
-        <Link href="/forgot-password" sx={linkStyle} style={{ marginBottom: '16px', display: 'block' }}>
-          Forgot Password?
-        </Link>
-        <Button sx={signUpButtonStyle}>Login</Button>
+        <Button sx={signUpButtonStyle}>Sign Up</Button>
       </Box>
     </Box>
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
