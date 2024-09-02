@@ -1,4 +1,3 @@
-
 import {
   Grid,
   Typography,
@@ -7,48 +6,49 @@ import {
   CardContent,
   CardActions,
   Box,
-} from '@mui/material';
-import KingBedIcon from '@mui/icons-material/KingBed';
-import PeopleIcon from '@mui/icons-material/People';
+} from "@mui/material";
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import PeopleIcon from "@mui/icons-material/People";
+import { packageTableStyles } from "./styles";
 
 const PackageTable = () => {
   const packages = [
     {
-      name: 'Basic Photography Package',
-      price: 'LKR 14,699',
-      features: ['2 Hours Session', '20 Edited Photos', '1 Location'],
+      name: "Basic Photography Package",
+      price: "LKR 14,699",
+      features: ["2 Hours Session", "20 Edited Photos", "1 Location"],
       guests: 2,
-      bedType: '1 extra-large double bed or 2 single beds',
-      breakfast: 'Non-refundable, Pay in advance',
+      bedType: "1 extra-large double bed or 2 single beds",
+      breakfast: "Non-refundable, Pay in advance",
     },
     {
-      name: 'Premium Photography Package',
-      price: 'LKR 23,500',
-      features: ['4 Hours Session', '50 Edited Photos', '2 Locations'],
+      name: "Premium Photography Package",
+      price: "LKR 23,500",
+      features: ["4 Hours Session", "50 Edited Photos", "2 Locations"],
       guests: 4,
-      bedType: '1 extra-large double bed or 2 single beds',
-      breakfast: 'Non-refundable, 10% Genius discount applied',
+      bedType: "1 extra-large double bed or 2 single beds",
+      breakfast: "Non-refundable, 10% Genius discount applied",
     },
     {
-      name: 'Basic Photography Package',
-      price: 'LKR 14,699',
-      features: ['2 Hours Session', '20 Edited Photos', '1 Location'],
+      name: "Basic Photography Package",
+      price: "LKR 14,699",
+      features: ["2 Hours Session", "20 Edited Photos", "1 Location"],
       guests: 2,
-      bedType: '1 extra-large double bed or 2 single beds',
-      breakfast: 'Non-refundable, Pay in advance',
+      bedType: "1 extra-large double bed or 2 single beds",
+      breakfast: "Non-refundable, Pay in advance",
     },
     {
-      name: 'Premium Photography Package',
-      price: 'LKR 23,500',
-      features: ['4 Hours Session', '50 Edited Photos', '2 Locations'],
+      name: "Premium Photography Package",
+      price: "LKR 23,500",
+      features: ["4 Hours Session", "50 Edited Photos", "2 Locations"],
       guests: 4,
-      bedType: '1 extra-large double bed or 2 single beds',
-      breakfast: 'Non-refundable, 10% Genius discount applied',
+      bedType: "1 extra-large double bed or 2 single beds",
+      breakfast: "Non-refundable, 10% Genius discount applied",
     },
   ];
 
   return (
-    <Box sx={{ flexGrow: 1, padding: 2 }}>
+    <Box sx={packageTableStyles.root}>
       <Grid container spacing={2}>
         {packages.map((pkg, index) => (
           <Grid item xs={12} md={6} key={index}>
@@ -60,24 +60,25 @@ const PackageTable = () => {
                 <Grid container spacing={1}>
                   <Grid item xs={6}>
                     <Typography variant="body2" color="textSecondary">
-                      Number of guests:
+                      Number of photos:
                     </Typography>
                     <Typography variant="body1">
-                      <PeopleIcon fontSize="small" /> {pkg.guests}
+                      <PeopleIcon fontSize="small" /> {pkg.features[1]}
                     </Typography>
                   </Grid>
                   <Grid item xs={6}>
                     <Typography variant="body2" color="textSecondary">
-                      Today's price:
+                      Package price:
                     </Typography>
                     <Typography variant="h6">{pkg.price}</Typography>
                   </Grid>
                   <Grid item xs={12}>
                     <Typography variant="body2" color="textSecondary">
-                      Your choices:
+                      Session details:
                     </Typography>
                     <Typography variant="body1">
-                      <KingBedIcon fontSize="small" /> {pkg.bedType}
+                      <CameraAltIcon fontSize="small" />{" "}
+                      {pkg.features.join(", ")}
                     </Typography>
                     <Typography variant="body2">{pkg.breakfast}</Typography>
                   </Grid>
@@ -85,7 +86,7 @@ const PackageTable = () => {
               </CardContent>
               <CardActions>
                 <Button variant="contained" color="primary">
-                  Reserve
+                  Book Now
                 </Button>
               </CardActions>
             </Card>

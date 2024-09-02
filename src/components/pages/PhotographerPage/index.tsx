@@ -1,7 +1,7 @@
 import React from "react";
 import FAQSection from "../../organisms/FAQSection";
 import QuiltedImageList from "../../organisms/PhotographerGallery";
-import PackageTable from "../../higherOrderComponents/PackageTable";
+import PackageTable from "../../organisms/PackageTable";
 import ReviewSection from "../../organisms/ReviewSection";
 import Navbar from "../../organisms/Navbar";
 import { Typography } from "@mui/material";
