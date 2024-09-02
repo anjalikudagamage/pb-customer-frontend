@@ -71,6 +71,7 @@ export const inputFieldStyle: SxProps<Theme> = {
 
 export const signUpButtonStyle: SxProps<Theme> = {
   backgroundColor: "#FF6B6B",
+  width: '100%',
   color: "#fff",
   fontWeight: "600",
   padding: "12px",

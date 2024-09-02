@@ -1,5 +1,7 @@
 import React from "react";
 import { Box, Button, TextField, Typography, Link } from "@mui/material";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import backgroundImage from "../../../assets/login/image1.jpg";
 import {
   containerStyle,
@@ -14,7 +16,28 @@ import {
   linkStyle,
 } from "./styles";
 
+const validationSchema = Yup.object({
+  name: Yup.string().required("Name is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+  password: Yup.string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+});
+
 const SignUpPage: React.FC = () => {
+  const handleSubmit = (values: {
+    name: string;
+    email: string;
+    password: string;
+  }) => {
+    // Handle form submission, e.g., sign up the user
+    console.log("Submitted name:", values.name);
+    console.log("Submitted email:", values.email);
+    console.log("Submitted password:", values.password);
+  };
+
   return (
     <Box sx={containerStyle}>
       <Box
@@ -46,29 +69,53 @@ const SignUpPage: React.FC = () => {
         <Typography variant="h4" sx={titleStyle}>
           Create Your Account
         </Typography>
-        <TextField
-          label="Name"
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          sx={inputFieldStyle}
-        />
-        <TextField
-          label="Email"
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          sx={inputFieldStyle}
-        />
-        <TextField
-          label="Password"
-          type="password"
-          fullWidth
-          margin="normal"
-          variant="outlined"
-          sx={inputFieldStyle}
-        />
-        <Button sx={signUpButtonStyle}>Sign Up</Button>
+        <Formik
+          initialValues={{ name: "", email: "", password: "" }}
+          validationSchema={validationSchema}
+          onSubmit={handleSubmit}
+        >
+          {({ touched, errors }) => (
+            <Form>
+              <Field
+                name="name"
+                as={TextField}
+                label="Name"
+                fullWidth
+                margin="normal"
+                variant="outlined"
+                sx={inputFieldStyle}
+                helperText={<ErrorMessage name="name" />}
+                error={touched.name && !!errors.name}
+              />
+              <Field
+                name="email"
+                as={TextField}
+                label="Email"
+                fullWidth
+                margin="normal"
+                variant="outlined"
+                sx={inputFieldStyle}
+                helperText={<ErrorMessage name="email" />}
+                error={touched.email && !!errors.email}
+              />
+              <Field
+                name="password"
+                as={TextField}
+                label="Password"
+                type="password"
+                fullWidth
+                margin="normal"
+                variant="outlined"
+                sx={inputFieldStyle}
+                helperText={<ErrorMessage name="password" />}
+                error={touched.password && !!errors.password}
+              />
+              <Button type="submit" sx={signUpButtonStyle}>
+                Sign Up
+              </Button>
+            </Form>
+          )}
+        </Formik>
       </Box>
     </Box>
   );
