@@ -3,7 +3,7 @@ import { SxProps, Theme } from "@mui/material";
 export const containerStyle: SxProps<Theme> = {
   display: "flex",
   height: "98vh",
-  backgroundColor: "black",
+  backgroundColor: "white",
   flexDirection: { xs: "column", md: "row" },
 };
 
@@ -35,14 +35,14 @@ export const formBoxStyle: SxProps<Theme> = {
   flexDirection: "column",
   justifyContent: "center",
   padding: 4,
-  backgroundColor: "rgba(255, 255, 255, 0.1)",
+  backgroundColor: "#FFCBCB",
   borderRadius: 2,
   margin: 4,
   backdropFilter: "blur(10px)",
 };
 
 export const titleStyle: SxProps<Theme> = {
-  color: "#fff",
+  color: "black",
   mb: 4,
   fontWeight: 600,
 };
@@ -52,28 +52,27 @@ export const inputFieldStyle: SxProps<Theme> = {
   borderRadius: "10px",
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: "#ff5a5f",
+      borderColor: "#fff",
     },
     "&:hover fieldset": {
       borderColor: "#ff7a7f",
     },
   },
   "& .MuiInputLabel-root": {
-    color: "#fff",
+    color: "black",
   },
   "& .MuiInputBase-input": {
-    color: "#fff",
+    color: "black",
   },
   "& .MuiInputBase-input::placeholder": {
-    color: "#fff",
+    color: "black",
   },
 };
 
 export const signUpButtonStyle: SxProps<Theme> = {
   backgroundColor: "#FF6B6B",
   color: "#fff",
-  backgroundImage:
-    "linear-gradient(to right, #000000 0%, #FF4757 51%, #000000 100%)",
+  fontWeight: "600",
   padding: "12px",
   marginTop: 2,
   borderRadius: "25px",
@@ -84,11 +83,12 @@ export const signUpButtonStyle: SxProps<Theme> = {
 
 export const headingStyle: SxProps<Theme> = {
   fontWeight: 700,
-  mb: 2,
+  mb: 5,
 };
 
 export const bodyStyle: SxProps<Theme> = {
-  mb: 10,
+  mb: 12,
+  paddingRight: "50px"
 };
 
 export const linkStyle: SxProps<Theme> = {

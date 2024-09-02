@@ -30,8 +30,7 @@ const LoginPage: React.FC = () => {
           Already Registered? <Link href="/login" sx={linkStyle}>Login here</Link>
         </Typography>
         <Typography variant="body2" sx={bodyStyle}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper
-          mauris in magna venenatis suscipit.
+          Unlock your potential with our platform! Photographers, elevate your brand by showcasing your portfolio, reaching new clients, and standing out in a competitive market. For clients, finding the perfect photographer has never been easier—explore a curated selection of talented professionals ready to capture your most cherished moments. Join our community today, whether to grow your photography business or to find a professional who truly understands your vision.
         </Typography>
         <Button sx={buttonStyle}>Learn More</Button>
       </Box>

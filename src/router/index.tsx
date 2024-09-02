@@ -12,7 +12,6 @@ import PhotographerDetailsPage from "../components/pages/PhotographerPage/index.
 import SearchResult from "../components/pages/SearchResultPage/index.tsx";
 import HeavenBookingForm from "../components/pages/PackageBookingPage/index.tsx";
 
-
 const AppRouter: React.FC = () => {
   return (
     <Router>
@@ -24,8 +23,8 @@ const AppRouter: React.FC = () => {
           path={ROUTES.PHOTOGRAPHER}
           element={<PhotographerDetailsPage />}
         />
-        <Route path={ROUTES.SEARCHRESULTPAGE} element={<SearchResult />} />
-        <Route path={"/form"} element={<HeavenBookingForm />} />
+        <Route path={ROUTES.SEARCHRESULT} element={<SearchResult />} />
+        <Route path={ROUTES.BOOKING} element={<HeavenBookingForm />} />
       </Routes>
     </Router>
   );
