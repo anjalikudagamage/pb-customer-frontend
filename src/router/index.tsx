@@ -9,7 +9,7 @@ import { ROUTES } from "../constants/routeConstants.ts";
 import LoginPage from "../components/pages/LoginPage/index.tsx";
 import HomePage from "../components/pages/HomePage/index.tsx";
 import SearchResult from "../components/pages/SearchResultPage/index.tsx";
-import HeavenBookingForm from "../components/organisms/PackageBookingForm/index.tsx";
+import HeavenBookingForm from "../components/pages/PackageBookingPage/index.tsx";
 
 const AppRouter: React.FC = () => {
   return (
