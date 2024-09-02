@@ -12,6 +12,7 @@ import PhotographerDetailsPage from "../components/pages/PhotographerPage/index.
 import SearchResult from "../components/pages/SearchResultPage/index.tsx";
 import HeavenBookingForm from "../components/pages/PackageBookingPage/index.tsx";
 import SignUpPage from "../components/pages/SignUpPage/index.tsx";
+import ForgotPasswordPage from "../components/pages/forgetPasswordPage/index.tsx";
 
 const AppRouter: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter: React.FC = () => {
         <Route path="/" element={<Navigate to={ROUTES.LOGIN} />} />
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
         <Route path={ROUTES.SIGNUP} element={<SignUpPage />} />
+        <Route path={ROUTES.PASSWORD} element={<ForgotPasswordPage />} />
         <Route path={ROUTES.HOMEPAGE} element={<HomePage />} />
         <Route
           path={ROUTES.PHOTOGRAPHER}
