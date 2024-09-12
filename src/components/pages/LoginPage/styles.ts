@@ -89,7 +89,8 @@ export const headingStyle: SxProps<Theme> = {
 
 export const bodyStyle: SxProps<Theme> = {
   mb: 12,
-  paddingRight: "50px"
+  paddingRight: "50px",
+  fontWeight: "bold"
 };
 
 export const linkStyle: SxProps<Theme> = {
