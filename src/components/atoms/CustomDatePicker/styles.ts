@@ -161,3 +161,10 @@ export const locationSelectStyles: StylesConfig<SelectOption, false> = {
     transition: "none",
   }),
 };
+
+export const customCalendarContainerStyle: SxProps = {
+  position: "relative",
+  zIndex: 1000,
+  width: "500px", // Increase width as needed
+  transition: "none",
+};

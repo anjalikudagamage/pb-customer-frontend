@@ -7,6 +7,7 @@ import {
   customDateButtonStyle,
   calendarIconStyle,
   inputBaseStyle,
+  customCalendarContainerStyle,
 } from "./styles";
 
 interface CustomDateInputProps extends React.HTMLProps<HTMLButtonElement> {
@@ -47,15 +48,12 @@ const CustomDatePicker: React.FC = () => {
     }
   );
 
-  const CustomCalendarContainer = ({
-    children,
-  }: {
-    children: React.ReactNode;
-  }) => (
-    <Box sx={{ position: "relative", zIndex: 1000 }}>
+  const CustomCalendarContainer = ({ children }: { children: React.ReactNode }) => (
+    <Box sx={customCalendarContainerStyle}>
       <CalendarContainer>{children}</CalendarContainer>
     </Box>
   );
+  
 
   return (
     <Box>
