@@ -18,4 +18,3 @@ export const ButtonStyle: SxProps<Theme> = {
     textDecoration: "none",
   },
 };
-
