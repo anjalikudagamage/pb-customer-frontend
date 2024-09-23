@@ -2,7 +2,18 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import WeddingImage1 from "../../../assets/images/WovenImage/image2.jpg";
+import img1 from "../../../assets/images/WovenImage/image1.jpg";
+import img2 from "../../../assets/images/WovenImage/image2.jpg";
+import img3 from "../../../assets/images/WovenImage/image3.jpg";
+import img4 from "../../../assets/images/WovenImage/image4.jpg";
+import img5 from "../../../assets/images/WovenImage/image5.jpg";
+import img6 from "../../../assets/images/WovenImage/image6.jpg";
+import img7 from "../../../assets/images/WovenImage/image7.jpg";
+import img8 from "../../../assets/images/WovenImage/image8.jpg";
+import img9 from "../../../assets/images/WovenImage/image9.jpg";
+import img10 from "../../../assets/images/WovenImage/image10.jpg";
+import img11 from "../../../assets/images/WovenImage/image11.jpg";
+import img12 from "../../../assets/images/WovenImage/image12.jpg";
 import {
   containerStyles,
   topicStyles,
@@ -18,51 +29,51 @@ interface ItemData {
 
 const itemData: ItemData[] = [
   {
-    img: WeddingImage1,
+    img:img1,
     title: "Wedding Basic Package",
   },
   {
-    img: WeddingImage1,
+    img: img2,
     title: "Wedding Standard Package",
   },
   {
-    img: WeddingImage1,
+    img: img3,
     title: "Wedding Premium Package",
   },
   {
-    img: WeddingImage1,
+    img: img4,
     title: "Portrait Mini Session",
   },
   {
-    img: WeddingImage1,
+    img: img6,
     title: "Portrait Standard Session",
   },
   {
-    img: WeddingImage1,
+    img: img5,
     title: "Portrait Deluxe Session",
   },
   {
-    img: WeddingImage1,
+    img: img7,
     title: "Event Basic Package",
   },
   {
-    img: WeddingImage1,
+    img: img8,
     title: "Event Standard Package",
   },
   {
-    img: WeddingImage1,
+    img: img9,
     title: "Event Extended Package",
   },
   {
-    img: WeddingImage1,
+    img: img10,
     title: "Commercial Product Photography",
   },
   {
-    img: WeddingImage1,
+    img: img11,
     title: "Commercial Branding Session",
   },
   {
-    img: WeddingImage1,
+    img: img12,
     title: "Full Day Commercial Shoot",
   },
 ];
