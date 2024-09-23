@@ -12,7 +12,6 @@ const commonSelectStyles: StylesConfig<SelectOption, false> = {
     height: "50px",
     borderRadius: "15px",
     borderColor: "#D0D5DD",
-    backgroundColor: "rgb(236, 255, 230)",
     boxShadow: "0 0 5px #eee",
     "&:hover": {
       borderColor: "#ABEFC6",
@@ -26,7 +25,6 @@ const commonSelectStyles: StylesConfig<SelectOption, false> = {
   }),
   option: (base) => ({
     ...base,
-    backgroundColor: "rgb(236, 255, 230)",
     "&:hover": {
       color: "#17B26A",
     },
