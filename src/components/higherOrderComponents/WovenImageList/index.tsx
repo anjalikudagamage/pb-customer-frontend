@@ -1,3 +1,5 @@
+import React from "react";
+import { motion } from "framer-motion";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Box from "@mui/material/Box";
@@ -29,7 +31,7 @@ interface ItemData {
 
 const itemData: ItemData[] = [
   {
-    img:img1,
+    img: img1,
     title: "Wedding Basic Package",
   },
   {
@@ -79,8 +81,14 @@ const itemData: ItemData[] = [
 ];
 
 const WovenImageList: React.FC = () => {
+  // Define animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <Box sx={containerStyles}>
+    <Box sx={{ ...containerStyles, overflow: "hidden" }}>
       {/* Topic */}
       <Typography variant="h4" sx={topicStyles}>
         Choose Your Package
@@ -94,24 +102,38 @@ const WovenImageList: React.FC = () => {
       </Typography>
 
       {/* Image List */}
-      <ImageList sx={imageListStyles} variant="woven" cols={3} gap={8}>
-        {itemData.map((item) => (
+      <ImageList
+        sx={{ ...imageListStyles, overflow: "hidden" }}
+        variant="woven"
+        cols={3}
+        gap={8}
+      >
+        {itemData.map((item, index) => (
           <ImageListItem key={item.title} sx={{ position: "relative" }}>
-            <img
-              srcSet={`${item.img}?w=251&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.img}?w=251&fit=crop&auto=format`}
-              alt={item.title}
-              loading="lazy"
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeInUp}
+              viewport={{ once: false }}
+              transition={{ delay: index * 0.1 }}
               style={{ width: "100%", height: "100%" }}
-            />
-            <Box sx={imageListItemBoxStyles}>
-              <a
-                href={`#${item.title}`}
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <Typography variant="subtitle1">{item.title}</Typography>
-              </a>
-            </Box>
+            >
+              <img
+                srcSet={`${item.img}?w=251&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.img}?w=251&fit=crop&auto=format`}
+                alt={item.title}
+                loading="lazy"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+              <Box sx={imageListItemBoxStyles}>
+                <a
+                  href={`#${item.title}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <Typography variant="subtitle1">{item.title}</Typography>
+                </a>
+              </Box>
+            </motion.div>
           </ImageListItem>
         ))}
       </ImageList>
