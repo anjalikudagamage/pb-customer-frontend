@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import image1 from "../../../assets/images/ImageCarousel/image1.jpg";
 import image2 from "../../../assets/images/ImageCarousel/image2.jpg";
 import { useStyles } from "./styles";
 
@@ -9,7 +10,7 @@ const slides = [
   {
     title: "Why choose us?",
     description: "Choosing the right photographer is essential for capturing your most cherished moments. Our platform connects you with the top photographers in Sri Lanka, handpicked based on their expertise, creativity, and professionalism. Whether it's for weddings, events, or personal projects, we ensure you have access to the best talent in the industry. With a variety of customizable packages, you'll find the perfect fit for your needs and budget. From candid moments to artistic shots, our photographers are committed to delivering stunning images that you'll treasure for a lifetime.",
-    imageUrl: image2,
+    imageUrl: image1,
   },
   {
     title: "Why choose us?",
