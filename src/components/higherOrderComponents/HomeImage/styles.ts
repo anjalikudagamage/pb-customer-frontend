@@ -1,15 +1,15 @@
 import { SxProps, Theme } from "@mui/material";
 
 export const backgroundImageStyle: SxProps<Theme> = {
-  width: "100%",          // Ensures full width
-  height: "100vh",        // Full viewport height
+  width: "100%",          
+  height: "100vh",        
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  overflow: "hidden",     // Prevents scrolling
+  overflow: "hidden",     
   position: "relative",
   padding: 0,
   margin: 0,
@@ -26,3 +26,5 @@ export const websiteNameStyle: SxProps<Theme> = {
   marginBottom: "60px",
   textAlign: "center",
 };
+
+
