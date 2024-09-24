@@ -1,5 +1,18 @@
 import { SxProps, Theme } from "@mui/material/styles";
 
+export const fullContainer: SxProps<Theme> = {
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+  position: "relative",
+  backgroundColor: "#F9FAFB", 
+  padding: "1rem",
+  boxSizing: "border-box",
+};
+
 export const carouselContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
   position: "relative",
   width: "100%",
@@ -13,7 +26,7 @@ export const carouselImage: SxProps<Theme> = {
   top: 0,
   left: 0,
   width: "100%",
-  height: "100%",
+  height: "200%",
   objectFit: "cover",
   transition: "opacity 1s ease-in-out",
 };
