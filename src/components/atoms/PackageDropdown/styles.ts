@@ -6,27 +6,31 @@ interface SelectOption {
 }
 
 const commonSelectStyles: StylesConfig<SelectOption, false> = {
-  control: (base) => ({
+  control: (base, state) => ({
     ...base,
     width: "300px",
     height: "50px",
-    borderRadius: "15px",
-    borderColor: "#D0D5DD",
-    boxShadow: "0 0 5px #eee",
+    borderRadius: "15px", // Rounded corners
+    borderColor: state.isFocused ? "#FF6B6B" : "#D0D5DD",
+    boxShadow: state.isFocused ? "0 0 5px #FF6B6B" : "0 0 5px #eee", // Box shadow when focused
     "&:hover": {
-      borderColor: "#ABEFC6",
+      borderColor: "#FF6B6B",
     },
   }),
   menu: (base) => ({
     ...base,
     width: "300px",
-    borderRadius: "15px",
+    borderRadius: "15px", // Rounded corners for the dropdown menu
     boxShadow: "0 0 5px #eee",
   }),
-  option: (base) => ({
+  option: (base, state) => ({
     ...base,
+    backgroundColor: state.isSelected ? "#FF6B6B" : state.isFocused ? "#FFB6B6" : "#fff", // Pink colors for selected and focused options
+    color: state.isSelected ? "#fff" : "#000",
+    borderRadius: "10px", // Rounded corners for options
     "&:hover": {
-      color: "#17B26A",
+      backgroundColor: "#FFB6B6",
+      color: "#FF6B6B",
     },
   }),
   placeholder: (base) => ({

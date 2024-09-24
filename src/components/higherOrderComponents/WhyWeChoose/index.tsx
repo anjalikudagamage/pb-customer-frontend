@@ -9,12 +9,12 @@ import { useStyles } from "./styles";
 const slides = [
   {
     title: "Why choose us?",
-    description: "As a photographer, your focus should be on capturing beautiful moments, not on managing the complexities of bookings, payments, and client communication. Our website offers an all-in-one solution tailored to photographers, simplifying your business operations with an intuitive booking system, a customizable portfolio to showcase your work, and secure payment processing. Gain greater visibility, manage your client relationships seamlessly, and grow your business with data-driven insights—all while maintaining a professional online presence 24/7. Elevate your photography business with us and spend more time doing what you love: capturing stunning images.",
+    description: "Choosing the right photographer is essential for capturing your most cherished moments. Our platform connects you with the top photographers in Sri Lanka, handpicked based on their expertise, creativity, and professionalism. Whether it's for weddings, events, or personal projects, we ensure you have access to the best talent in the industry. With a variety of customizable packages, you'll find the perfect fit for your needs and budget. From candid moments to artistic shots, our photographers are committed to delivering stunning images that you'll treasure for a lifetime.",
     imageUrl: image1,
   },
   {
     title: "Why choose us?",
-    description: "Description by second slide",
+    description: "Stand out from the competition and expand your reach with our platform designed to showcase the best photographers in Sri Lanka. We provide you with the tools to highlight your portfolio, attract clients, and grow your business. With our focus on connecting customers to the right professionals, you can market your unique style and skills to a wide audience. Offering flexible and customizable packages ensures you meet the diverse needs of your clients, helping you build a solid reputation and establish long-term relationships. Join us and elevate your brand by being part of Sri Lanka’s most trusted photography community.",
     imageUrl: image2,
   },
 ];

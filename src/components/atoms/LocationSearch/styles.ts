@@ -16,7 +16,7 @@ const commonSelectStyles: StylesConfig<SelectOption, false> = {
     backgroundColor: "rgb(236, 255, 230)",
     boxShadow: "0 0 5px #eee",
     "&:hover": {
-      borderColor: "#ABEFC6",
+      borderColor: "#FF6B6B",  // Updated to pink
     },
   }),
   menu: (base) => ({
@@ -33,8 +33,8 @@ const commonSelectStyles: StylesConfig<SelectOption, false> = {
     backgroundColor: "#ECFDF3",
     color: "#344054",
     "&:hover": {
-      backgroundColor: "#ECFDF3",
-      color: "#17B26A",
+      backgroundColor: "#FCE4E4",  // Lighter pink for hover
+      color: "#FF6B6B",  // Updated to pink
     },
   }),
   placeholder: (base) => ({
@@ -119,12 +119,12 @@ export const customDateButtonStyle: SxProps = {
 };
 
 export const calendarIconStyle = (isClicked: boolean): SxProps => ({
-  color: isClicked ? "#17B26A" : "#667085",
+  color: isClicked ? "#FF6B6B" : "#667085",  // Updated to pink
   marginRight: "8px",
 });
 
 export const inputBaseStyle = (isClicked: boolean): SxProps => ({
-  color: isClicked ? "#17B26A" : "#344054",
+  color: isClicked ? "#FF6B6B" : "#344054",  // Updated to pink
   fontFamily: "Arial, sans-serif",
   fontSize: "14px",
   fontWeight: 600,

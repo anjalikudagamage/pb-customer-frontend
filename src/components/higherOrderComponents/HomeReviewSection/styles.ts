@@ -38,7 +38,7 @@ export const reviewerRoleStyles: SxProps<Theme> = {};
 
 export const reviewSectionContainerStyles: SxProps<Theme> = {
   padding: "100px 50px",
-  backgroundColor: "#0F67B1",
+  backgroundColor: "#fab6b6",
   textAlign: "center",
   borderRadius: "10px",
   mb: 5,
