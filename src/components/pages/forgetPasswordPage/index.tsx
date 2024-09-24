@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Button, TextField, Typography, Link } from "@mui/material";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import backgroundImage from "../../../assets/login/image1.jpg";
+import backgroundImage from "../../../assets/images/login/image1.jpg";
 import {
   containerStyle,
   imageBoxStyle,
