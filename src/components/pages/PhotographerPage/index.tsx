@@ -5,7 +5,7 @@ import PackageTable from "../../organisms/PackageTable";
 import ReviewSection from "../../organisms/ReviewSection";
 import Navbar from "../../organisms/Navbar";
 import { Typography } from "@mui/material";
-import Img from "../../../assets/images/photographer/image.jpg"
+import Img from "../../../assets/images/photographer/image1.jpg"
 import {
   sectionTitleStyle,
   photographerDetailsStyle,

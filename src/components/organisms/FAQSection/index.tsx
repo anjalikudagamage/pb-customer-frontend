@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Typography, Button, Accordion, AccordionSummary, AccordionDetails, Box } from '@mui/material';
+import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { faqContainerStyles, faqItemStyles, buttonContainerStyles, getInTouchButtonStyles } from './styles';
+import { faqContainerStyles, faqItemStyles, buttonContainerStyles, more } from './styles';
+import TextButton from '../../atoms/TextButton';
 
 const FAQSection: React.FC = () => {
   const [expanded, setExpanded] = useState<string | false>(false);
@@ -61,10 +62,8 @@ const FAQSection: React.FC = () => {
         </Accordion>
       </Box>
       <Box sx={buttonContainerStyles}>
-        <Typography variant="body2">Got any more questions?</Typography>
-        <Button variant="contained" sx={getInTouchButtonStyles}>
-          Get in touch
-        </Button>
+        <Typography variant="body2" sx= {more}>Got any more questions?</Typography>
+        <TextButton text="Search" />
       </Box>
     </Container>
   );

@@ -22,3 +22,7 @@ export const getInTouchButtonStyles = {
     backgroundColor: "#5a52d1", 
   },
 };
+
+export const more = {
+  mb: 2,
+};

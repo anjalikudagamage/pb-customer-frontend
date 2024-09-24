@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { carouselContainer, carouselImage, textContainer } from "./styles";
+import { carouselContainer, carouselImage, textContainer, fullContainer } from "./styles";
 import { Typography, SxProps, Theme } from "@mui/material";
 
 interface ImageCarouselProps {
@@ -29,39 +29,37 @@ const ImageCarousel: FC<ImageCarouselProps> = ({
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
+    }, 5000);
     return () => clearInterval(intervalId);
   }, [images]);
 
-  const getImageSource = (image: string): string => {
-    return image;
-  };
-
   return (
-    <Grid container justifyContent="center" alignItems="center">
-      <Grid item xs={12}>
-        <Box sx={carouselContainer(isSmallScreen)}>
-          <Box
-            component="img"
-            src={getImageSource(images[currentIndex])}
-            alt="Carousel"
-            sx={carouselImage}
-          />
-        </Box>
-        <Box sx={textContainer(isSmallScreen, isMediumScreen)}>
-          {title && (
-            <Typography variant="h5" sx={{ ...titleStyleOverride }}>
-              {title}
-            </Typography>
-          )}
-          {description && (
-            <Typography variant="body1" sx={{ ...descriptionStyleOverride }}>
-              {description}
-            </Typography>
-          )}
-        </Box>
+    <Box sx={fullContainer}>
+      <Grid container justifyContent="center" alignItems="center">
+        <Grid item xs={12}>
+          <Box sx={carouselContainer(isSmallScreen)}>
+            <Box
+              component="img"
+              src={images[currentIndex]}
+              alt="Carousel"
+              sx={carouselImage}
+            />
+          </Box>
+          <Box sx={textContainer(isSmallScreen, isMediumScreen)}>
+            {title && (
+              <Typography variant="h5" sx={{ ...titleStyleOverride }}>
+                {title}
+              </Typography>
+            )}
+            {description && (
+              <Typography variant="body1" sx={{ ...descriptionStyleOverride }}>
+                {description}
+              </Typography>
+            )}
+          </Box>
+        </Grid>
       </Grid>
-    </Grid>
+    </Box>
   );
 };
 
