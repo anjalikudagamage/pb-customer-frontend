@@ -14,7 +14,7 @@ import {
 
 import Navbar from "../../organisms/Navbar";
 
-const imageUrls = [ Image2, Image1];
+const imageUrls = [ Image1, Image2];
 
 const SearchResult: React.FC = () => {
   return (
