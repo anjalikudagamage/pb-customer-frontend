@@ -1,6 +1,6 @@
 import React from "react";
 import ImageCarousel from "../../../components/organisms/ImageCarousel";
-import Image1 from "../../../assets/images/imageCarousel/image3.jpg";
+import Image1 from "../../../assets/images/ImageCarousel/image3.jpg"
 import Image2 from "../../../assets/images/ImageCarousel/image4.jpg";
 import PhotographerCardList from "../../organisms/PhotographerCards";
 import Footer from "../../atoms/Footer";
