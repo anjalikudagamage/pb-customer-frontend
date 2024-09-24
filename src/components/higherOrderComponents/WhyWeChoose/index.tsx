@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Box, Typography, IconButton } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import image1 from "../../../assets/images/ImageCarousel/image2.jpg";
-import image2 from "../../../assets/images/ImageCarousel/image1.jpg";
+import image2 from "../../../assets/images/ImageCarousel/image2.jpg";
 import { useStyles } from "./styles";
 
 const slides = [
@@ -15,7 +14,7 @@ const slides = [
   {
     title: "Why choose us?",
     description: "Stand out from the competition and expand your reach with our platform designed to showcase the best photographers in Sri Lanka. We provide you with the tools to highlight your portfolio, attract clients, and grow your business. With our focus on connecting customers to the right professionals, you can market your unique style and skills to a wide audience. Offering flexible and customizable packages ensures you meet the diverse needs of your clients, helping you build a solid reputation and establish long-term relationships. Join us and elevate your brand by being part of Sri Lanka’s most trusted photography community.",
-    imageUrl: image1,
+    imageUrl: image2,
   },
 ];
 
