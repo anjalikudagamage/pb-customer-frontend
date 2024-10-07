@@ -167,11 +167,13 @@ const PhotographerBookingForm: React.FC = () => {
                       <Typography sx={fareLabel}>Select Session Type</Typography>
                       <Field as={RadioGroup} row name="sessionType">
                         <FormControlLabel
+                          sx={fareLabel}
                           value="portrait"
                           control={<Radio />}
                           label="Portrait"
                         />
                         <FormControlLabel
+                          sx={fareLabel}
                           value="event"
                           control={<Radio />}
                           label="Event"

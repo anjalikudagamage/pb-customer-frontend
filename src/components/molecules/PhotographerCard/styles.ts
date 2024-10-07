@@ -71,12 +71,23 @@ export const priceStyle: SxProps<Theme> = {
 };
 
 export const ratingStyle: SxProps<Theme> = {
-  backgroundColor: "#1976d2",
   color: "#fff",
   padding: 0.5,
-  borderRadius: "4px",
   display: "flex",
   marginBottom: 1,
+  backgroundColor: "#FF6B6B",
+  maxWidth: "180px",
+  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)", 
+  textAlign: "center",
+  textTransform: "uppercase",
+  transition: "0.5s",
+  backgroundSize: "200% auto",
+  borderRadius: "10px",
+  "&:hover": {
+    backgroundPosition: "right center",
+    color: "#fff",
+    textDecoration: "none",
+  },
 };
 
 export const buttonStyle: SxProps<Theme> = {
@@ -85,7 +96,19 @@ export const buttonStyle: SxProps<Theme> = {
   marginTop: 1, 
   padding: "0.5rem 1rem",
   
+ 
+  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)", 
+
+
+  textAlign: "center",
+  textTransform: "uppercase",
+  transition: "0.5s",
+  backgroundSize: "200% auto",
+  boxShadow: "0 0 8px #eee",
+  borderRadius: "10px",
   "&:hover": {
-    backgroundColor: "#115293",
+    backgroundPosition: "right center",
+    color: "#fff",
+    textDecoration: "none",
   },
 };

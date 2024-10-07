@@ -25,6 +25,7 @@ export const websiteNameStyle: SxProps<Theme> = {
   fontWeight: "600",
   marginBottom: "60px",
   textAlign: "center",
+  textShadow: "2px 2px 2px rgba(0, 0, 0, 0.7)",
 };
 
 
