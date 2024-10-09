@@ -12,7 +12,7 @@ import PhotographerDetailsPage from "../components/pages/PhotographerPage/index.
 import SearchResult from "../components/pages/SearchResultPage/index.tsx";
 import HeavenBookingForm from "../components/pages/PackageBookingPage/index.tsx";
 import SignUpPage from "../components/pages/SignUpPage/index.tsx";
-import ForgotPasswordPage from "../components/pages/ForgetPasswordPage";
+import ForgotPasswordPage from "../components/pages/ForgetPWPage";
 
 const AppRouter: React.FC = () => {
   return (
