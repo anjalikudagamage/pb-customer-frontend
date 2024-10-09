@@ -9,7 +9,7 @@ interface PhotographerImageProps {
 const PhotographerImage: React.FC<PhotographerImageProps> = ({ imageUrl }) => {
     return (
         <Box sx={{ ...heroContainer, backgroundImage: `url(${imageUrl})` }}>
-            <Typography variant="h2" sx={title}>
+            <Typography variant="h4" sx={title}>
                 ETERNAL MOMENTS PHOTOGRAPHY
             </Typography>
             <Typography variant="h6" sx={subtitle}>

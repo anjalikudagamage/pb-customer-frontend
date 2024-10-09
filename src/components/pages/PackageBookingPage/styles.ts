@@ -57,10 +57,20 @@ export const buttonContainer: SxProps = {
 };
 
 export const submitButton: SxProps = {
-  backgroundColor: "#ff9800",
+  backgroundColor: "#FF6B6B",
   color: "#fff",
+  maxWidth: "180px",
+  padding: "8px 32px",
+  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)", 
+  textAlign: "center",
+  textTransform: "uppercase",
+  transition: "0.5s",
+  backgroundSize: "200% auto",
+  borderRadius: "10px",
   "&:hover": {
-    backgroundColor: "#e68900",
+    backgroundPosition: "right center",
+    color: "#fff",
+    textDecoration: "none",
   },
 };
 

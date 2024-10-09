@@ -35,5 +35,5 @@ export const subsectionContentStyle: SxProps<Theme> = {
 };
 
 export const sliderStyle: SxProps<Theme> = {
-  color: "#1976d2",
+  color: "#FF6B6B",
 };

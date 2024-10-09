@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import PeopleIcon from "@mui/icons-material/People";
-import { packageTableStyles } from "./styles";
+import { packageTableStyles, BookButton } from "./styles";
 
 const PackageTable = () => {
   const packages = [
@@ -85,7 +85,7 @@ const PackageTable = () => {
                 </Grid>
               </CardContent>
               <CardActions>
-                <Button variant="contained" color="primary">
+                <Button variant="contained" sx= {BookButton}>
                   Book Now
                 </Button>
               </CardActions>
