@@ -18,7 +18,7 @@ const AppRouter: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to={ROUTES.LOGIN} />} />
+        <Route path="/" element={<Navigate to={ROUTES.HOMEPAGE} />} />
         <Route path={ROUTES.LOGIN} element={<LoginPage />} />
         <Route path={ROUTES.SIGNUP} element={<SignUpPage />} />
         <Route path={ROUTES.PASSWORD} element={<ForgotPasswordPage />} />

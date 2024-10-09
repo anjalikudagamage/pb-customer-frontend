@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import CameraEnhanceIcon from "@mui/icons-material/CameraEnhance";
 import LanguageIcon from "@mui/icons-material/Language";
 import HelpIcon from "@mui/icons-material/Help";
+import LogoutIcon from "@mui/icons-material/Logout";
 import {
   appBarSx,
   adbIconSx,
@@ -22,7 +23,7 @@ import {
   buttonSx,
 } from "./styles";
 
-const pages = ["Showcase Your Expertise", "Register", "Sign In"];
+const pages = ["Showcase Your Expertise", "Sign In"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -114,6 +115,9 @@ function Navbar() {
                 {page}
               </Button>
             ))}
+            <IconButton size="large" color="inherit" sx={{ ml: 2 }}>
+              <LogoutIcon />
+            </IconButton>
             <IconButton
               size="large"
               aria-label="change language"
