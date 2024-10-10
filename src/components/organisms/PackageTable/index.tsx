@@ -10,6 +10,7 @@ import {
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import PeopleIcon from "@mui/icons-material/People";
 import { packageTableStyles, BookButton } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const PackageTable = () => {
   const packages = [
@@ -46,6 +47,12 @@ const PackageTable = () => {
       breakfast: "Non-refundable, 10% Genius discount applied",
     },
   ];
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/booking");
+  };
 
   return (
     <Box sx={packageTableStyles.root}>
@@ -85,7 +92,7 @@ const PackageTable = () => {
                 </Grid>
               </CardContent>
               <CardActions>
-                <Button variant="contained" sx= {BookButton}>
+                <Button variant="contained" sx= {BookButton} onClick={handleClick}>
                   Book Now
                 </Button>
               </CardActions>

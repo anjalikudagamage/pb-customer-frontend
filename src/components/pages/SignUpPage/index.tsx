@@ -15,6 +15,7 @@ import {
   bodyStyle,
   linkStyle,
 } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
@@ -32,10 +33,15 @@ const SignUpPage: React.FC = () => {
     email: string;
     password: string;
   }) => {
-    // Handle form submission, e.g., sign up the user
     console.log("Submitted name:", values.name);
     console.log("Submitted email:", values.email);
     console.log("Submitted password:", values.password);
+  };
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/login");
   };
 
   return (
@@ -51,7 +57,7 @@ const SignUpPage: React.FC = () => {
         </Typography>
         <Typography variant="body1" sx={bodyStyle}>
           Already have an account?{" "}
-          <Link href="/login" sx={linkStyle}>
+          <Link href="/login" sx={linkStyle} onClick={handleClick}>
             Login here
           </Link>
         </Typography>

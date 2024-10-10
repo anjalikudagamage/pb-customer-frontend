@@ -12,6 +12,8 @@ import MenuItem from "@mui/material/MenuItem";
 import CameraEnhanceIcon from "@mui/icons-material/CameraEnhance";
 import LanguageIcon from "@mui/icons-material/Language";
 import HelpIcon from "@mui/icons-material/Help";
+import LogoutIcon from "@mui/icons-material/Logout";
+import { useNavigate } from "react-router-dom";
 import {
   appBarSx,
   adbIconSx,
@@ -22,12 +24,13 @@ import {
   buttonSx,
 } from "./styles";
 
-const pages = ["Showcase Your Expertise", "Register", "Sign In"];
+const pages = ["Showcase Your Expertise", "Sign In"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -35,6 +38,10 @@ function Navbar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleClick = () => {
+    navigate("/login");
   };
 
   return (
@@ -80,7 +87,12 @@ function Navbar() {
               sx={menuSx}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  key={page}
+                  onClick={
+                    page === "Sign In" ? handleClick : handleCloseNavMenu
+                  }
+                >
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -92,6 +104,7 @@ function Navbar() {
               </MenuItem>
             </Menu>
           </Box>
+
           <CameraEnhanceIcon sx={adbIconSxMobile} />
           <Typography
             variant="h5"
@@ -102,6 +115,7 @@ function Navbar() {
           >
             CLICKBOOKER
           </Typography>
+
           <Box
             sx={{
               flexGrow: 1,
@@ -110,10 +124,19 @@ function Navbar() {
             }}
           >
             {pages.map((page) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={buttonSx}>
+              <Button
+                key={page}
+                onClick={
+                  page === "Sign In" ? handleClick : handleCloseNavMenu
+                }
+                sx={buttonSx}
+              >
                 {page}
               </Button>
             ))}
+            <IconButton size="large" color="inherit" sx={{ ml: 2 }}>
+              <LogoutIcon />
+            </IconButton>
             <IconButton
               size="large"
               aria-label="change language"
