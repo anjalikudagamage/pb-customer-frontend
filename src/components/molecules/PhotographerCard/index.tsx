@@ -15,6 +15,7 @@ import {
   ratingStyle,
   buttonStyle,
 } from "./styles";
+import { useNavigate } from "react-router-dom";
 
 interface IPhotographerCardProps {
   imageUrl: string;
@@ -41,6 +42,13 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
   rating,
   reviews,
 }) => {
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/photographer");
+  };
+  
   return (
     <Box sx={cardContainer}>
       <Grid container>
@@ -78,7 +86,7 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
               </span>
             </Typography>
             <Typography sx={priceStyle}>{price}</Typography>
-            <Button variant="contained" sx={buttonStyle}>
+            <Button variant="contained" sx={buttonStyle} onClick={handleClick}>
               Check availability
             </Button>
           </Box>
