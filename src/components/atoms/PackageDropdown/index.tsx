@@ -13,9 +13,10 @@ const PackageDropdown: React.FC = () => {
   );
 
   const packageOptions: PackageOption[] = [
-    { label: "Basic Package", value: "basic" },
-    { label: "Standard Package", value: "standard" },
-    { label: "Premium Package", value: "premium" },
+    { label: "Wedding Package", value: "wedding" },
+    { label: "Portrait Standard Package", value: "portrait" },
+    { label: "Event Package", value: "event" },
+    { label: "Commercial Package", value: "commercial" },
   ];
 
   const handleChange = (selectedOption: PackageOption | null) => {

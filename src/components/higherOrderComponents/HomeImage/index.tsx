@@ -32,7 +32,7 @@ const HomeImage: React.FC = () => {
     >
       <Box sx={searchBarWrapper}>
         <Typography variant="h4" sx={websiteNameStyle}>
-          Find Your Ideal Photographer
+          FIND YOUR IDEAL PHOTOGRAPHER
         </Typography>
         <SearchBar />
       </Box>
