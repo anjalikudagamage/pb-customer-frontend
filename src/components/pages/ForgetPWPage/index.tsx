@@ -23,7 +23,6 @@ const validationSchema = Yup.object({
 
 const ForgotPasswordPage: React.FC = () => {
   const handleSubmit = (values: { email: string }) => {
-    // Handle form submission, e.g., send reset link
     console.log("Submitted email:", values.email);
   };
 
