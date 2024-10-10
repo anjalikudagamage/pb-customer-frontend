@@ -4,11 +4,12 @@ import { ButtonStyle } from "./styles";
 
 interface IButtonProps {
   text: string;
+  onClick?: () => void;
 }
 
-const TextButton: React.FC<IButtonProps> = ({ text }) => {
+const TextButton: React.FC<IButtonProps> = ({ text, onClick }) => {
   return (
-    <Button fullWidth variant="contained" color="primary" sx={ButtonStyle}>
+    <Button fullWidth variant="contained" color="primary" sx={ButtonStyle} onClick={onClick}>
       {text}
     </Button>
   );
