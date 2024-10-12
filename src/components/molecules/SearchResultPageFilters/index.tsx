@@ -68,15 +68,15 @@ const FilterSidebar: React.FC = () => {
             control={<Checkbox />}
             label="Outdoor photography"
           />
-          <FormControlLabel control={<Checkbox />} label="Wedding packages" />
-          <FormControlLabel control={<Checkbox />} label="Event coverage" />
+          <FormControlLabel control={<Checkbox />} label="Refundable" />
+          <FormControlLabel control={<Checkbox />} label="Pay in advance" />
           <FormControlLabel
             control={<Checkbox />}
-            label="Photo editing included"
+            label="Pay in cash"
           />
           <FormControlLabel
             control={<Checkbox />}
-            label="High-resolution images"
+            label="Pay in card"
           />
           <FormControlLabel control={<Checkbox />} label="Photobook included" />
           <FormControlLabel
