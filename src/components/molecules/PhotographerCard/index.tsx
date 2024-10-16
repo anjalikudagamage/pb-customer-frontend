@@ -5,7 +5,6 @@ import {
   imageStyle,
   contentStyle,
   titleStyle,
-  locationStyle,
   packageStyle,
   featuresContainerStyle,
   featureStyle,
@@ -20,8 +19,6 @@ import { useNavigate } from "react-router-dom";
 interface IPhotographerCardProps {
   imageUrl: string;
   photographerName: string;
-  studioName: string;
-  location: string;
   packageType: string;
   features: string[];
   price: string;
@@ -33,8 +30,6 @@ interface IPhotographerCardProps {
 const PhotographerCard: React.FC<IPhotographerCardProps> = ({
   imageUrl,
   photographerName,
-  studioName,
-  location,
   packageType,
   features,
   price,
@@ -64,9 +59,6 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
           <Box sx={contentStyle}>
             <Typography variant="h6" sx={titleStyle}>
               {photographerName}
-            </Typography>
-            <Typography sx={locationStyle}>
-              {studioName} • {location}
             </Typography>
             <Typography sx={packageStyle}>{packageType}</Typography>
             <Box sx={featuresContainerStyle}>

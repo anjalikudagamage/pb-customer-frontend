@@ -25,11 +25,6 @@ export const contentStyle: SxProps<Theme> = {
 };
 
 export const titleStyle: SxProps<Theme> = {
-  fontWeight: "bold",
-  marginBottom: 0.5,
-};
-
-export const locationStyle: SxProps<Theme> = {
   color: "primary.main",
   marginBottom: 1,
 };

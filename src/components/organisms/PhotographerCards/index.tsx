@@ -9,9 +9,8 @@ const photographerData = [
     imageUrl: Image1,
     photographerName: "John Doe",
     studioName: "Doe Studios",
-    location: "New York, NY",
     packageType: "Wedding Package",
-    features: ["10 Edited photoes", "10 hours", "2 locations", "Refundable", "Pay in advance"],
+    features: ["10 Edited photoes", "10 hours", "2 locations"],
     price: "$2000",
     availability: "Available",
     rating: "4.9",
@@ -21,7 +20,6 @@ const photographerData = [
     imageUrl: Image1,
     photographerName: "Jane Smith",
     studioName: "Smith Photography",
-    location: "Los Angeles, CA",
     packageType: "Engagement Package",
     features: ["10 Edited photoes", "10 hours", "2 locations"],
     price: "$1500",
@@ -33,7 +31,6 @@ const photographerData = [
     imageUrl: Image1,
     photographerName: "Jane Smith",
     studioName: "Smith Photography",
-    location: "Los Angeles, CA",
     packageType: "Engagement Package",
     features: ["10 Edited photoes", "10 hours", "2 locations"],
     price: "$1500",
@@ -51,8 +48,6 @@ const PhotographerCardList: React.FC = () => {
           key={index}
           imageUrl={photographer.imageUrl}
           photographerName={photographer.photographerName}
-          studioName={photographer.studioName}
-          location={photographer.location}
           packageType={photographer.packageType}
           features={photographer.features}
           price={photographer.price}
