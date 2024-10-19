@@ -37,13 +37,23 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
   rating,
   reviews,
 }) => {
-
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/photographer");
+    navigate("/photographer", {
+      state: {
+        imageUrl,
+        photographerName,
+        packageType,
+        features,
+        price,
+        availability,
+        rating,
+        reviews,
+      },
+    });
   };
-  
+
   return (
     <Box sx={cardContainer}>
       <Grid container>

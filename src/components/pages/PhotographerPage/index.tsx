@@ -1,151 +1,133 @@
-import React, { useState } from "react";
+import React from "react";
+import { useLocation } from "react-router-dom";
 import FAQSection from "../../organisms/FAQSection";
 import QuiltedImageList from "../../organisms/PhotographerGallery";
 import PackageTable from "../../organisms/PackageTable";
 import ReviewSection from "../../organisms/ReviewSection";
 import Navbar from "../../organisms/Navbar";
-import { Typography, Button } from "@mui/material";
-import {
-  sectionTitleStyle,
-  photographerDetailsStyle,
-} from "./styles";
+import { Typography } from "@mui/material";
+import { sectionTitleStyle, photographerDetailsStyle } from "./styles";
 import PhotographerImage from "../../organisms/PhotographerImage";
 import Footer from "../../atoms/Footer";
-import Img1 from "../../../assets/images/photographer/image1.jpg";
-import Img2 from "../../../assets/images/photographer/image2.jpg";
-import Img3 from "../../../assets/images/photographer/image3.jpg";
+import Img from "../../../assets/images/photographerCard/image1.jpg";
+
+const photographers = [
+  {
+    photographerName: "Eternal Moments Photography",
+    description:
+      "Eternal Moments Photography is a modern photography studio specializing in capturing life's most precious moments with a creative and personalized touch.",
+    packages: [
+      {
+        name: "Wedding Package",
+        price: "$1500",
+        features: ["Full-day coverage", "100 Edited Photos", "2 Locations"],
+      },
+      {
+        name: "Event Package",
+        price: "$500",
+        features: ["2-hour session", "20 Edited Photos", "1 Location"],
+      },
+    ],
+  },
+  {
+    photographerName: "Timeless Frames Photography",
+    description:
+      "Timeless Frames Photography focuses on capturing candid moments that last a lifetime. We specialize in portrait and event photography.",
+    packages: [
+      {
+        name: "Portrait Package",
+        price: "$800",
+        features: ["3-hour session", "50 Edited Photos", "Outdoor/Studio"],
+      },
+      {
+        name: "Event Package",
+        price: "$700",
+        features: ["5-hour session", "75 Edited Photos", "Unlimited Locations"],
+      },
+    ],
+  },
+  {
+    photographerName: "Moments in Focus Photography",
+    description:
+      "Moments in Focus Photography delivers top-quality service with a creative flair. We specialize in family and commercial photography.",
+    packages: [
+      {
+        name: "Family Portrait Package",
+        price: "$1000",
+        features: [
+          "Full-day session",
+          "75 Edited Photos",
+          "1 Studio and 1 Outdoor Location",
+        ],
+      },
+      {
+        name: "Commercial Package",
+        price: "$2000",
+        features: ["Full-day shoot", "100 Edited Photos", "3 Locations"],
+      },
+    ],
+  },
+];
+
+const commonImageUrl = Img;
 
 const PhotographerDetailsPage: React.FC = () => {
-  const [currentPhotographerIndex, setCurrentPhotographerIndex] = useState(0);
+  const location = useLocation();
+  const selectedPhotographerName = location.state?.photographerName;
+  const photographer = photographers.find(
+    (p) => p.photographerName === selectedPhotographerName
+  );
 
-  const photographers = [
-    {
-      photographerName: "Eternal Moments Photography",
-      description:
-        "Eternal Moments Photography is a modern photography studio specializing in capturing life's most precious moments with a creative and personalized touch...",
-      imageUrl: Img1, // Dynamically passed image path
-      packages: [
-        {
-          name: "Wedding Package",
-          price: "$1500",
-          features: ["Full-day coverage", "100 Edited Photos", "2 Locations"],
-        },
-        {
-          name: "Event Package",
-          price: "$500",
-          features: ["2-hour session", "20 Edited Photos", "1 Location"],
-        },
-      ],
-      reviews: [
-        { author: "Alice", rating: 5, comment: "Amazing experience!" },
-        { author: "Bob", rating: 4, comment: "Great photos, but a bit pricey." },
-      ],
-      faqs: [
-        {
-          question: "Do you travel for shoots?",
-          answer: "Yes, I am available for travel.",
-        },
-        {
-          question: "How long does it take to get the photos?",
-          answer: "Typically within 2 weeks.",
-        },
-      ],
-    },
-    {
-      photographerName: "Timeless Frames Photography",
-      description:
-        "Timeless Frames Photography focuses on capturing candid moments that last a lifetime. We specialize in portrait and event photography.",
-      imageUrl: Img2,
-      packages: [
-        {
-          name: "Portrait Package",
-          price: "$800",
-          features: ["3-hour session", "50 Edited Photos", "Outdoor/Studio"],
-        },
-        {
-          name: "Event Package",
-          price: "$700",
-          features: ["5-hour session", "75 Edited Photos", "Unlimited Locations"],
-        },
-      ],
-      reviews: [
-        { author: "David", rating: 5, comment: "Professional and friendly!" },
-        { author: "Sarah", rating: 4, comment: "Good service, slightly overpriced." },
-      ],
-      faqs: [
-        {
-          question: "Do you offer discounts for multiple events?",
-          answer: "Yes, we offer discounted rates for booking multiple sessions.",
-        },
-        {
-          question: "Do you provide a photo album?",
-          answer: "Yes, we offer custom-designed photo albums at an additional cost.",
-        },
-      ],
-    },
-    {
-      photographerName: "Moments in Focus Photography",
-      description:
-        "Moments in Focus Photography delivers top-quality service with a creative flair. We specialize in family and commercial photography.",
-      imageUrl: Img3,
-      packages: [
-        {
-          name: "Family Portrait Package",
-          price: "$1000",
-          features: ["Full-day session", "75 Edited Photos", "1 Studio and 1 Outdoor Location"],
-        },
-        {
-          name: "Commercial Package",
-          price: "$2000",
-          features: ["Full-day shoot", "100 Edited Photos", "3 Locations"],
-        },
-      ],
-      reviews: [
-        { author: "Emily", rating: 5, comment: "Exceptional service!" },
-        { author: "Michael", rating: 4, comment: "Great photos, quick turnaround." },
-      ],
-      faqs: [
-        {
-          question: "Do you provide raw photos?",
-          answer: "No, we only provide edited photos for professional reasons.",
-        },
-        {
-          question: "Can you schedule shoots during weekends?",
-          answer: "Yes, we are available for weekend shoots with prior booking.",
-        },
-      ],
-    },
-  ];
-
-  const photographer = photographers[currentPhotographerIndex];
-
-  const handleNextPhotographer = () => {
-    setCurrentPhotographerIndex((prevIndex) => (prevIndex + 1) % photographers.length);
-  };
+  if (!photographer) {
+    return <div>No photographer data available.</div>;
+  }
 
   return (
     <div>
       <Navbar />
+
+      {/* Use common image for all photographers */}
       <PhotographerImage
-        imageUrl={photographer.imageUrl}
+        imageUrl={commonImageUrl}
         photographerName={photographer.photographerName}
         description={photographer.description}
       />
+
       <QuiltedImageList />
+
       <Typography sx={sectionTitleStyle}>About the Photographer</Typography>
       <Typography sx={photographerDetailsStyle}>
         {photographer.description}
       </Typography>
+
+      {/* Dynamic Package Table */}
       <PackageTable packages={photographer.packages} />
-      <ReviewSection reviews={photographer.reviews} />
-      <FAQSection faqs={photographer.faqs} />
+
+      {/* Static Reviews and FAQs */}
+      <ReviewSection
+        reviews={[
+          { author: "John", rating: 5, comment: "Loved the photos!" },
+          {
+            author: "Anna",
+            rating: 4,
+            comment: "Great work, would hire again!",
+          },
+        ]}
+      />
+      <FAQSection
+        faqs={[
+          {
+            question: "Do you provide raw images?",
+            answer: "No, we provide only edited images.",
+          },
+          {
+            question: "Can you travel for events?",
+            answer: "Yes, travel is possible for an additional cost.",
+          },
+        ]}
+      />
+
       <Footer />
-      
-      <div style={{ textAlign: 'center', margin: '20px' }}>
-        <Button variant="contained" onClick={handleNextPhotographer}>
-          Next Photographer
-        </Button>
-      </div>
     </div>
   );
 };
