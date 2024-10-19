@@ -19,14 +19,14 @@ export const section: SxProps = {
 };
 
 export const sectionTitle: SxProps = {
-  color: "#00bcd4",
+  color: "white",
   marginBottom: "10px",
 };
 
 export const textField: SxProps = {
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      borderColor: "#00bcd4",
+      borderColor: "white",
     },
     "&:hover fieldset": {
       borderColor: "#00e5ff",
@@ -36,13 +36,13 @@ export const textField: SxProps = {
     },
   },
   "& .MuiInputLabel-root": {
-    color: "#00bcd4",
+    color: "white",
   },
   "& .MuiInputLabel-root.Mui-focused": {
     color: "#00e5ff",
   },
   "& input": {
-    color: "#fff", 
+    color: "white",
   },
 };
 
@@ -61,7 +61,7 @@ export const submitButton: SxProps = {
   color: "#fff",
   maxWidth: "180px",
   padding: "8px 32px",
-  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)", 
+  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)",
   textAlign: "center",
   textTransform: "uppercase",
   transition: "0.5s",
@@ -75,8 +75,8 @@ export const submitButton: SxProps = {
 };
 
 export const clearButton: SxProps = {
-  borderColor: "#00bcd4",
-  color: "#00bcd4",
+  borderColor: "white",
+  color: "white",
   "&:hover": {
     borderColor: "#00e5ff",
     color: "#00e5ff",

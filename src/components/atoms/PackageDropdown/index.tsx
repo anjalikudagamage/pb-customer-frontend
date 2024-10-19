@@ -7,19 +7,23 @@ interface PackageOption {
   value: string;
 }
 
-const PackageDropdown: React.FC = () => {
-  const [selectedPackage, setSelectedPackage] = useState<PackageOption | null>(
-    null
-  );
+interface PackageDropdownProps {
+  onPackageSelect: (selectedPackage: PackageOption | null) => void;
+}
+
+const PackageDropdown: React.FC<PackageDropdownProps> = ({ onPackageSelect }) => {
+  const [selectedPackage, setSelectedPackage] = useState<PackageOption | null>(null);
 
   const packageOptions: PackageOption[] = [
-    { label: "Basic Package", value: "basic" },
-    { label: "Standard Package", value: "standard" },
-    { label: "Premium Package", value: "premium" },
+    { label: "Wedding Package", value: "wedding" },
+    { label: "Portrait Standard Package", value: "portrait" },
+    { label: "Event Package", value: "event" },
+    { label: "Commercial Package", value: "commercial" },
   ];
 
   const handleChange = (selectedOption: PackageOption | null) => {
     setSelectedPackage(selectedOption);
+    onPackageSelect(selectedOption); // Notify parent component
   };
 
   return (

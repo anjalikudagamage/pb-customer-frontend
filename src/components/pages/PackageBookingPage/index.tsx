@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage} from "formik";
+import { Formik, Form, Field, ErrorMessage, FieldProps } from "formik";
 import * as Yup from "yup";
 import bgImg from "../../../assets/images/photographerCard/image1.jpg";
 import {
@@ -8,11 +8,8 @@ import {
   Grid,
   TextField,
   Typography,
-  Radio,
-  RadioGroup,
-  FormControlLabel,
-  FormControl,
-  FormHelperText,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import {
   formContainer,
@@ -20,38 +17,44 @@ import {
   section,
   sectionTitle,
   textField,
-  fareLabel,
   buttonContainer,
   submitButton,
   clearButton,
 } from "./styles";
 
+const CustomErrorMessage = ({ name }: { name: string }) => (
+  <ErrorMessage name={name}>
+    {(msg) => <div style={{ color: "red" }}>{msg}</div>}
+  </ErrorMessage>
+);
+
 const validationSchema = Yup.object().shape({
-  eventType: Yup.string().required("Event Type is required"),
-  location: Yup.string().required("Location is required"),
-  packageType: Yup.string().required("Package Type is required"),
-  photographer: Yup.string().required("Preferred Photographer is required"),
-  eventDate: Yup.date().required("Event Date is required").nullable(),
-  eventTime: Yup.string().required("Event Time is required"),
-  sessionType: Yup.string().required("Session Type is required"),
-  instructions: Yup.string(),
+  packageName: Yup.string().required("Package Name is required"),
+  eventDate: Yup.string()
+    .matches(/^\d{4}-\d{2}-\d{2}$/, "Date must be in the format YYYY-MM-DD")
+    .required("Event Date is required"),
+  eventTime: Yup.string()
+    .matches(
+      /^(0?[1-9]|1[0-2]):[0-5][0-9] [AP][M]$/,
+      "Time must be in the format HH:MM AM/PM"
+    )
+    .required("Event Time is required"),
+  address: Yup.string().required("Address is required"),
   fullName: Yup.string().required("Full Name is required"),
   phoneNumber: Yup.string()
     .matches(/^[0-9]+$/, "Phone number is not valid")
     .required("Phone Number is required"),
-  email: Yup.string().email("Invalid email address").required("Email is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
 });
 
 const PhotographerBookingForm: React.FC = () => {
   const initialValues = {
-    eventType: "",
-    location: "",
-    packageType: "",
-    photographer: "",
+    packageName: "",
     eventDate: "",
     eventTime: "",
-    sessionType: "",
-    instructions: "",
+    address: "",
     fullName: "",
     phoneNumber: "",
     email: "",
@@ -73,12 +76,18 @@ const PhotographerBookingForm: React.FC = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          // Handle form submission
           console.log(values);
           resetForm();
         }}
       >
-        {({ handleSubmit, handleReset, isSubmitting, errors, touched }) => (
+        {({
+          handleSubmit,
+          handleReset,
+          isSubmitting,
+          errors,
+          touched,
+          values,
+        }) => (
           <Form onSubmit={handleSubmit}>
             <Box sx={formContainer}>
               <Typography variant="h4" sx={formTitle}>
@@ -91,62 +100,55 @@ const PhotographerBookingForm: React.FC = () => {
                 </Typography>
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
-                    <Field
-                      as={TextField}
-                      name="eventType"
-                      label="Event Type"
-                      fullWidth
-                      variant="outlined"
-                      sx={textField}
-                      helperText={<ErrorMessage name="eventType" />}
-                      error={Boolean(errors.eventType && touched.eventType)}
-                    />
+                    <Field name="packageName">
+                      {({ field }: FieldProps) => (
+                        <Select
+                          {...field}
+                          displayEmpty
+                          fullWidth
+                          variant="outlined"
+                          sx={{
+                            ...textField,
+                            "& .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "white",
+                            },
+                            "&:hover .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "#00e5ff",
+                            },
+                            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                              borderColor: "#00e5ff",
+                            },
+                            color: values.packageName ? "white" : "white",
+                            "& .MuiSelect-select": {
+                              color: values.packageName ? "white" : "white",
+                            },
+                            "&.Mui-focused .MuiSelect-select": {
+                              color: "white",
+                            },
+                          }}
+                        >
+                          <MenuItem value="">
+                            <em>Select a Package</em>
+                          </MenuItem>
+                          <MenuItem value="package1">Package 1</MenuItem>
+                          <MenuItem value="package2">Package 2</MenuItem>
+                          <MenuItem value="package3">Package 3</MenuItem>
+                        </Select>
+                      )}
+                    </Field>
+                    <CustomErrorMessage name="packageName" />
                   </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field
-                      as={TextField}
-                      name="location"
-                      label="Location"
-                      fullWidth
-                      variant="outlined"
-                      sx={textField}
-                      helperText={<ErrorMessage name="location" />}
-                      error={Boolean(errors.location && touched.location)}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field
-                      as={TextField}
-                      name="packageType"
-                      label="Package Type"
-                      fullWidth
-                      variant="outlined"
-                      sx={textField}
-                      helperText={<ErrorMessage name="packageType" />}
-                      error={Boolean(errors.packageType && touched.packageType)}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <Field
-                      as={TextField}
-                      name="photographer"
-                      label="Preferred Photographer"
-                      fullWidth
-                      variant="outlined"
-                      sx={textField}
-                      helperText={<ErrorMessage name="photographer" />}
-                      error={Boolean(errors.photographer && touched.photographer)}
-                    />
-                  </Grid>
+
                   <Grid item xs={12} sm={6}>
                     <Field
                       as={TextField}
                       name="eventDate"
                       label="Event Date"
+                      placeholder="YYYY-MM-DD"
                       fullWidth
                       variant="outlined"
                       sx={textField}
-                      helperText={<ErrorMessage name="eventDate" />}
+                      helperText={<CustomErrorMessage name="eventDate" />}
                       error={Boolean(errors.eventDate && touched.eventDate)}
                     />
                   </Grid>
@@ -155,45 +157,24 @@ const PhotographerBookingForm: React.FC = () => {
                       as={TextField}
                       name="eventTime"
                       label="Event Time"
+                      placeholder="HH:MM AM/PM"
                       fullWidth
                       variant="outlined"
                       sx={textField}
-                      helperText={<ErrorMessage name="eventTime" />}
+                      helperText={<CustomErrorMessage name="eventTime" />}
                       error={Boolean(errors.eventTime && touched.eventTime)}
                     />
                   </Grid>
-                  <Grid item xs={12} sm={12}>
-                    <FormControl component="fieldset" error={Boolean(errors.sessionType && touched.sessionType)}>
-                      <Typography sx={fareLabel}>Select Session Type</Typography>
-                      <Field as={RadioGroup} row name="sessionType">
-                        <FormControlLabel
-                          sx={fareLabel}
-                          value="portrait"
-                          control={<Radio />}
-                          label="Portrait"
-                        />
-                        <FormControlLabel
-                          sx={fareLabel}
-                          value="event"
-                          control={<Radio />}
-                          label="Event"
-                        />
-                      </Field>
-                      <FormHelperText>
-                        <ErrorMessage name="sessionType" />
-                      </FormHelperText>
-                    </FormControl>
-                  </Grid>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} sm={6}>
                     <Field
                       as={TextField}
-                      name="instructions"
-                      label="Additional Instructions"
-                      multiline
-                      rows={4}
+                      name="address"
+                      label="Address"
                       fullWidth
                       variant="outlined"
                       sx={textField}
+                      helperText={<CustomErrorMessage name="address" />}
+                      error={Boolean(errors.address && touched.address)}
                     />
                   </Grid>
                 </Grid>
@@ -212,7 +193,7 @@ const PhotographerBookingForm: React.FC = () => {
                       fullWidth
                       variant="outlined"
                       sx={textField}
-                      helperText={<ErrorMessage name="fullName" />}
+                      helperText={<CustomErrorMessage name="fullName" />}
                       error={Boolean(errors.fullName && touched.fullName)}
                     />
                   </Grid>
@@ -224,7 +205,7 @@ const PhotographerBookingForm: React.FC = () => {
                       fullWidth
                       variant="outlined"
                       sx={textField}
-                      helperText={<ErrorMessage name="phoneNumber" />}
+                      helperText={<CustomErrorMessage name="phoneNumber" />}
                       error={Boolean(errors.phoneNumber && touched.phoneNumber)}
                     />
                   </Grid>
@@ -236,7 +217,7 @@ const PhotographerBookingForm: React.FC = () => {
                       fullWidth
                       variant="outlined"
                       sx={textField}
-                      helperText={<ErrorMessage name="email" />}
+                      helperText={<CustomErrorMessage name="email" />}
                       error={Boolean(errors.email && touched.email)}
                     />
                   </Grid>
