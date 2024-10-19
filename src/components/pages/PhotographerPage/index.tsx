@@ -20,7 +20,7 @@ const PhotographerDetailsPage: React.FC = () => {
 
   const photographers = [
     {
-      name: "Eternal Moments Photography",
+      photographerName: "Eternal Moments Photography",
       description:
         "Eternal Moments Photography is a modern photography studio specializing in capturing life's most precious moments with a creative and personalized touch...",
       imageUrl: Img1, // Dynamically passed image path
@@ -52,7 +52,7 @@ const PhotographerDetailsPage: React.FC = () => {
       ],
     },
     {
-      name: "Timeless Frames Photography",
+      photographerName: "Timeless Frames Photography",
       description:
         "Timeless Frames Photography focuses on capturing candid moments that last a lifetime. We specialize in portrait and event photography.",
       imageUrl: Img2,
@@ -84,7 +84,7 @@ const PhotographerDetailsPage: React.FC = () => {
       ],
     },
     {
-      name: "Moments in Focus Photography",
+      photographerName: "Moments in Focus Photography",
       description:
         "Moments in Focus Photography delivers top-quality service with a creative flair. We specialize in family and commercial photography.",
       imageUrl: Img3,
@@ -128,7 +128,7 @@ const PhotographerDetailsPage: React.FC = () => {
       <Navbar />
       <PhotographerImage
         imageUrl={photographer.imageUrl}
-        name={photographer.name}
+        photographerName={photographer.photographerName}
         description={photographer.description}
       />
       <QuiltedImageList />

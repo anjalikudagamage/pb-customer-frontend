@@ -9,7 +9,7 @@ import Image1 from "../../../assets/images/photographerCard/image1.jpg";
 const photographerData = [
   {
     imageUrl: Image1,
-    photographerName: "John Doe",
+    photographerName: "Timeless Frames Photography",
     studioName: "Doe Studios",
     packageType: "Wedding Package",
     features: ["10 Edited photoes", "10 hours", "2 locations"],
@@ -20,7 +20,7 @@ const photographerData = [
   },
   {
     imageUrl: Image1,
-    photographerName: "Jane Smith",
+    photographerName: "Moments in Focus Photography",
     studioName: "Smith Photography",
     packageType: "Engagement Package",
     features: ["10 Edited photoes", "10 hours", "2 locations"],
