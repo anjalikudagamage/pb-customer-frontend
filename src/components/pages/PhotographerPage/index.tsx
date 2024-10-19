@@ -5,33 +5,36 @@ import PackageTable from "../../organisms/PackageTable";
 import ReviewSection from "../../organisms/ReviewSection";
 import Navbar from "../../organisms/Navbar";
 import { Typography } from "@mui/material";
-import Img from "../../../assets/images/photographer/image1.jpg"
 import {
   sectionTitleStyle,
   photographerDetailsStyle,
 } from "./styles";
 import PhotographerImage from "../../organisms/PhotographerImage";
 import Footer from "../../atoms/Footer";
+import Img from "../../../assets/images/photographer/image1.jpg"
 
 const PhotographerDetailsPage: React.FC = () => {
   const photographer = {
-    details:
-      "Eternal Moments Photography is a modern photography studio specializing in capturing life's most precious moments with a creative and personalized touch. Founded in 2012, our studio has quickly become a go-to destination for clients seeking high-quality photography for weddings, engagements, portraits, and commercial projects. Nestled in the heart of the city, Sunset Studio features a state-of-the-art facility equipped with the latest camera technology, professional lighting setups, and a variety of customizable backdrops. Our team of skilled photographers and editors is passionate about storytelling through images, and we pride ourselves on creating a relaxed, fun environment where every client feels comfortable and confident in front of the camera. Whether it's a romantic couple's shoot, a lively family portrait, or a sleek corporate headshot, we are dedicated to delivering stunning results that exceed expectations.",
+    name: "Eternal Moments Photography",
+    description:
+      "Eternal Moments Photography is a modern photography studio specializing in capturing life's most precious moments with a creative and personalized touch...",
+    imageUrl: Img, 
     packages: [
       {
         name: "Wedding Package",
         price: "$1500",
-        details: "Includes full-day coverage...",
+        features: ["Full-day coverage", "100 Edited Photos", "2 Locations"],
       },
       {
-        name: "Portrait Package",
+        name: "Event Package",
         price: "$500",
-        details: "Includes a 2-hour session...",
+        features: ["2-hour session", "20 Edited Photos", "1 Location"],
       },
     ],
     reviews: [
       { author: "Alice", rating: 5, comment: "Amazing experience!" },
       { author: "Bob", rating: 4, comment: "Great photos, but a bit pricey." },
+      { author: "Alice", rating: 5, comment: "Amazing experience!" },  
     ],
     faqs: [
       {
@@ -48,16 +51,20 @@ const PhotographerDetailsPage: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <PhotographerImage imageUrl={Img}/>
+      <PhotographerImage
+        imageUrl={photographer.imageUrl}
+        name={photographer.name}
+        description={photographer.description}
+      />
       <QuiltedImageList />
       <Typography sx={sectionTitleStyle}>About the Photographer</Typography>
       <Typography sx={photographerDetailsStyle}>
-        {photographer.details}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea illo nesciunt, sint asperiores voluptates tenetur consequuntur fuga qui error est facere fugit aut laborum praesentium. Voluptatem magni provident optio expedita.
       </Typography>
-      <PackageTable />
-      <ReviewSection />
-      <FAQSection />
-      <Footer/>
+      <PackageTable packages={photographer.packages} />
+      <ReviewSection reviews={photographer.reviews} />
+      <FAQSection faqs={photographer.faqs} />
+      <Footer />
     </div>
   );
 };

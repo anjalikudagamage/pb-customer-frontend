@@ -1,22 +1,25 @@
-import React from 'react';
+import React from 'react'; 
 import { Box, Typography } from '@mui/material';
 import { heroContainer, title, subtitle } from './styles';
 
 interface PhotographerImageProps {
     imageUrl: string;
+    name: string;
+    description: string;
 }
 
-const PhotographerImage: React.FC<PhotographerImageProps> = ({ imageUrl }) => {
+const PhotographerImage: React.FC<PhotographerImageProps> = ({ imageUrl, name, description }) => {
     return (
         <Box sx={{ ...heroContainer, backgroundImage: `url(${imageUrl})` }}>
             <Typography variant="h4" sx={title}>
-                ETERNAL MOMENTS PHOTOGRAPHY
+                {name}
             </Typography>
             <Typography variant="h6" sx={subtitle}>
-                At Eternal Moments Photography Studio, we specialize in capturing life's most cherished moments with elegance and authenticity.
+                {description}
             </Typography>
         </Box>
     );
 }
 
 export default PhotographerImage;
+
