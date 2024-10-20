@@ -3,8 +3,6 @@ import { SxProps } from "@mui/system";
 export const heroContainer: SxProps = {
   width: "100vw",
   height: "80vh",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -12,6 +10,7 @@ export const heroContainer: SxProps = {
   textAlign: "center",
   color: "#fff",
   padding: 0,
+  position: "relative",
 };
 
 export const title: SxProps = {
