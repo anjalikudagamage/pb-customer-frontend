@@ -11,7 +11,7 @@ import Image2 from "../../../assets/images/photographerCard/image1.jpg";
 const photographerData = [
   {
     imageUrl: Image1,
-    photographerName: "Timeless Frames Photography",
+    businessName: "Timeless Frames Photography",
     studioName: "Doe Studios",
     packageType: "Wedding Package",
     features: ["10 Edited photos", "10 hours", "2 locations"],
@@ -22,7 +22,7 @@ const photographerData = [
   },
   {
     imageUrl: Image2,
-    photographerName: "Moments in Focus Photography",
+    businessName: "Moments in Focus Photography",
     studioName: "Smith Photography",
     packageType: "Engagement Package",
     features: ["15 Edited photos", "8 hours", "1 location"],
@@ -33,7 +33,7 @@ const photographerData = [
   },
   {
     imageUrl: Image1,
-    photographerName: "Eternal Moments Photography",
+    businessName: "Eternal Moments Photography",
     studioName: "Johnson Studios",
     packageType: "Portrait Package",
     features: ["5 Edited photos", "3 hours", "1 location"],
@@ -74,7 +74,7 @@ const PhotographerCardList: React.FC = () => {
         <PhotographerCard
           key={index}
           imageUrl={photographer.imageUrl}
-          photographerName={photographer.photographerName}
+          businessName={photographer.businessName}
           packageType={photographer.packageType}
           features={photographer.features}
           price={photographer.price}
