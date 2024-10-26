@@ -16,6 +16,7 @@ interface IPhotographerUser {
 }
 
 export interface IPhotographerDetails {
+  description: string;
   businessName: string;
   packageDetails: { [key: string]: string };
 }

@@ -1,18 +1,10 @@
 import React from "react";
-import {
-  Grid,
-  Typography,
-  Button,
-  Card,
-  CardContent,
-  CardActions,
-  Box,
-} from "@mui/material";
+import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import { packageTableStyles, BookButton } from "./styles";
-import { useNavigate } from "react-router-dom";
 
 interface Package {
   name: string;
