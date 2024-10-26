@@ -1,12 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { photographerLogin } from "../actions/photographerActions";
+import { photographerLogin, fetchPhotographers, } from "../actions/photographerActions";
 
 interface IPhotographerState {
   isLoading: boolean;
   isPhotographerAuthenticated: boolean;
   error: string | null;
   user: IPhotographerUser | null;
-  photographerDetails: IPhotographerDetails | null;
+  photographers: IPhotographerDetails[] | null;
 }
 
 interface IPhotographerUser {
@@ -15,18 +15,16 @@ interface IPhotographerUser {
   role: string;
 }
 
-interface IPhotographerDetails {
-  photographerName: string;
-  description: string;
-  packages: Array<{ name: string; price: string; features: string[] }>;
+export interface IPhotographerDetails {
+  businessName: string;
+  packageDetails: { [key: string]: string };
 }
-
 const initialState: IPhotographerState = {
   isLoading: false,
   isPhotographerAuthenticated: false,
+  photographers: null,
   error: null,
   user: null,
-  photographerDetails: null,
 }; 
 
 const photographerSlice = createSlice({
@@ -50,6 +48,20 @@ const photographerSlice = createSlice({
       state.isPhotographerAuthenticated = false;
       state.error = action.payload as string;
     })
+    .addCase(fetchPhotographers.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    })
+    .addCase(fetchPhotographers.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.photographers = action.payload;
+      state.error = null;
+    })
+    .addCase(fetchPhotographers.rejected, (state, action) => {
+      state.isLoading = false;
+      state.photographers = null;
+      state.error = action.payload as string;
+    });
   },
 });
 

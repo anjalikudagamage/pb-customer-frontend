@@ -1,88 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
-import { useLocation } from "react-router-dom";
-import _ from "lodash";
+import { useAppDispatch, useAppSelector } from "../../../redux/store";
+import { fetchPhotographers } from "../../../redux/actions/photographerActions";
 import PhotographerCard from "../../molecules/PhotographerCard";
 import { photographerCardListContainer } from "./styles";
-
-import Image1 from "../../../assets/images/photographerCard/image1.jpg";
-import Image2 from "../../../assets/images/photographerCard/image1.jpg";
-
-const photographerData = [
-  {
-    imageUrl: Image1,
-    businessName: "Timeless Frames Photography",
-    studioName: "Doe Studios",
-    packageType: "Wedding Package",
-    features: ["10 Edited photos", "10 hours", "2 locations"],
-    price: "$2000",
-    availability: "Available",
-    rating: "4.9",
-    reviews: "24",
-  },
-  {
-    imageUrl: Image2,
-    businessName: "Moments in Focus Photography",
-    studioName: "Smith Photography",
-    packageType: "Engagement Package",
-    features: ["15 Edited photos", "8 hours", "1 location"],
-    price: "$1500",
-    availability: "Available",
-    rating: "4.7",
-    reviews: "15",
-  },
-  {
-    imageUrl: Image1,
-    businessName: "Eternal Moments Photography",
-    studioName: "Johnson Studios",
-    packageType: "Portrait Package",
-    features: ["5 Edited photos", "3 hours", "1 location"],
-    price: "$800",
-    availability: "Available",
-    rating: "4.5",
-    reviews: "10",
-  },
-];
+import { IPhotographerDetails } from "../../../redux/slice/photographerSlice"; // Import photographer type
 
 const PhotographerCardList: React.FC = () => {
-  const location = useLocation();
-  const [filteredData, setFilteredData] = useState(photographerData);
-
-  const query = new URLSearchParams(location.search);
-  const selectedPackage = query.get("package");
-
-  const handleSearch = _.debounce((packageType: string | null) => {
-    if (packageType) {
-      const filtered = photographerData.filter((photographer) =>
-        photographer.packageType
-          .toLowerCase()
-          .includes(packageType.toLowerCase())
-      );
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(photographerData);
-    }
-  }, 300);
+  const dispatch = useAppDispatch();
+  const { photographers, isLoading, error } = useAppSelector(
+    (state) => state.photographer
+  );
 
   useEffect(() => {
-    handleSearch(selectedPackage);
-  }, [selectedPackage]);
+    dispatch(fetchPhotographers());
+  }, [dispatch]);
+
+  if (isLoading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <Box sx={photographerCardListContainer}>
-      {filteredData.map((photographer, index) => (
-        <PhotographerCard
-          key={index}
-          imageUrl={photographer.imageUrl}
-          businessName={photographer.businessName}
-          packageType={photographer.packageType}
-          features={photographer.features}
-          price={photographer.price}
-          availability={photographer.availability}
-          rating={photographer.rating}
-          reviews={photographer.reviews}
-        />
-      ))}
+      {photographers &&
+        photographers.map((photographer: IPhotographerDetails, index: number) => {
+          const { businessName, packageDetails } = photographer;
+          const [packageType, packageInfo] = Object.entries(packageDetails)[0] as [
+            string,
+            string
+          ];
+          const features = packageInfo.split(", ").slice(0, -1);
+          const price = packageInfo.split(", ").slice(-1)[0];
+
+          return (
+            <PhotographerCard
+              key={index}
+              imageUrl={"image_url_placeholder"} // Replace with actual image or placeholder
+              businessName={businessName}
+              packageType={packageType}
+              features={features}
+              price={price}
+              availability="Available" // Example availability text
+              rating="4.5" // Placeholder for rating
+              reviews="10" // Placeholder for reviews
+            />
+          );
+        })}
     </Box>
   );
 };

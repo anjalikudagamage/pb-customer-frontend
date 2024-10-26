@@ -18,3 +18,15 @@ export const photographerLoginService = async (loginData: LoginData) => {
   }
 };
 
+// New function to fetch photographer data
+export const fetchPhotographersService = async () => {
+  try {
+    const response = await photographerClient.get("/allData");
+    return response.data; // Assuming the API response contains an array of photographer objects
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      return Promise.reject(error.response?.data?.message || "Failed to fetch photographers");
+    }
+    return Promise.reject("An unknown error occurred while fetching photographers");
+  }
+};
