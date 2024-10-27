@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { photographerLogin, fetchPhotographers, } from "../actions/photographerActions";
+import { photographerLogin, fetchPhotographers, submitBooking } from "../actions/photographerActions";
 
 interface IPhotographerState {
   isLoading: boolean;
@@ -61,6 +61,18 @@ const photographerSlice = createSlice({
     .addCase(fetchPhotographers.rejected, (state, action) => {
       state.isLoading = false;
       state.photographers = null;
+      state.error = action.payload as string;
+    })
+    .addCase(submitBooking.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    })
+    .addCase(submitBooking.fulfilled, (state) => {
+      state.isLoading = false;
+      state.error = null;
+    })
+    .addCase(submitBooking.rejected, (state, action) => {
+      state.isLoading = false;
       state.error = action.payload as string;
     });
   },

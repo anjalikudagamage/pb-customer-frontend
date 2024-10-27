@@ -1,12 +1,21 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { photographerClient } from "../../api/axiosClient";
+import { bookingClient } from "../../api/axiosClient";
 import { AxiosError } from "axios";
 
 interface LoginPayload {
   email: string;
   password: string;
 }
-
+interface BookingPayload {
+  packageName: string;
+  eventDate: string;
+  eventTime: string;
+  address: string;
+  fullName: string;
+  phoneNumber: string;
+  email: string;
+}
 
 // Photographer login async action
 export const photographerLogin = createAsyncThunk(
@@ -39,6 +48,24 @@ export const fetchPhotographers = createAsyncThunk(
         return rejectWithValue(error.response?.data?.message || "Failed to fetch photographers");
       }
       return rejectWithValue("An unknown error occurred");
+    }
+  }
+);
+
+export const submitBooking = createAsyncThunk(
+  "photographer/submitBooking",
+  async (payload: BookingPayload, { rejectWithValue }) => {
+    try {
+      const response = await bookingClient.post("/create", payload);
+      return response.data;
+    } catch (error: AxiosError | unknown) {
+      let errorMsg = "Booking failed";
+      if (error instanceof AxiosError && error.response?.data?.message) {
+        errorMsg = error.response.data.message;
+      } else if (error instanceof Error) {
+        errorMsg = error.message;
+      }
+      return rejectWithValue(errorMsg);
     }
   }
 );

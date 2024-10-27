@@ -21,6 +21,8 @@ import {
   submitButton,
   clearButton,
 } from "./styles";
+import { useAppDispatch, useAppSelector } from "../../../redux/store";
+import { submitBooking } from "../../../redux/actions/photographerActions";
 
 const CustomErrorMessage = ({ name }: { name: string }) => (
   <ErrorMessage name={name}>
@@ -50,6 +52,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const PhotographerBookingForm: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const isSubmitting = useAppSelector((state) => state.photographer.isLoading);
+
   const initialValues = {
     packageName: "",
     eventDate: "",
@@ -76,18 +81,18 @@ const PhotographerBookingForm: React.FC = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
-          resetForm();
+          dispatch(submitBooking(values))
+            .unwrap()
+            .then(() => {
+              alert("Booking submitted successfully!");
+              resetForm();
+            })
+            .catch((err) => {
+              alert(`Booking failed: ${err}`);
+            });
         }}
       >
-        {({
-          handleSubmit,
-          handleReset,
-          isSubmitting,
-          errors,
-          touched,
-          values,
-        }) => (
+        {({ handleSubmit, handleReset, errors, touched, values }) => (
           <Form onSubmit={handleSubmit}>
             <Box sx={formContainer}>
               <Typography variant="h4" sx={formTitle}>
