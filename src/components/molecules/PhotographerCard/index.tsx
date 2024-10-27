@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 interface IPhotographerCardProps {
   imageUrl: string;
-  photographerName: string;
+  businessName: string;
   packageType: string;
   features: string[];
   price: string;
@@ -29,7 +29,7 @@ interface IPhotographerCardProps {
 
 const PhotographerCard: React.FC<IPhotographerCardProps> = ({
   imageUrl,
-  photographerName,
+  businessName,
   packageType,
   features,
   price,
@@ -43,7 +43,7 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
     navigate("/photographer", {
       state: {
         imageUrl,
-        photographerName,
+        businessName,
         packageType,
         features,
         price,
@@ -61,14 +61,14 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
           <Box
             component="img"
             src={imageUrl}
-            alt={photographerName}
+            alt={businessName}
             sx={imageStyle}
           />
         </Grid>
         <Grid item xs={8}>
           <Box sx={contentStyle}>
             <Typography variant="h6" sx={titleStyle}>
-              {photographerName}
+              {businessName}
             </Typography>
             <Typography sx={packageStyle}>{packageType}</Typography>
             <Box sx={featuresContainerStyle}>

@@ -4,13 +4,13 @@ import { heroContainer, title, subtitle } from "./styles";
 
 interface PhotographerImageProps {
   imageUrl: string;
-  photographerName: string;
+  businessName: string;
   description: string;
 }
 
 const PhotographerImage: React.FC<PhotographerImageProps> = ({
   imageUrl,
-  photographerName,
+  businessName,
   description,
 }) => {
   return (
@@ -30,7 +30,7 @@ const PhotographerImage: React.FC<PhotographerImageProps> = ({
         }}
       />
       <Typography variant="h4" sx={title}>
-        {photographerName}
+        {businessName}
       </Typography>
       <Typography variant="h6" sx={subtitle}>
         {description}
