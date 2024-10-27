@@ -22,7 +22,7 @@ import {
   clearButton,
 } from "./styles";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
-import { submitBooking } from "../../../redux/actions/photographerActions";
+import { submitBooking } from "../../../redux/actions/bookingAction";
 
 const CustomErrorMessage = ({ name }: { name: string }) => (
   <ErrorMessage name={name}>
