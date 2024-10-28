@@ -81,7 +81,6 @@ const Footer: React.FC = () => {
         </Grid>
       </Grid>
 
-      {/* Horizontal Line */}
       <Box sx={horizontalLine}></Box>
 
       <Box sx={iconSection}>

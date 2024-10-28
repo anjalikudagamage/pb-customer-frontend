@@ -43,7 +43,8 @@ const HomeFAQ: React.FC = () => {
           Frequently Asked Questions
         </Typography>
         <Typography variant="body1" sx={classes.description}>
-          Got questions? Here you’ll find the answers most valued by our photographers, along with access to step-by-step guides and support.
+          Got questions? Here you’ll find the answers most valued by our
+          photographers, along with access to step-by-step guides and support.
         </Typography>
       </Box>
 
@@ -78,7 +79,9 @@ const HomeFAQ: React.FC = () => {
                     </AccordionSummary>
                     <AccordionDetails>
                       <Typography>
-                        This is where the answer to the question will go. You can customize this section with specific details about our photography services.
+                        This is where the answer to the question will go. You
+                        can customize this section with specific details about
+                        our photography services.
                       </Typography>
                     </AccordionDetails>
                   </Accordion>
@@ -93,3 +96,4 @@ const HomeFAQ: React.FC = () => {
 };
 
 export default HomeFAQ;
+

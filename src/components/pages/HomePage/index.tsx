@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
         initial="hidden"
         whileInView="visible"
         variants={fadeInUp}
-        viewport={{ once: false }} 
+        viewport={{ once: false }}
       >
         <HomeImage />
       </motion.div>
