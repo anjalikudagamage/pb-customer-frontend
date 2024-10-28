@@ -7,6 +7,7 @@ import HomeImage from "../../higherOrderComponents/HomeImage";
 import ReviewSection from "../../higherOrderComponents/HomeReviewSection";
 import ImageSlider from "../../higherOrderComponents/WhyWeChoose";
 import FAQPage from "../../higherOrderComponents/HomeFAQ";
+import SubscribeForm from "../../organisms/SubscribeForm";
 
 const HomePage: React.FC = () => {
   const fadeInUp = {
@@ -61,6 +62,15 @@ const HomePage: React.FC = () => {
         viewport={{ once: false }}
       >
         <FAQPage />
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        viewport={{ once: false }}
+      >
+        <SubscribeForm />
       </motion.div>
 
       <motion.div
