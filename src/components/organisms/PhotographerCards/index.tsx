@@ -6,6 +6,7 @@ import { fetchPhotographers } from "../../../redux/actions/photographerActions";
 import PhotographerCard from "../../molecules/PhotographerCard";
 import { photographerCardListContainer } from "./styles";
 import { IPhotographerDetails } from "../../../redux/slice/photographerSlice";
+import Img from "../../../assets/images/photographerCard/image1.jpg"
 
 const PhotographerCardList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -17,7 +18,6 @@ const PhotographerCardList: React.FC = () => {
   const searchParams = new URLSearchParams(location.search);
   const selectedPackage = searchParams.get("package");
 
-  // Helper function to match selectedPackage to backend package names
   const formatPackageName = (packageName: string | null) => {
     if (!packageName) return null;
     const lowerPackage = packageName.toLowerCase();
@@ -57,7 +57,7 @@ const PhotographerCardList: React.FC = () => {
           return (
             <PhotographerCard
               key={index}
-              imageUrl={"image_url_placeholder"}
+              imageUrl={Img}
               businessName={businessName}
               packageType={formattedPackage!}
               features={features}

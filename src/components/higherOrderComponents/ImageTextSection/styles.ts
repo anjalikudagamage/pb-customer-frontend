@@ -85,6 +85,6 @@ export const buttonBoxStyle = {
 export const titleTextStyle = {
   color: "primary.dark",
   fontWeight: 500,
-  fontSize: 26,
+  fontSize: 30,
   lineHeight: 1,
 };
