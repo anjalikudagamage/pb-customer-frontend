@@ -6,9 +6,15 @@ import { fetchPhotographers } from "../../../redux/actions/photographerActions";
 import PhotographerCard from "../../molecules/PhotographerCard";
 import { photographerCardListContainer } from "./styles";
 import { IPhotographerDetails } from "../../../redux/slice/photographerSlice";
-import Img from "../../../assets/images/photographerCard/image1.jpg"
+import Img from "../../../assets/images/photographerCard/image1.jpg";
 
-const PhotographerCardList: React.FC = () => {
+interface PhotographerCardListProps {
+  onSearchCount: (count: number) => void;
+}
+
+const PhotographerCardList: React.FC<PhotographerCardListProps> = ({
+  onSearchCount,
+}) => {
   const dispatch = useAppDispatch();
   const { photographers, isLoading, error } = useAppSelector(
     (state) => state.photographer
@@ -34,13 +40,18 @@ const PhotographerCardList: React.FC = () => {
     dispatch(fetchPhotographers());
   }, [dispatch]);
 
-  const filteredPhotographers = photographers?.filter((photographer: IPhotographerDetails) =>
-    formattedPackage
-      ? Object.keys(photographer.packageDetails).some(
-          (packageName) => packageName === formattedPackage
-        )
-      : true
+  const filteredPhotographers = photographers?.filter(
+    (photographer: IPhotographerDetails) =>
+      formattedPackage
+        ? Object.keys(photographer.packageDetails).some(
+            (packageName) => packageName === formattedPackage
+          )
+        : true
   );
+
+  useEffect(() => {
+    onSearchCount(filteredPhotographers?.length || 0);
+  }, [filteredPhotographers, onSearchCount]);
 
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
