@@ -101,12 +101,24 @@ const PhotographerDetailsPage: React.FC = () => {
       <FAQSection
         faqs={[
           {
-            question: "Do you provide raw images?",
-            answer: "No, we provide only edited images.",
+            question: "How do I book a session with a photographer?",
+            answer: "To book a session, simply browse our list of photographers, choose the package that suits you best, and click 'Book Now.' You'll receive a confirmation email with all the details.",
           },
           {
-            question: "Can you travel for events?",
-            answer: "Yes, travel is possible for an additional cost.",
+            question: "Can I customize a photography package?",
+            answer: "Absolutely! Many photographers offer customizable packages. After selecting a package, you can reach out directly to the photographer to discuss specific requirements or any additional requests.",
+          },
+          {
+            question: "How far in advance should I book a photographer?",
+            answer: "We recommend booking as early as possible, especially for peak seasons. Ideally, you should book 3–6 months in advance to secure your preferred photographer and date.",
+          },
+          {
+            question: "What happens if I need to reschedule my booking?",
+            answer: "If you need to reschedule, you can contact the photographer directly through our platform. Please check their rescheduling and cancellation policies, as they may vary by photographer.",
+          },
+          {
+            question: "Are there any extra fees I should know about?",
+            answer: "Most package prices include standard fees, but some photographers may have additional charges for travel, special equipment, or extended hours. Be sure to review the package details for any specific terms.",
           },
         ]}
       />
