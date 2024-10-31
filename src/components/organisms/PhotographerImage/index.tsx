@@ -11,7 +11,6 @@ interface PhotographerImageProps {
 const PhotographerImage: React.FC<PhotographerImageProps> = ({
   imageUrl,
   businessName,
-  description,
 }) => {
   return (
     <Box sx={{ ...heroContainer, overflow: "hidden" }}>
@@ -33,7 +32,9 @@ const PhotographerImage: React.FC<PhotographerImageProps> = ({
         {businessName}
       </Typography>
       <Typography variant="h6" sx={subtitle}>
-        {description}
+        Capturing life’s most precious moments with artistry and precision. Our
+        studio blends creativity with professional expertise to deliver
+        stunning, timeless images that tell your unique story. 
       </Typography>
     </Box>
   );

@@ -1,12 +1,12 @@
 import { SxProps } from "@mui/material";
 
 export const sectionTitleStyle: SxProps = {
-  fontSize: "40px",
+  fontSize: "35px",
   color: "#1A4870",
   fontWeight: "medium",
   textAlign: 'center',
   justifyContent: "center",
-  marginTop: "15px",
+  marginTop: "40px",
   marginBottom: "16px",
 };
 
