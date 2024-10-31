@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import { fetchPhotographers } from "../../../redux/actions/photographerActions";
 import Navbar from "../../organisms/Navbar";
@@ -9,12 +10,12 @@ import PackageTable from "../../organisms/PackageTable";
 import ReviewSection from "../../organisms/ReviewSection";
 import FAQSection from "../../organisms/FAQSection";
 import Footer from "../../atoms/Footer";
+import ImageGallery from "../../higherOrderComponents/ImageGallery";
 import { sectionTitleStyle, photographerDetailsStyle } from "./styles";
 import Img from "../../../assets/images/photographer/image1.jpg";
 import Img1 from "../../../assets/images/Review/image3.jpg";
 import Img2 from "../../../assets/images/Review/Image2.jpg";
 import Img3 from "../../../assets/images/Review/image3.jpg";
-import ImageGallery from "../../higherOrderComponents/ImageGallery";
 
 const PhotographerDetailsPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -24,6 +25,11 @@ const PhotographerDetailsPage: React.FC = () => {
   const { photographers, isLoading, error } = useAppSelector(
     (state) => state.photographer
   );
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
 
   useEffect(() => {
     if (!photographers) {
@@ -50,16 +56,41 @@ const PhotographerDetailsPage: React.FC = () => {
       })
     : [];
 
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  };
+
   return (
     <div>
       <Navbar />
-      <PhotographerImage
-        imageUrl={Img}
-        businessName={photographer?.businessName || ""}
-        description={photographer?.description || ""}
-      />
-      <Typography sx={sectionTitleStyle}>About the Photographer</Typography>
-      <Typography sx={photographerDetailsStyle}>
+
+      <motion.div
+        variants={slideInLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <PhotographerImage
+          imageUrl={Img}
+          businessName={photographer?.businessName || ""}
+          description={photographer?.description || ""}
+        />
+      </motion.div>
+
+      <motion.div
+        variants={slideInRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <Typography sx={sectionTitleStyle}>About the Photographer</Typography>
+        <Typography sx={photographerDetailsStyle}>
         As a dedicated photographer, my goal is to turn every moment into a
         lasting memory. With years of experience across various photography
         styles—whether portrait, event, commercial, or lifestyle photography—I
@@ -70,59 +101,85 @@ const PhotographerDetailsPage: React.FC = () => {
         resonate deeply and beautifully. Together, let’s craft images that
         you’ll cherish for a lifetime, reflecting the moments that mean the most
         to you
-      </Typography>
-      <ImageGallery/>
-      <PackageTable packages={packages} />
-      <ReviewSection
-        reviews={[
-          {
-            image: Img1,
-            author: "John",
-            rating: 5,
-            comment:
-              "The photos were absolutely stunning! Every detail was captured perfectly, and the quality exceeded all my expectations. The whole experience felt comfortable and professional, and I’m thrilled with the final results. I highly recommend this photographer to anyone looking for quality and creativity!",
-          },
-          {
-            image: Img2,
-            author: "Anna",
-            rating: 4,
-            comment:
-              "The session was amazing, and the photographer made us feel at ease right away. They really listened to what I wanted and brought my ideas to life with such creativity! The photos turned out beautifully, and I’m so pleased. Would definitely hire again for future events or sessions!",
-          },
-          {
-            image: Img3,
-            author: "Michael",
-            rating: 5,
-            comment:
-              "Incredible experience! From start to finish, the photographer was professional, attentive, and so creative. The photos perfectly capture our special day, and looking at them brings back such wonderful memories. I couldn’t have asked for a better experience or more beautiful photos!",
-          },
-        ]}
-      />
-      <FAQSection
-        faqs={[
-          {
-            question: "How do I book a session with a photographer?",
-            answer: "To book a session, simply browse our list of photographers, choose the package that suits you best, and click 'Book Now.' You'll receive a confirmation email with all the details.",
-          },
-          {
-            question: "Can I customize a photography package?",
-            answer: "Absolutely! Many photographers offer customizable packages. After selecting a package, you can reach out directly to the photographer to discuss specific requirements or any additional requests.",
-          },
-          {
-            question: "How far in advance should I book a photographer?",
-            answer: "We recommend booking as early as possible, especially for peak seasons. Ideally, you should book 3–6 months in advance to secure your preferred photographer and date.",
-          },
-          {
-            question: "What happens if I need to reschedule my booking?",
-            answer: "If you need to reschedule, you can contact the photographer directly through our platform. Please check their rescheduling and cancellation policies, as they may vary by photographer.",
-          },
-          {
-            question: "Are there any extra fees I should know about?",
-            answer: "Most package prices include standard fees, but some photographers may have additional charges for travel, special equipment, or extended hours. Be sure to review the package details for any specific terms.",
-          },
-        ]}
-      />
-      <Footer />
+        </Typography>
+      </motion.div>
+
+      <motion.div
+        variants={slideInLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3}}
+      >
+        <ImageGallery />
+      </motion.div>
+
+      <motion.div
+        variants={slideInRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <PackageTable packages={packages} />
+      </motion.div>
+
+      <motion.div
+        variants={slideInLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <ReviewSection
+          reviews={[
+            {
+              image: Img1,
+              author: "John",
+              rating: 5,
+              comment:
+                "The photos were absolutely stunning! Every detail was captured perfectly...",
+            },
+            {
+              image: Img2,
+              author: "Anna",
+              rating: 4,
+              comment:
+                "The session was amazing, and the photographer made us feel at ease right away...",
+            },
+            {
+              image: Img3,
+              author: "Michael",
+              rating: 5,
+              comment:
+                "Incredible experience! From start to finish, the photographer was professional...",
+            },
+          ]}
+        />
+      </motion.div>
+
+      <motion.div
+        variants={slideInRight}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <FAQSection
+          faqs={[
+            { question: "How do I book a session with a photographer?", answer: "To book a session, simply..." },
+            { question: "Can I customize a photography package?", answer: "Absolutely! Many photographers..." },
+            { question: "How far in advance should I book?", answer: "We recommend booking as early as..." },
+            { question: "What happens if I need to reschedule?", answer: "If you need to reschedule, you can..." },
+            { question: "Are there any extra fees?", answer: "Most package prices include standard..." },
+          ]}
+        />
+      </motion.div>
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={fadeInUp}
+        viewport={{ once: false }}
+      >
+        <Footer />
+      </motion.div>
     </div>
   );
 };
