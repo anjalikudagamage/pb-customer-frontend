@@ -13,7 +13,7 @@ export const filterSidebarContainerStyle: SxProps<Theme> = {
   backgroundColor: "#fff",
   boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
   width: "300px",
-  height: "620px",
+  height: "750px",
 };
 
 export const sectionTitleStyle: SxProps<Theme> = {
@@ -36,4 +36,10 @@ export const subsectionContentStyle: SxProps<Theme> = {
 
 export const sliderStyle: SxProps<Theme> = {
   color: "#FF6B6B",
+};
+
+export const filterOptionsStyle: SxProps<Theme> = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "flex-start",
 };
