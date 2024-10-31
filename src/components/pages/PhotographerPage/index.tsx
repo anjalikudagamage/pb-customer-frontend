@@ -11,7 +11,7 @@ import FAQSection from "../../organisms/FAQSection";
 import Footer from "../../atoms/Footer";
 import { sectionTitleStyle, photographerDetailsStyle } from "./styles";
 import Img from "../../../assets/images/photographer/image1.jpg";
-import Img1 from "../../../assets/images/Review/Image1.jpg";
+import Img1 from "../../../assets/images/Review/image3.jpg";
 import Img2 from "../../../assets/images/Review/Image2.jpg";
 import Img3 from "../../../assets/images/Review/image3.jpg";
 import ImageGallery from "../../higherOrderComponents/ImageGallery";
