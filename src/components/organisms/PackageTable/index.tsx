@@ -40,7 +40,7 @@ const PackageTable: React.FC<PackageTableProps> = ({ packages }) => {
                       Number of photos:
                     </Typography>
                     <Typography variant="body1" sx={{ marginLeft: 4 }}>
-                      {pkg.features[1]}
+                      {pkg.features[0]}
                     </Typography>
                   </Grid>
                   <Grid item xs={6} sx={{ marginBottom: 2 }}>
@@ -49,7 +49,7 @@ const PackageTable: React.FC<PackageTableProps> = ({ packages }) => {
                       Number of hours:
                     </Typography>
                     <Typography variant="body1" sx={{ marginLeft: 4 }}>
-                      {pkg.features[0]}
+                      {pkg.features[1]}
                     </Typography>
                   </Grid>
                   <Grid item xs={6}>

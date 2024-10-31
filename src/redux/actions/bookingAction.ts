@@ -1,4 +1,3 @@
-// bookingAction.ts
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { bookingClient } from "../../api/axiosClient";
 import { AxiosError } from "axios";

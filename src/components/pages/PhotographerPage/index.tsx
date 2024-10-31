@@ -14,6 +14,7 @@ import Img from "../../../assets/images/photographer/image1.jpg";
 import Img1 from "../../../assets/images/Review/Image1.jpg";
 import Img2 from "../../../assets/images/Review/Image2.jpg";
 import Img3 from "../../../assets/images/Review/image3.jpg";
+import ImageGallery from "../../higherOrderComponents/ImageGallery";
 
 const PhotographerDetailsPage: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -70,6 +71,7 @@ const PhotographerDetailsPage: React.FC = () => {
         you’ll cherish for a lifetime, reflecting the moments that mean the most
         to you
       </Typography>
+      <ImageGallery/>
       <PackageTable packages={packages} />
       <ReviewSection
         reviews={[
