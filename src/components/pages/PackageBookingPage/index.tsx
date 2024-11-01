@@ -23,6 +23,8 @@ import {
 } from "./styles";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import { submitBooking } from "../../../redux/actions/bookingAction";
+import CustomDatePicker from "../../molecules/DatePicker";
+import dayjs from "dayjs";
 
 const CustomErrorMessage = ({ name }: { name: string }) => (
   <ErrorMessage name={name}>
@@ -92,7 +94,14 @@ const PhotographerBookingForm: React.FC = () => {
             });
         }}
       >
-        {({ handleSubmit, handleReset, errors, touched, values }) => (
+        {({
+          handleSubmit,
+          handleReset,
+          errors,
+          touched,
+          values,
+          setFieldValue,
+        }) => (
           <Form onSubmit={handleSubmit}>
             <Box sx={formContainer}>
               <Typography variant="h4" sx={formTitle}>
@@ -145,17 +154,19 @@ const PhotographerBookingForm: React.FC = () => {
                   </Grid>
 
                   <Grid item xs={12} sm={6}>
-                    <Field
-                      as={TextField}
-                      name="eventDate"
+                    <CustomDatePicker
                       label="Event Date"
-                      placeholder="YYYY-MM-DD"
-                      fullWidth
-                      variant="outlined"
-                      sx={textField}
-                      helperText={<CustomErrorMessage name="eventDate" />}
-                      error={Boolean(errors.eventDate && touched.eventDate)}
+                      selectedDate={
+                        values.eventDate ? dayjs(values.eventDate) : null
+                      }
+                      onDateChange={(newDate) =>
+                        setFieldValue(
+                          "eventDate",
+                          newDate ? newDate.format("YYYY-MM-DD") : ""
+                        )
+                      }
                     />
+                    <CustomErrorMessage name="eventDate" />
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Field
