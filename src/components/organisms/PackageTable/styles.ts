@@ -3,7 +3,7 @@ import { SxProps, Theme } from "@mui/material";
 export const packageTableStyles: Record<string, SxProps<Theme>> = {
   root: {
     flexGrow: 1,
-    padding: "20px 170px",
+    padding: "80px 170px",
   },
   card: {
     backgroundColor: "#FFF6E3",
