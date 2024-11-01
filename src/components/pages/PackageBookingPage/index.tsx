@@ -25,6 +25,7 @@ import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import { submitBooking } from "../../../redux/actions/bookingAction";
 import CustomDatePicker from "../../molecules/DatePicker";
 import dayjs from "dayjs";
+import CustomTimePicker from "../../molecules/TimePicker";
 
 const CustomErrorMessage = ({ name }: { name: string }) => (
   <ErrorMessage name={name}>
@@ -169,17 +170,21 @@ const PhotographerBookingForm: React.FC = () => {
                     <CustomErrorMessage name="eventDate" />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <Field
-                      as={TextField}
-                      name="eventTime"
+                    <CustomTimePicker
                       label="Event Time"
-                      placeholder="HH:MM AM/PM"
-                      fullWidth
-                      variant="outlined"
-                      sx={textField}
-                      helperText={<CustomErrorMessage name="eventTime" />}
-                      error={Boolean(errors.eventTime && touched.eventTime)}
+                      selectedTime={
+                        values.eventTime
+                          ? dayjs(values.eventTime, "HH:mm A")
+                          : null
+                      }
+                      onTimeChange={(newTime) =>
+                        setFieldValue(
+                          "eventTime",
+                          newTime ? newTime.format("HH:mm A") : ""
+                        )
+                      }
                     />
+                    <CustomErrorMessage name="eventTime" />
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <Field
