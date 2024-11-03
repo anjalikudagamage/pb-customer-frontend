@@ -2,7 +2,7 @@ import { SxProps } from "@mui/material/styles";
 
 export const formContainer: SxProps = {
   backgroundColor: "rgba(0, 0, 0, 0.7)",
-  padding: "30px",
+  padding: "50px",
   borderRadius: "10px",
   maxWidth: "700px",
   width: "100%",

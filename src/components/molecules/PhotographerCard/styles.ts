@@ -61,7 +61,8 @@ export const priceContainerStyle: SxProps<Theme> = {
 
 export const priceStyle: SxProps<Theme> = {
   fontWeight: "bold",
-  fontSize: "1.5rem",
+  fontSize: "1.2rem",
+  color: "primary.main",
   marginBottom: 1, 
 };
 
