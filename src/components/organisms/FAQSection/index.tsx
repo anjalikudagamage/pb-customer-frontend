@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
-import { Container, Typography, Accordion, AccordionSummary, AccordionDetails, Box } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { faqContainerStyles, faqItemStyles, buttonContainerStyles, more } from './styles';
-import TextButton from '../../atoms/TextButton';
+import React, { useState } from "react";
+import {
+  Container,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Box,
+  Button,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import {
+  faqContainerStyles,
+  faqItemStyles,
+  buttonContainerStyles,
+  moreTextStyles,
+  demoButtonStyles,
+  accordionStyles,
+} from "./styles";
 
 type FAQ = {
   question: string;
@@ -16,17 +30,15 @@ interface FAQSectionProps {
 const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
   const [expanded, setExpanded] = useState<string | false>(false);
 
-  const handleChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
-    setExpanded(isExpanded ? panel : false);
-  };
+  const handleChange =
+    (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
 
   return (
     <Container sx={faqContainerStyles}>
       <Typography variant="h3" gutterBottom textAlign="center">
-        We're here to answer all your photography questions.
-      </Typography>
-      <Typography variant="body1" gutterBottom textAlign="center">
-        Whether you're a beginner or a pro, this section will help you learn more about photography and our services.
+        All the A's to your Q's
       </Typography>
       <Box sx={faqItemStyles}>
         {faqs.map((faq, index) => (
@@ -34,6 +46,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
             expanded={expanded === `panel${index}`}
             onChange={handleChange(`panel${index}`)}
             key={index}
+            sx={accordionStyles}
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               <Typography>{faq.question}</Typography>
@@ -45,8 +58,16 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
         ))}
       </Box>
       <Box sx={buttonContainerStyles}>
-        <Typography variant="body2" sx={more}>Got any more questions?</Typography>
-        <TextButton text="Search" />
+        <Typography variant="body1" sx={moreTextStyles}>
+          Still have questions?
+        </Typography>
+        <Typography variant="body2" textAlign="center">
+          Book a call with our team to learn how we can help you change the way
+          you manage your business.
+        </Typography>
+        <Button variant="contained" sx={demoButtonStyles}>
+          Book a demo
+        </Button>
       </Box>
     </Container>
   );

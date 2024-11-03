@@ -1,5 +1,3 @@
-
-
 export const useStyles = () => ({
   sliderContainer: {
     width: "100%",
@@ -36,7 +34,7 @@ export const useStyles = () => ({
   title: {
     fontWeight: "bold",
     marginBottom: "10px",
-    fontSize: "40px"
+    fontSize: "40px",
   },
   description: {
     marginTop: "15px",

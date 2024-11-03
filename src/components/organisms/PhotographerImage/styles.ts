@@ -17,9 +17,12 @@ export const title: SxProps = {
   fontWeight: "bold",
   marginBottom: "20px",
   textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+  fontSize: "2.5rem", 
+  textTransform: "uppercase", 
 };
 
+
 export const subtitle: SxProps = {
-  maxWidth: "800px",
+  maxWidth: "1000px",
   textShadow: "1px 1px 3px rgba(0, 0, 0, 0.7)",
 };

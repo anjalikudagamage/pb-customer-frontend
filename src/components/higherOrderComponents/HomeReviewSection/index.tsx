@@ -3,13 +3,13 @@ import { Box, Typography } from "@mui/material";
 import ReviewCard from "../../atoms/HomeReviewCard";
 import TextButton from "../../atoms/TextButton";
 import logo from "../../../assets/logo2.png";
-import img from "../../../assets/images/Review/image1.jpg"
+import img from "../../../assets/images/Review/image1.jpg";
 import {
   reviewSectionContainerStyles,
   sectionTitleStyles,
   sectionSubtitleStyles,
   reviewsContainerStyles,
-} from "./styles"; 
+} from "./styles";
 
 const reviews = [
   {

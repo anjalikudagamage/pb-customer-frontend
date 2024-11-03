@@ -23,7 +23,7 @@ const PackageDropdown: React.FC<PackageDropdownProps> = ({ onPackageSelect }) =>
 
   const handleChange = (selectedOption: PackageOption | null) => {
     setSelectedPackage(selectedOption);
-    onPackageSelect(selectedOption); // Notify parent component
+    onPackageSelect(selectedOption); 
   };
 
   return (

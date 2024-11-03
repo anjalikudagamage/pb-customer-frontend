@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import ImageCarousel from "../../../components/organisms/ImageCarousel";
-import Image1 from "../../../assets/images/ImageCarousel/image3.jpg"
+import Image1 from "../../../assets/images/ImageCarousel/image3.jpg";
 import Image2 from "../../../assets/images/ImageCarousel/image4.jpg";
 import PhotographerCardList from "../../organisms/PhotographerCards";
 import Footer from "../../atoms/Footer";
@@ -11,18 +11,20 @@ import {
   filterSidebarGridItemStyle,
   imageCarouselTitleStyleOverride,
 } from "./styles";
-
 import Navbar from "../../organisms/Navbar";
 
-const imageUrls = [ Image1, Image2];
+const imageUrls = [Image1, Image2];
 
 const SearchResult: React.FC = () => {
+  const [searchCount, setSearchCount] = useState(0);
+  const formattedPackage = "Selected Package";
+
   return (
     <>
       <Navbar />
       <ImageCarousel
         images={imageUrls}
-        title="Wedding Basic Package:  21 photographers found"
+        title={`${formattedPackage}: ${searchCount} photographers found`}
         titleStyleOverride={imageCarouselTitleStyleOverride}
       />
       <Box sx={rootContainerStyle}>
@@ -31,7 +33,7 @@ const SearchResult: React.FC = () => {
             <FilterSidebar />
           </Grid>
           <Grid item xs={12} md={8}>
-            <PhotographerCardList />
+            <PhotographerCardList onSearchCount={setSearchCount} />
           </Grid>
         </Grid>
       </Box>

@@ -1,20 +1,20 @@
+import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import photographerReducer from "./slice/photographerSlice";
-import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
+import bookingReducer from "./slice/bookingSlice";
 
-// Configure the store
 const store = configureStore({
   reducer: {
     photographer: photographerReducer,
+    booking: bookingReducer,
   },
 });
 
-// Define RootState and AppDispatch types
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-// Custom hooks for typed dispatch and selector
-export const useAppDispatch: () => AppDispatch = useDispatch;
+// Custom hooks
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export default store;
