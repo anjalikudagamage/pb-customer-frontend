@@ -118,10 +118,6 @@ export const customDateButtonStyle: SxProps = {
   },
 };
 
-export const calendarIconStyle = (isClicked: boolean): SxProps => ({
-  color: isClicked ? "#FF6B6B" : "#667085",  // Updated to pink
-  marginRight: "8px",
-});
 
 export const inputBaseStyle = (isClicked: boolean): SxProps => ({
   color: isClicked ? "#FF6B6B" : "#344054",  // Updated to pink
