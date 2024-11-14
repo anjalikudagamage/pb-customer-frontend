@@ -126,9 +126,7 @@ function Navbar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={
-                  page === "Sign In" ? handleClick : handleCloseNavMenu
-                }
+                onClick={page === "Sign In" ? handleClick : handleCloseNavMenu}
                 sx={buttonSx}
               >
                 {page}

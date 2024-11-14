@@ -31,7 +31,13 @@ const SearchBar: React.FC = () => {
           <LocationSearch />
         </Grid>
         <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
-          <CustomDatePicker />
+          <CustomDatePicker
+            label={""}
+            selectedDate={null}
+            onDateChange={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
         </Grid>
         <Grid item xs={12} sm={6} md={3} sx={searchBarItem}>
           <PackageDropdown onPackageSelect={handlePackageSelect} />

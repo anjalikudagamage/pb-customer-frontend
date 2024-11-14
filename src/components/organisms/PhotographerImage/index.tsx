@@ -34,7 +34,7 @@ const PhotographerImage: React.FC<PhotographerImageProps> = ({
       <Typography variant="h6" sx={subtitle}>
         Capturing life’s most precious moments with artistry and precision. Our
         studio blends creativity with professional expertise to deliver
-        stunning, timeless images that tell your unique story. 
+        stunning, timeless images that tell your unique story.
       </Typography>
     </Box>
   );

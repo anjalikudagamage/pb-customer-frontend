@@ -33,7 +33,7 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ reviews }) => {
               name={`rating-${index}`}
               value={review.rating}
               readOnly
-              precision={0.5} 
+              precision={0.5}
               sx={{ marginTop: 1 }}
             />
           </Grid>

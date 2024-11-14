@@ -8,7 +8,7 @@ import {
   avatarStyles,
   reviewerNameStyles,
   reviewerRoleStyles,
-} from "./styles"; // Adjust the import path as necessary
+} from "./styles";
 
 interface ReviewCardProps {
   logoUrl: string;

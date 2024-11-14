@@ -25,7 +25,7 @@ export const DatePickerStyle = {
     color: "white",
   },
   "& .MuiSvgIcon-root": {
-    color: "white", 
+    color: "white",
   },
 };
 

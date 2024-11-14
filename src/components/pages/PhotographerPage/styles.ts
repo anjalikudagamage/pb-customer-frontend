@@ -4,7 +4,7 @@ export const sectionTitleStyle: SxProps = {
   fontSize: "35px",
   color: "#1A4870",
   fontWeight: "medium",
-  textAlign: 'center',
+  textAlign: "center",
   justifyContent: "center",
   marginTop: "40px",
   marginBottom: "16px",
@@ -15,6 +15,6 @@ export const photographerDetailsStyle: SxProps = {
   lineHeight: "1.5",
   marginBottom: "40px",
   padding: "10px 200px",
-  textAlign: 'center',
+  textAlign: "center",
   color: "black",
 };

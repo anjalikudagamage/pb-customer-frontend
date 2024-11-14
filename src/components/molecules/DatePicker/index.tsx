@@ -33,7 +33,7 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
         .min(currentDate, "Date cannot be in the past."),
     }),
     onSubmit: (values) => {
-      onDateChange(values.selectedDate); // Pass the selected date back to parent component
+      onDateChange(values.selectedDate);
     },
   });
 

@@ -10,7 +10,7 @@ export const DatePickerStyle = {
     color: "#344054",
     backgroundColor: "rgb(236, 255, 230)",
     borderRadius: "15px",
-    height: "50px", 
+    height: "50px",
     boxShadow: "0 0 5px #eee",
     "& .MuiOutlinedInput-notchedOutline": {
       borderColor: "#D0D5DD",

@@ -2,11 +2,11 @@ import { SxProps, Theme } from "@mui/material/styles";
 
 export const popupContainer = (_isError: boolean): SxProps<Theme> => ({
   position: "fixed",
-  top: "50%", 
-  left: "50%", 
-  transform: "translate(-50%, -50%)", 
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   zIndex: 9999,
-  backgroundColor: "#fff", 
+  backgroundColor: "#fff",
   padding: "20px",
   borderRadius: "8px",
   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
@@ -19,11 +19,10 @@ export const popupContainer = (_isError: boolean): SxProps<Theme> => ({
   },
 });
 
-
 export const popupMessage: SxProps<Theme> = {
   fontSize: "1.2rem",
   fontWeight: "bold",
-  color: "#4CAF50", 
+  color: "#4CAF50",
   marginBottom: "10px",
 };
 

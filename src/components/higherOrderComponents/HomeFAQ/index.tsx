@@ -96,4 +96,3 @@ const HomeFAQ: React.FC = () => {
 };
 
 export default HomeFAQ;
-

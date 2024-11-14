@@ -54,8 +54,8 @@ export const availabilityStyle: SxProps<Theme> = {
 export const priceContainerStyle: SxProps<Theme> = {
   display: "flex",
   flexDirection: "column",
-  alignItems: "flex-end", 
-  justifyContent: "flex-start", 
+  alignItems: "flex-end",
+  justifyContent: "flex-start",
   paddingRight: 6,
 };
 
@@ -63,7 +63,7 @@ export const priceStyle: SxProps<Theme> = {
   fontWeight: "bold",
   fontSize: "1.2rem",
   color: "primary.main",
-  marginBottom: 1, 
+  marginBottom: 1,
 };
 
 export const ratingStyle: SxProps<Theme> = {
@@ -73,7 +73,7 @@ export const ratingStyle: SxProps<Theme> = {
   marginBottom: 1,
   backgroundColor: "#FF6B6B",
   maxWidth: "180px",
-  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)", 
+  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)",
   textAlign: "center",
   textTransform: "uppercase",
   transition: "0.5s",
@@ -89,12 +89,10 @@ export const ratingStyle: SxProps<Theme> = {
 export const buttonStyle: SxProps<Theme> = {
   backgroundColor: "#1976d2",
   color: "#fff",
-  marginTop: 1, 
+  marginTop: 1,
   padding: "0.5rem 1rem",
-  
- 
-  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)", 
 
+  backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)",
 
   textAlign: "center",
   textTransform: "uppercase",

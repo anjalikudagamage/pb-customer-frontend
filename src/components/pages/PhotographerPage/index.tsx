@@ -91,16 +91,16 @@ const PhotographerDetailsPage: React.FC = () => {
       >
         <Typography sx={sectionTitleStyle}>About the Photographer</Typography>
         <Typography sx={photographerDetailsStyle}>
-        As a dedicated photographer, my goal is to turn every moment into a
-        lasting memory. With years of experience across various photography
-        styles—whether portrait, event, commercial, or lifestyle photography—I
-        bring both technical expertise and a creative eye to every project. My
-        approach centers on capturing authentic expressions and unique details
-        that make each story truly personal. From the warmth of a candid smile
-        to the grandeur of life’s biggest events, I strive to create images that
-        resonate deeply and beautifully. Together, let’s craft images that
-        you’ll cherish for a lifetime, reflecting the moments that mean the most
-        to you
+          As a dedicated photographer, my goal is to turn every moment into a
+          lasting memory. With years of experience across various photography
+          styles—whether portrait, event, commercial, or lifestyle photography—I
+          bring both technical expertise and a creative eye to every project. My
+          approach centers on capturing authentic expressions and unique details
+          that make each story truly personal. From the warmth of a candid smile
+          to the grandeur of life’s biggest events, I strive to create images
+          that resonate deeply and beautifully. Together, let’s craft images
+          that you’ll cherish for a lifetime, reflecting the moments that mean
+          the most to you
         </Typography>
       </motion.div>
 
@@ -108,7 +108,7 @@ const PhotographerDetailsPage: React.FC = () => {
         variants={slideInLeft}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3}}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <ImageGallery />
       </motion.div>
@@ -163,11 +163,26 @@ const PhotographerDetailsPage: React.FC = () => {
       >
         <FAQSection
           faqs={[
-            { question: "How do I book a session with a photographer?", answer: "To book a session, simply..." },
-            { question: "Can I customize a photography package?", answer: "Absolutely! Many photographers..." },
-            { question: "How far in advance should I book?", answer: "We recommend booking as early as..." },
-            { question: "What happens if I need to reschedule?", answer: "If you need to reschedule, you can..." },
-            { question: "Are there any extra fees?", answer: "Most package prices include standard..." },
+            {
+              question: "How do I book a session with a photographer?",
+              answer: "To book a session, simply...",
+            },
+            {
+              question: "Can I customize a photography package?",
+              answer: "Absolutely! Many photographers...",
+            },
+            {
+              question: "How far in advance should I book?",
+              answer: "We recommend booking as early as...",
+            },
+            {
+              question: "What happens if I need to reschedule?",
+              answer: "If you need to reschedule, you can...",
+            },
+            {
+              question: "Are there any extra fees?",
+              answer: "Most package prices include standard...",
+            },
           ]}
         />
       </motion.div>

@@ -52,10 +52,10 @@ const FilterSidebar: React.FC = () => {
             Deals
           </Typography>
           <Box sx={filterOptionsStyle}>
-          <FormControlLabel
-            control={<Checkbox />}
-            label="Discounted packages"
-          />
+            <FormControlLabel
+              control={<Checkbox />}
+              label="Discounted packages"
+            />
           </Box>
         </Box>
 
@@ -64,14 +64,26 @@ const FilterSidebar: React.FC = () => {
             Popular filters
           </Typography>
           <Box sx={filterOptionsStyle}>
-            <FormControlLabel control={<Checkbox />} label="Studio photography" />
-            <FormControlLabel control={<Checkbox />} label="Outdoor photography" />
+            <FormControlLabel
+              control={<Checkbox />}
+              label="Studio photography"
+            />
+            <FormControlLabel
+              control={<Checkbox />}
+              label="Outdoor photography"
+            />
             <FormControlLabel control={<Checkbox />} label="Refundable" />
             <FormControlLabel control={<Checkbox />} label="Pay in advance" />
             <FormControlLabel control={<Checkbox />} label="Pay in cash" />
             <FormControlLabel control={<Checkbox />} label="Pay in card" />
-            <FormControlLabel control={<Checkbox />} label="Photobook included" />
-            <FormControlLabel control={<Checkbox />} label="Customizable packages" />
+            <FormControlLabel
+              control={<Checkbox />}
+              label="Photobook included"
+            />
+            <FormControlLabel
+              control={<Checkbox />}
+              label="Customizable packages"
+            />
           </Box>
         </Box>
       </Box>
