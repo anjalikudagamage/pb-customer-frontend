@@ -6,21 +6,26 @@ export const formContainer: SxProps = {
   borderRadius: "10px",
   maxWidth: "700px",
   width: "100%",
+  boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.3)", // Added shadow for a more elevated look
 };
 
 export const formTitle: SxProps = {
   textAlign: "center",
   color: "#fff",
   marginBottom: "20px",
+  fontSize: "2rem", // Increased font size for emphasis
+  fontWeight: 600, // Added weight for emphasis
 };
 
 export const section: SxProps = {
-  marginBottom: "20px",
+  marginBottom: "30px", // Increased margin for better spacing
 };
 
 export const sectionTitle: SxProps = {
-  color: "white",
-  marginBottom: "10px",
+  color: "#fff",
+  marginBottom: "15px", // Slightly increased margin for better spacing
+  fontSize: "1.25rem", // Adjusted font size for better readability
+  fontWeight: 500, // Slightly lighter font weight for subtler emphasis
 };
 
 export const textField: SxProps = {
@@ -44,23 +49,25 @@ export const textField: SxProps = {
   "& input": {
     color: "white",
   },
+  marginBottom: "15px", // Added margin for better field spacing
 };
 
 export const fareLabel: SxProps = {
   color: "#00bcd4",
+  fontSize: "1rem", // Increased font size for better clarity
 };
 
 export const buttonContainer: SxProps = {
   display: "flex",
   justifyContent: "space-between",
-  marginTop: "20px",
+  marginTop: "30px", // Increased margin for better button spacing
 };
 
 export const submitButton: SxProps = {
   backgroundColor: "#FF6B6B",
   color: "#fff",
   maxWidth: "180px",
-  padding: "8px 32px",
+  padding: "10px 32px", // Increased padding for better button appearance
   backgroundImage: "linear-gradient(90deg, #FF6B6B, #FF6B6B)",
   textAlign: "center",
   textTransform: "uppercase",
@@ -77,6 +84,8 @@ export const submitButton: SxProps = {
 export const clearButton: SxProps = {
   borderColor: "white",
   color: "white",
+  padding: "8px 24px", // Slightly adjusted padding for consistency
+  borderRadius: "8px", // More rounded button
   "&:hover": {
     borderColor: "#00e5ff",
     color: "#00e5ff",

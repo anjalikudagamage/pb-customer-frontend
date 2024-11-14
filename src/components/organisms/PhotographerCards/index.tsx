@@ -6,7 +6,7 @@ import { fetchPhotographers } from "../../../redux/actions/photographerActions";
 import PhotographerCard from "../../molecules/PhotographerCard";
 import { photographerCardListContainer } from "./styles";
 import { IPhotographerDetails } from "../../../redux/slice/photographerSlice";
-import Img from "../../../assets/images/photographerCard/image1.jpg";
+import Img from "../../../assets/images/photographerCard/image4.png";
 
 interface PhotographerCardListProps {
   onSearchCount: (count: number) => void;

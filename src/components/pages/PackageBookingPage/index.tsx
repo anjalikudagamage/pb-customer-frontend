@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage, FieldProps } from "formik";
 import * as Yup from "yup";
-import bgImg from "../../../assets/images/Booking/image1.jpg";
+import bgImg from "../../../assets/images/photographerCard/image.png";
 import { AccessTime, CameraAlt, Event, Payment } from "@mui/icons-material";
 import {
   Box,
@@ -90,7 +90,6 @@ const PhotographerBookingForm: React.FC = () => {
           color: "white",
         }}
       >
-        {/* Left side with topic text and sub-topics */}
         <Grid
           item
           xs={12}

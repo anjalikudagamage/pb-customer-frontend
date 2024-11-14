@@ -20,6 +20,7 @@ const PopupMessage: React.FC<PopupMessageProps> = ({
 
   return (
     <Box sx={popupContainer(isError)}>
+      <Typography sx={popupMessage}>SUCCESS</Typography>
       <Typography sx={popupMessage}>{message}</Typography>
       <Button onClick={onClose} sx={closeButton}>
         Close
