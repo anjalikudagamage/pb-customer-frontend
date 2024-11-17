@@ -11,9 +11,25 @@ export interface BookingData {
   email: string;
 }
 
-export const submitBookingService = async (bookingData: BookingData): Promise<any> => {
+export interface BookingResponse {
+  id: string;
+  packageName: string;
+  eventDate: string;
+  eventTime: string;
+  address: string;
+  fullName: string;
+  phoneNumber: string;
+  email: string;
+}
+
+export const submitBookingService = async (
+  bookingData: BookingData
+): Promise<BookingResponse> => {
   try {
-    const { data } = await apiClient.post("/booking/create", bookingData);
+    const { data } = await apiClient.post<BookingResponse>(
+      "/booking/create",
+      bookingData
+    );
     return data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -23,9 +39,9 @@ export const submitBookingService = async (bookingData: BookingData): Promise<an
   }
 };
 
-export const fetchBookingsService = async (): Promise<any> => {
+export const fetchBookingsService = async (): Promise<BookingResponse[]> => {
   try {
-    const { data } = await apiClient.get("/booking");
+    const { data } = await apiClient.get<BookingResponse[]>("/booking");
     return data;
   } catch (error) {
     if (error instanceof AxiosError) {

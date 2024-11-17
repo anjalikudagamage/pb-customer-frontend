@@ -6,9 +6,26 @@ interface LoginData {
   password: string;
 }
 
-export const photographerLoginService = async (loginData: LoginData): Promise<any> => {
+export interface PhotographerUser {
+  id: number;
+  email: string;
+  role: string;
+}
+
+export interface PhotographerDetails {
+  description: string;
+  businessName: string;
+  packageDetails: Record<string, string>;
+}
+
+export const photographerLoginService = async (
+  loginData: LoginData
+): Promise<PhotographerUser> => {
   try {
-    const { data } = await apiClient.post("/photographer/login", loginData);
+    const { data } = await apiClient.post<PhotographerUser>(
+      "/photographer/login",
+      loginData
+    );
     return data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -18,9 +35,13 @@ export const photographerLoginService = async (loginData: LoginData): Promise<an
   }
 };
 
-export const fetchPhotographersService = async (): Promise<any> => {
+export const fetchPhotographersService = async (): Promise<
+  PhotographerDetails[]
+> => {
   try {
-    const { data } = await apiClient.get("/photographer/allData");
+    const { data } = await apiClient.get<PhotographerDetails[]>(
+      "/photographer/allData"
+    );
     return data;
   } catch (error) {
     if (error instanceof AxiosError) {
