@@ -33,7 +33,7 @@ export const paragraphStyles: SxProps<Theme> = {
   lineHeight: "1.6",
   textAlign: "center",
   marginBottom: "26px",
-  maxWidth: "800px",
+  maxWidth: "1000px",
   fontFamily: "'Roboto', sans-serif",
   fontWeight: 400,
 };

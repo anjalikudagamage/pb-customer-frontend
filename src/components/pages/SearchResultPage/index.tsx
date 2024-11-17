@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ImageCarousel from "../../../components/organisms/ImageCarousel";
 import Image1 from "../../../assets/images/ImageCarousel/image3.jpg";
 import Image2 from "../../../assets/images/ImageCarousel/image4.jpg";
+import Image3 from "../../../assets/images/ImageCarousel/image5.jpg";
 import PhotographerCardList from "../../organisms/PhotographerCardList";
 import Footer from "../../atoms/Footer";
 import FilterSidebar from "../../molecules/FilterSidebar";
@@ -13,7 +14,7 @@ import {
 } from "./styles";
 import Navbar from "../../organisms/Navbar";
 
-const imageUrls = [Image1, Image2];
+const imageUrls = [Image1, Image2, Image3];
 
 const SearchResultPage: React.FC = () => {
   const [searchCount, setSearchCount] = useState(0);

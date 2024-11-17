@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button, Grid } from "@mui/material";
+import { Box, Typography, Button, Grid, TextField, InputAdornment } from "@mui/material";
 import {
   cardContainer,
   imageStyle,
@@ -56,7 +56,7 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
 
   return (
     <Box sx={cardContainer}>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={4}>
           <Box
             component="img"
@@ -67,29 +67,62 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
         </Grid>
         <Grid item xs={8}>
           <Box sx={contentStyle}>
-            <Typography variant="h6" sx={titleStyle}>
+            <Typography variant="h5" sx={titleStyle}>
               {businessName}
             </Typography>
-            <Typography sx={packageStyle}>{packageType}</Typography>
+            <Typography variant="subtitle1" sx={packageStyle}>
+              {packageType}
+            </Typography>
             <Box sx={featuresContainerStyle}>
               {features.map((feature, index) => (
-                <Typography key={index} sx={featureStyle}>
-                  {feature}
+                <Typography key={index} variant="body2" sx={featureStyle}>
+                  • {feature}
                 </Typography>
               ))}
             </Box>
-            <Typography sx={availabilityStyle}>{availability}</Typography>
+            <Typography variant="body1" sx={availabilityStyle}>
+              {availability}
+            </Typography>
           </Box>
           <Box sx={priceContainerStyle}>
-            <Typography sx={ratingStyle}>
-              {rating}
+            <Typography variant="body2" sx={ratingStyle}>
+              ⭐ {rating}
               <span style={{ marginLeft: "0.5rem", fontSize: "0.875rem" }}>
-                {reviews} reviews
+                ({reviews} reviews)
               </span>
             </Typography>
-            <Typography sx={priceStyle}>{price}</Typography>
+            <TextField
+              variant="standard"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end" sx={{
+                     marginLeft: "-5.5rem",
+                  }}>
+                    <Typography
+                      sx={{
+                        fontWeight: "bold",
+                        fontSize: "1rem",
+                        color: "#1E88E5",
+                      }}
+                    >
+                      RS
+                    </Typography>
+                  </InputAdornment>
+                ),
+                disableUnderline: true,
+              }}
+              value={price}
+              sx={{
+                ...priceStyle,
+                ".MuiInputBase-input": {
+                  fontWeight: "bold", 
+                  fontSize: "1.2rem", 
+                  color: "#1E88E5",  
+                },
+              }}
+            />
             <Button variant="contained" sx={buttonStyle} onClick={handleClick}>
-              Check availability
+              Check Availability
             </Button>
           </Box>
         </Grid>
@@ -99,3 +132,4 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
 };
 
 export default PhotographerCard;
+
