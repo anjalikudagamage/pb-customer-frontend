@@ -10,12 +10,12 @@ export const container = {
 };
 
 export const title = {
-  fontSize: "1.75rem",
   marginBottom: "0.5rem",
+  fontSize: "38px",
 };
 
 export const subtitle = {
-  fontSize: "1rem",
+  fontSize: "18px",
   marginBottom: "1rem",
   color: "#666",
 };

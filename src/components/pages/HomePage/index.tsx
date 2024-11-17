@@ -7,7 +7,7 @@ import HomeImage from "../../higherOrderComponents/HomeImage";
 import ReviewSection from "../../higherOrderComponents/HomeReviewSection";
 import ImageSlider from "../../higherOrderComponents/WhyWeChoose";
 import FAQPage from "../../higherOrderComponents/HomeFAQ";
-import SubscribeForm from "../../organisms/SubscribeForm";
+import SubscribeForm from "../../higherOrderComponents/SubscribeForm";
 import ImageTextSection from "../../higherOrderComponents/ImageTextSection";
 import Img1 from "../../../assets/images/ImageText/Image1.jpg";
 import Img2 from "../../../assets/images/ImageText/Image2.jpg";

@@ -10,7 +10,22 @@ import {
   Grid,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { useStyles } from "./styles";
+
+import {
+  container,
+  faqHeader,
+  title,
+  description,
+  gridContainer,
+  linksContainer,
+  link,
+  faqCategory,
+  faqCategoryTitle,
+  accordion,
+  accordionSummary,
+  accordionTitle,
+  answer
+} from "./styles";
 
 const faqs = [
   {
@@ -34,26 +49,24 @@ const links = [
 ];
 
 const HomeFAQ: React.FC = () => {
-  const classes = useStyles();
-
   return (
-    <Container sx={classes.container}>
-      <Box sx={classes.faqHeader}>
-        <Typography variant="h3" sx={classes.title}>
+    <Container sx={container}>
+      <Box sx={faqHeader}>
+        <Typography variant="h3" sx={title}>
           Frequently Asked Questions
         </Typography>
-        <Typography variant="body1" sx={classes.description}>
+        <Typography variant="body1" sx={description}>
           Got questions? Here you’ll find the answers most valued by our
           photographers, along with access to step-by-step guides and support.
         </Typography>
       </Box>
 
-      <Grid container sx={classes.gridContainer}>
+      <Grid container sx={gridContainer}>
         <Grid item xs={12} md={4}>
-          <Box sx={classes.linksContainer}>
-            {links.map((link, index) => (
-              <Link href="#" key={index} sx={classes.link}>
-                {link}
+          <Box sx={linksContainer}>
+            {links.map((linkItem, index) => (
+              <Link href="#" key={index} sx={link}>
+                {linkItem}
               </Link>
             ))}
           </Box>
@@ -61,24 +74,22 @@ const HomeFAQ: React.FC = () => {
         <Grid item xs={12} md={8}>
           <Box>
             {faqs.map((faq, index) => (
-              <Box key={index} sx={classes.faqCategory}>
-                <Typography variant="h5" sx={classes.faqCategoryTitle}>
+              <Box key={index} sx={faqCategory}>
+                <Typography variant="h5" sx={faqCategoryTitle}>
                   {faq.category}
                 </Typography>
                 {faq.questions.map((question, qIndex) => (
-                  <Accordion key={qIndex} sx={classes.accordion}>
+                  <Accordion key={qIndex} sx={accordion}>
                     <AccordionSummary
                       expandIcon={<ExpandMoreIcon />}
                       aria-controls={`panel${qIndex}-content`}
                       id={`panel${qIndex}-header`}
-                      sx={classes.accordionSummary}
+                      sx={accordionSummary}
                     >
-                      <Typography sx={classes.accordionTitle}>
-                        {question}
-                      </Typography>
+                      <Typography sx={accordionTitle}>{question}</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                      <Typography>
+                      <Typography sx={answer}>
                         This is where the answer to the question will go. You
                         can customize this section with specific details about
                         our photography services.

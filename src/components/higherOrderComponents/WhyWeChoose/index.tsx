@@ -4,7 +4,13 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import image1 from "../../../assets/images/ImageCarousel/image1.jpg";
 import image2 from "../../../assets/images/ImageCarousel/image.jpg";
-import { useStyles } from "./styles";
+import {
+  sliderContainer,
+  slide,
+  arrowButton,
+  title,
+  description,
+} from "./styles";
 
 const slides = [
   {
@@ -22,7 +28,6 @@ const slides = [
 ];
 
 const WhyWeChoose: React.FC = () => {
-  const classes = useStyles();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
@@ -41,24 +46,24 @@ const WhyWeChoose: React.FC = () => {
   }, []);
 
   return (
-    <Box sx={classes.sliderContainer}>
-      <IconButton onClick={prevSlide} sx={classes.arrowButton}>
+    <Box sx={sliderContainer}>
+      <IconButton onClick={prevSlide} sx={arrowButton}>
         <ArrowBackIosIcon />
       </IconButton>
       <Box
         sx={{
-          ...classes.slide,
+          ...slide,
           backgroundImage: `url(${slides[currentSlide].imageUrl})`,
         }}
       >
-        <Typography variant="h4" sx={classes.title}>
+        <Typography variant="h4" sx={title}>
           {slides[currentSlide].title}
         </Typography>
-        <Typography variant="subtitle1" sx={classes.description}>
+        <Typography variant="subtitle1" sx={description}>
           {slides[currentSlide].description}
         </Typography>
       </Box>
-      <IconButton onClick={nextSlide} sx={classes.arrowButton}>
+      <IconButton onClick={nextSlide} sx={arrowButton}>
         <ArrowForwardIosIcon />
       </IconButton>
     </Box>

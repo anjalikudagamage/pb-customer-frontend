@@ -14,7 +14,8 @@ export const logoStyles: React.CSSProperties = {
 };
 
 export const reviewTextStyles: SxProps<Theme> = {
-  fontStyle: "italic",
+  fontFamily: "'Roboto', sans-serif",
+  fontWeight: 600,
   marginBottom: "20px",
 };
 
