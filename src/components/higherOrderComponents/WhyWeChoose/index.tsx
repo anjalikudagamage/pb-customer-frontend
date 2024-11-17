@@ -3,7 +3,7 @@ import { Box, Typography, IconButton } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import image1 from "../../../assets/images/ImageCarousel/image1.jpg";
-import image2 from "../../../assets/images/ImageCarousel/image2.jpg";
+import image2 from "../../../assets/images/ImageCarousel/image.jpg";
 import { useStyles } from "./styles";
 
 const slides = [

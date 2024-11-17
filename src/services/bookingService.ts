@@ -36,3 +36,5 @@ export const fetchBookingsService = async () => {
     return Promise.reject("An unknown error occurred while fetching bookings");
   }
 };
+
+//test
