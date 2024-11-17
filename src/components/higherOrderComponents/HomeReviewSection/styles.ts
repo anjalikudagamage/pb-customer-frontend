@@ -48,11 +48,15 @@ export const sectionTitleStyles: SxProps<Theme> = {
   color: "#fff",
   fontWeight: "bold",
   marginBottom: "10px",
+  fontFamily: "'Roboto', sans-serif",
+  fontSize: "40px",
 };
 
 export const sectionSubtitleStyles: SxProps<Theme> = {
   color: "#fff",
   marginBottom: "50px",
+  fontSize: "18px",
+  fontFamily: "'Roboto', sans-serif"
 };
 
 export const reviewsContainerStyles: SxProps<Theme> = {

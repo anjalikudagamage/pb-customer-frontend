@@ -23,10 +23,10 @@ const ReviewSection: React.FC<ReviewSectionProps> = ({ reviews }) => {
               src={review.image}
               sx={{ width: 150, height: 150, margin: "0 auto" }}
             />
-            <Typography variant="h6" component="h2" gutterBottom>
+            <Typography variant="h6" component="h2" gutterBottom sx={{fontSize: "18px", fontWeight: "bold", color: "black"}}>
               {review.author}
             </Typography>
-            <Typography variant="body1" color="textSecondary">
+            <Typography variant="body1" color="textSecondary" sx={{fontSize: "18px", fontWeight: "bold"}}>
               {review.comment}
             </Typography>
             <Rating

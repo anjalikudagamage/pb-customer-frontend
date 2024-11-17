@@ -37,7 +37,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
 
   return (
     <Container sx={faqContainerStyles}>
-      <Typography variant="h3" gutterBottom textAlign="center">
+      <Typography variant="h3" gutterBottom textAlign="center" sx={{fontSize: "40px", marginBottom: "50px"}}>
         All the A's to your Q's
       </Typography>
       <Box sx={faqItemStyles}>
@@ -49,10 +49,10 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
             sx={accordionStyles}
           >
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography>{faq.question}</Typography>
+              <Typography sx ={{fontSize: "18px", fontWeight: "bold"}}>{faq.question}</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>{faq.answer}</Typography>
+              <Typography sx ={{fontSize: "18px", color: "gray"}}>{faq.answer}</Typography>
             </AccordionDetails>
           </Accordion>
         ))}
@@ -61,7 +61,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
         <Typography variant="body1" sx={moreTextStyles}>
           Still have questions?
         </Typography>
-        <Typography variant="body2" textAlign="center">
+        <Typography variant="body2" textAlign="center" sx ={{fontSize: "18px", color: "gray"}}>
           Book a call with our team to learn how we can help you change the way
           you manage your business.
         </Typography>

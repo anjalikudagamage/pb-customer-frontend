@@ -8,15 +8,23 @@ export const containerStyles: SxProps<Theme> = {
   width: "97%",
   height: "100%",
   padding: "20px",
+  letterSpacing: "1px",
   backgroundColor: "white",
 };
 
 export const topicStyles: SxProps<Theme> = {
   color: "#1A4870",
+  fontFamily: "'Roboto', sans-serif",
   fontSize: "50px",
   fontWeight: "600",
   marginBottom: "25px",
   marginTop: "50px",
+};
+
+export const itemTitle: SxProps<Theme> = {
+  fontSize: "16px",
+  textAlign: "center",
+  fontFamily: "'Roboto', sans-serif",
 };
 
 export const paragraphStyles: SxProps<Theme> = {
@@ -25,11 +33,13 @@ export const paragraphStyles: SxProps<Theme> = {
   lineHeight: "1.6",
   textAlign: "center",
   marginBottom: "26px",
-  maxWidth: "800px",
+  maxWidth: "1000px",
+  fontFamily: "'Roboto', sans-serif",
+  fontWeight: 400,
 };
 
 export const imageListStyles: SxProps<Theme> = {
-  width: 1000,
+  width: 1280,
   height: 3000,
 };
 

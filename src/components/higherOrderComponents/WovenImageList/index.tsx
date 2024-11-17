@@ -22,6 +22,7 @@ import {
   paragraphStyles,
   imageListStyles,
   imageListItemBoxStyles,
+  itemTitle
 } from "./styles";
 
 interface ItemData {
@@ -129,7 +130,7 @@ const WovenImageList: React.FC = () => {
                   href={`#${item.title}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <Typography variant="subtitle1">{item.title}</Typography>
+                  <Typography variant="subtitle1" sx={itemTitle}>{item.title}</Typography>
                 </a>
               </Box>
             </motion.div>

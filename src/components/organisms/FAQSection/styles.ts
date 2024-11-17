@@ -27,7 +27,7 @@ export const buttonContainerStyles = {
 };
 
 export const moreTextStyles = {
-  fontSize: "1rem",
+  fontSize: "18px",
   fontWeight: 500,
   color: "#FF6B6B",
   mb: 1,
