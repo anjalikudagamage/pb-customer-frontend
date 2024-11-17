@@ -5,5 +5,5 @@ export const ROUTES = {
   HOMEPAGE: "/home",
   SEARCHRESULT: "/search",
   PHOTOGRAPHER: "/photographer",
-  BOOKING: "/booking"
+  BOOKING: "/booking",
 };

@@ -26,7 +26,7 @@ const initialState: IPhotographerState = {
   photographers: null,
   error: null,
   user: null,
-}; 
+};
 
 const photographerSlice = createSlice({
   name: "photographer",
@@ -34,20 +34,20 @@ const photographerSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(fetchPhotographers.pending, (state) => {
-      state.isLoading = true;
-      state.error = null;
-    })
-    .addCase(fetchPhotographers.fulfilled, (state, action) => {
-      state.isLoading = false;
-      state.photographers = action.payload;
-      state.error = null;
-    })
-    .addCase(fetchPhotographers.rejected, (state, action) => {
-      state.isLoading = false;
-      state.photographers = null;
-      state.error = action.payload as string;
-    });
+      .addCase(fetchPhotographers.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(fetchPhotographers.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.photographers = action.payload;
+        state.error = null;
+      })
+      .addCase(fetchPhotographers.rejected, (state, action) => {
+        state.isLoading = false;
+        state.photographers = null;
+        state.error = action.payload as string;
+      });
   },
 });
 

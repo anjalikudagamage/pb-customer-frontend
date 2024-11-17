@@ -24,10 +24,10 @@ import {
 } from "./styles";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import { submitBooking } from "../../../redux/actions/bookingAction";
-import CustomDatePicker from "../../molecules/DatePicker";
+import CustomDatePicker from "../../molecules/CustomDatePicker";
 import dayjs from "dayjs";
-import PopupMessage from "../../organisms/BookingFormPopup";
-import CustomTimePicker from "../../molecules/TimePicker";
+import PopupMessage from "../../layouts/BookingPopup";
+import CustomTimePicker from "../../molecules/CustomTimePicker";
 
 const CustomErrorMessage = ({ name }: { name: string }) => (
   <ErrorMessage name={name}>
@@ -49,7 +49,7 @@ const validationSchema = Yup.object().shape({
     .required("Email is required"),
 });
 
-const PhotographerBookingForm: React.FC = () => {
+const PackageBookingPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const isSubmitting = useAppSelector((state) => state.photographer.isLoading);
   const [popup, setPopup] = useState<{
@@ -380,4 +380,4 @@ const PhotographerBookingForm: React.FC = () => {
   );
 };
 
-export default PhotographerBookingForm;
+export default PackageBookingPage;

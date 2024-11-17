@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { Box, Typography, Button } from "@mui/material";
 import { popupContainer, popupMessage, closeButton } from "./styles";
 
-interface PopupMessageProps {
+interface BookingPopupProps {
   message: string;
   onClose: () => void;
   isError?: boolean;
 }
 
-const PopupMessage: React.FC<PopupMessageProps> = ({
+const BookingPopup: React.FC<BookingPopupProps> = ({
   message,
   onClose,
   isError = false,
@@ -29,4 +29,4 @@ const PopupMessage: React.FC<PopupMessageProps> = ({
   );
 };
 
-export default PopupMessage;
+export default BookingPopup;

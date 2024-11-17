@@ -17,7 +17,7 @@ import Img1 from "../../../assets/images/Review/image3.jpg";
 import Img2 from "../../../assets/images/Review/Image2.jpg";
 import Img3 from "../../../assets/images/Review/image3.jpg";
 
-const PhotographerDetailsPage: React.FC = () => {
+const PhotographerPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const location = useLocation();
   const selectedBusinessName = location.state?.businessName;
@@ -199,4 +199,4 @@ const PhotographerDetailsPage: React.FC = () => {
   );
 };
 
-export default PhotographerDetailsPage;
+export default PhotographerPage;

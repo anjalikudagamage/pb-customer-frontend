@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import { photographerClient } from "../api/axiosClient";
+import { apiClient } from "../api/axiosClient";
 
 interface LoginData {
   email: string;
@@ -8,7 +8,7 @@ interface LoginData {
 
 export const photographerLoginService = async (loginData: LoginData) => {
   try {
-    const response = await photographerClient.post("/login", loginData);
+    const response = await apiClient.post("/photographer/login", loginData);
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -18,15 +18,18 @@ export const photographerLoginService = async (loginData: LoginData) => {
   }
 };
 
-// New function to fetch photographer data
 export const fetchPhotographersService = async () => {
   try {
-    const response = await photographerClient.get("/allData");
-    return response.data; // Assuming the API response contains an array of photographer objects
+    const response = await apiClient.get("/photographer/allData");
+    return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
-      return Promise.reject(error.response?.data?.message || "Failed to fetch photographers");
+      return Promise.reject(
+        error.response?.data?.message || "Failed to fetch photographers"
+      );
     }
-    return Promise.reject("An unknown error occurred while fetching photographers");
+    return Promise.reject(
+      "An unknown error occurred while fetching photographers"
+    );
   }
 };

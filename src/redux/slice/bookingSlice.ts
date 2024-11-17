@@ -1,4 +1,3 @@
-// bookingSlice.ts
 import { createSlice } from "@reduxjs/toolkit";
 import { submitBooking, fetchBookings } from "../actions/bookingAction";
 

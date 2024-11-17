@@ -1,6 +1,5 @@
-// bookingService.ts
 import { AxiosError } from "axios";
-import { bookingClient } from "../api/axiosClient";
+import { apiClient } from "../api/axiosClient";
 
 export interface BookingData {
   packageName: string;
@@ -14,7 +13,7 @@ export interface BookingData {
 
 export const submitBookingService = async (bookingData: BookingData) => {
   try {
-    const response = await bookingClient.post("/create", bookingData);
+    const response = await apiClient.post("/booking/create", bookingData);
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -26,11 +25,13 @@ export const submitBookingService = async (bookingData: BookingData) => {
 
 export const fetchBookingsService = async () => {
   try {
-    const response = await bookingClient.get("/");
+    const response = await apiClient.get("/booking");
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
-      return Promise.reject(error.response?.data?.message || "Failed to fetch bookings");
+      return Promise.reject(
+        error.response?.data?.message || "Failed to fetch bookings"
+      );
     }
     return Promise.reject("An unknown error occurred while fetching bookings");
   }

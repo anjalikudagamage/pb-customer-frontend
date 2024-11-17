@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { bookingClient } from "../../api/axiosClient";
+import { apiClient } from "../../api/axiosClient";
 import { AxiosError } from "axios";
 
 interface BookingPayload {
@@ -16,7 +16,7 @@ export const submitBooking = createAsyncThunk(
   "booking/submitBooking",
   async (payload: BookingPayload, { rejectWithValue }) => {
     try {
-      const response = await bookingClient.post("/create", payload);
+      const response = await apiClient.post("/booking/create", payload);
       return response.data;
     } catch (error: AxiosError | unknown) {
       let errorMsg = "Booking failed";
@@ -34,7 +34,7 @@ export const fetchBookings = createAsyncThunk(
   "booking/fetchBookings",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await bookingClient.get("/");
+      const response = await apiClient.get("/booking");
       return response.data;
     } catch (error: AxiosError | unknown) {
       let errorMsg = "Failed to fetch bookings";
