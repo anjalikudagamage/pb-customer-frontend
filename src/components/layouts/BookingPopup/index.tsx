@@ -20,7 +20,7 @@ const BookingPopup: React.FC<BookingPopupProps> = ({
 
   return (
     <Box sx={popupContainer(isError)}>
-      <Typography sx={popupMessage}>SUCCESS</Typography>
+      <Typography sx={popupMessage}>{isError ? "ERROR" : "SUCCESS"}</Typography>
       <Typography sx={popupMessage}>{message}</Typography>
       <Button onClick={onClose} sx={closeButton}>
         Close

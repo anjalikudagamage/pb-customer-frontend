@@ -6,7 +6,7 @@ export const popupContainer = (_isError: boolean): SxProps<Theme> => ({
   left: "50%",
   transform: "translate(-50%, -50%)",
   zIndex: 9999,
-  backgroundColor: "#fff",
+  backgroundColor: _isError ? "#f44336" : "#4CAF50",
   padding: "20px",
   borderRadius: "8px",
   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
