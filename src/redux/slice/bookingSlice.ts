@@ -1,12 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { submitBooking, fetchBookings } from "../actions/bookingAction";
 
-interface BookingState {
-  isLoading: boolean;
-  error: string | null;
-  bookings: BookingDetails[] | null;
-}
-
 interface BookingDetails {
   packageName: string;
   eventDate: string;
@@ -15,6 +9,12 @@ interface BookingDetails {
   fullName: string;
   phoneNumber: string;
   email: string;
+}
+
+interface BookingState {
+  isLoading: boolean;
+  error: string | null;
+  bookings: BookingDetails[] | null;
 }
 
 const initialState: BookingState = {
