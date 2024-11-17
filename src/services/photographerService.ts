@@ -6,30 +6,47 @@ interface LoginData {
   password: string;
 }
 
-export const photographerLoginService = async (loginData: LoginData) => {
+export interface PhotographerUser {
+  id: number;
+  email: string;
+  role: string;
+}
+
+export interface PhotographerDetails {
+  description: string;
+  businessName: string;
+  packageDetails: Record<string, string>;
+}
+
+export const photographerLoginService = async (
+  loginData: LoginData
+): Promise<PhotographerUser> => {
   try {
-    const response = await apiClient.post("/photographer/login", loginData);
-    return response.data;
+    const { data } = await apiClient.post<PhotographerUser>(
+      "/photographer/login",
+      loginData
+    );
+    return data;
   } catch (error) {
     if (error instanceof AxiosError) {
-      return Promise.reject(error.response?.data?.message || "Login failedd");
+      throw error.response?.data?.message || "Login failed";
     }
-    return Promise.reject("An unknown error occurred during login");
+    throw "An unknown error occurred during login";
   }
 };
 
-export const fetchPhotographersService = async () => {
+export const fetchPhotographersService = async (): Promise<
+  PhotographerDetails[]
+> => {
   try {
-    const response = await apiClient.get("/photographer/allData");
-    return response.data;
+    const { data } = await apiClient.get<PhotographerDetails[]>(
+      "/photographer/allData"
+    );
+    return data;
   } catch (error) {
     if (error instanceof AxiosError) {
-      return Promise.reject(
-        error.response?.data?.message || "Failed to fetch photographers"
-      );
+      throw error.response?.data?.message || "Failed to fetch photographers";
     }
-    return Promise.reject(
-      "An unknown error occurred while fetching photographers"
-    );
+    throw "An unknown error occurred while fetching photographers";
   }
 };
