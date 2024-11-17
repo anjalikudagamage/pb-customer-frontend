@@ -1,21 +1,24 @@
 import React from "react";
 import { Grid, Box, Typography } from "@mui/material";
 import { galleryContainer, imageBox, titleStyles } from "./styles";
-import Img from "../../../assets/images/photographer/gallery/image1.jpg"
+import Img from "../../../assets/images/photographer/gallery/image1.jpg";
 
 const categories = [
   { title: "Paintings & Prints", imageUrl: Img },
-  { title: "Photography", imageUrl: Img  },
-  { title: "Drawings & Illustration", imageUrl: Img  },
-  { title: "Digital Art", imageUrl: Img  },
+  { title: "Photography", imageUrl: Img },
+  { title: "Drawings & Illustration", imageUrl: Img },
+  { title: "Digital Art", imageUrl: Img },
   { title: "Sculptures & Carvings", imageUrl: Img },
-  { title: "Ceramics & Pottery", imageUrl: Img }
+  { title: "Ceramics & Pottery", imageUrl: Img },
 ];
 
 const PhotographerGallery: React.FC = () => {
   return (
     <Box sx={galleryContainer}>
-      <Typography variant="h4" sx={{ mb: 4, color: "#1A4870", fontSize: "40px", }}>
+      <Typography
+        variant="h4"
+        sx={{ mb: 4, color: "#1A4870", fontSize: "40px" }}
+      >
         Categories
       </Typography>
       <Grid container spacing={2}>

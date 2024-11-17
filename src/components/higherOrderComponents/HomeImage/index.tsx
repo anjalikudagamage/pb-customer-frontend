@@ -10,7 +10,7 @@ import {
 } from "./styles";
 import { Typography } from "@mui/material";
 
-const images = [ image1, image3];
+const images = [image1, image3];
 
 const HomeImage: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

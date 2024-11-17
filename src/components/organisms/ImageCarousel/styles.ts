@@ -8,7 +8,7 @@ export const fullContainer: SxProps<Theme> = {
   alignItems: "center",
   flexDirection: "column",
   position: "relative",
-  backgroundColor: "#F9FAFB", 
+  backgroundColor: "#F9FAFB",
   padding: "1rem",
   boxSizing: "border-box",
 };
@@ -18,7 +18,7 @@ export const carouselContainer = (isSmallScreen: boolean): SxProps<Theme> => ({
   width: "100%",
   height: isSmallScreen ? "30vw" : "10rem",
   overflow: "hidden",
-  marginTop: "60px"
+  marginTop: "60px",
 });
 
 export const carouselImage: SxProps<Theme> = {

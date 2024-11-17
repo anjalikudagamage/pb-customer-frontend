@@ -6,6 +6,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+
 import { DatePickerStyle, DateTimeMainContainer } from "./styles";
 
 interface CustomDatePickerProps {
@@ -22,7 +23,9 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
   const currentDate = dayjs();
 
   const formik = useFormik({
-    initialValues: { selectedDate: selectedDate },
+    initialValues: {
+      selectedDate: selectedDate,
+    },
     validationSchema: Yup.object({
       selectedDate: Yup.date()
         .nullable()
@@ -40,19 +43,11 @@ const CustomDatePicker: React.FC<CustomDatePickerProps> = ({
         <form onSubmit={formik.handleSubmit} style={{ textAlign: "center" }}>
           <DatePicker
             label={label}
-            value={formik.values.selectedDate}
-            onChange={(newValue) => {
-              formik.setFieldValue("selectedDate", newValue, true);
-              onDateChange(newValue);
-            }}
+            value={selectedDate}
+            onChange={(newValue) => onDateChange(newValue)}
             minDate={currentDate}
             sx={DatePickerStyle}
           />
-          {formik.errors.selectedDate && (
-            <Box sx={{ color: "#FF6B6B", marginTop: "8px" }}>
-              {formik.errors.selectedDate}
-            </Box>
-          )}
         </form>
       </Box>
     </LocalizationProvider>

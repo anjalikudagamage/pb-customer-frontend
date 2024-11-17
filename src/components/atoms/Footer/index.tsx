@@ -7,7 +7,7 @@ import {
   Google,
   GitHub,
 } from "@mui/icons-material";
-import Img from "../../../assets/logo.png";
+import Img from "../../../assets/images/logo.png";
 import {
   footerContainer,
   logo,

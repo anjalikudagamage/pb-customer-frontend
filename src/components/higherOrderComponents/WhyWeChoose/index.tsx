@@ -21,7 +21,7 @@ const slides = [
   },
 ];
 
-const ImageSlider: React.FC = () => {
+const WhyWeChoose: React.FC = () => {
   const classes = useStyles();
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -65,4 +65,4 @@ const ImageSlider: React.FC = () => {
   );
 };
 
-export default ImageSlider;
+export default WhyWeChoose;

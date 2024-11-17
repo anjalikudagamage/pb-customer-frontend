@@ -3,7 +3,12 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { carouselContainer, carouselImage, textContainer, fullContainer } from "./styles";
+import {
+  carouselContainer,
+  carouselImage,
+  textContainer,
+  fullContainer,
+} from "./styles";
 import { Typography, SxProps, Theme } from "@mui/material";
 
 interface ImageCarouselProps {

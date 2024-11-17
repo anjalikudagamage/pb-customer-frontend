@@ -2,8 +2,8 @@ import { SxProps, Theme } from "@mui/material/styles";
 
 export const outerContainerStyle: SxProps<Theme> = {
   display: "flex",
-  justifyContent: "flex-end", 
-  paddingTop: "16px", 
+  justifyContent: "flex-end",
+  paddingTop: "16px",
 };
 
 export const filterSidebarContainerStyle: SxProps<Theme> = {

@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Typography, Grid, Card, CardContent, CardActions, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  CardActions,
+  Button,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
@@ -30,13 +38,24 @@ const PackageTable: React.FC<PackageTableProps> = ({ packages }) => {
           <Grid item xs={12} md={6} key={index}>
             <Card sx={packageTableStyles.card}>
               <CardContent>
-                <Typography variant="h6" gutterBottom sx={packageTableStyles.packageName}>
+                <Typography
+                  variant="h6"
+                  gutterBottom
+                  sx={packageTableStyles.packageName}
+                >
                   {pkg.name}
                 </Typography>
                 <Grid container spacing={2}>
                   <Grid item xs={6} sx={{ marginBottom: 2 }}>
-                    <Typography variant="body2" color="textSecondary" sx={packageTableStyles.featureText}>
-                      <PhotoCameraIcon fontSize="small" sx={{ marginRight: 1 }} />
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      sx={packageTableStyles.featureText}
+                    >
+                      <PhotoCameraIcon
+                        fontSize="small"
+                        sx={{ marginRight: 1 }}
+                      />
                       Number of photos:
                     </Typography>
                     <Typography variant="body1" sx={{ marginLeft: 4 }}>
@@ -44,7 +63,11 @@ const PackageTable: React.FC<PackageTableProps> = ({ packages }) => {
                     </Typography>
                   </Grid>
                   <Grid item xs={6} sx={{ marginBottom: 2 }}>
-                    <Typography variant="body2" color="textSecondary" sx={packageTableStyles.featureText}>
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      sx={packageTableStyles.featureText}
+                    >
                       <ScheduleIcon fontSize="small" sx={{ marginRight: 1 }} />
                       Number of hours:
                     </Typography>
@@ -53,8 +76,15 @@ const PackageTable: React.FC<PackageTableProps> = ({ packages }) => {
                     </Typography>
                   </Grid>
                   <Grid item xs={6}>
-                    <Typography variant="body2" color="textSecondary" sx={packageTableStyles.featureText}>
-                      <LocationOnIcon fontSize="small" sx={{ marginRight: 1 }} />
+                    <Typography
+                      variant="body2"
+                      color="textSecondary"
+                      sx={packageTableStyles.featureText}
+                    >
+                      <LocationOnIcon
+                        fontSize="small"
+                        sx={{ marginRight: 1 }}
+                      />
                       Number of locations:
                     </Typography>
                     <Typography variant="body1" sx={{ marginLeft: 4 }}>
@@ -65,14 +95,21 @@ const PackageTable: React.FC<PackageTableProps> = ({ packages }) => {
                     <Typography variant="body2" color="textSecondary">
                       Package price:
                     </Typography>
-                    <Typography variant="h6" sx={packageTableStyles.packagePrice}>
+                    <Typography
+                      variant="h6"
+                      sx={packageTableStyles.packagePrice}
+                    >
                       {pkg.price}
                     </Typography>
                   </Grid>
                 </Grid>
               </CardContent>
               <CardActions>
-                <Button variant="contained" sx={BookButton} onClick={handleClick}>
+                <Button
+                  variant="contained"
+                  sx={BookButton}
+                  onClick={handleClick}
+                >
                   Book Now
                 </Button>
               </CardActions>

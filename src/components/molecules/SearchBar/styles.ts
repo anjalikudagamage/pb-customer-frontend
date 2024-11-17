@@ -7,7 +7,7 @@ export const searchBarContainer: SxProps<Theme> = {
 
 export const searchBarItem: SxProps<Theme> = {
   display: "flex",
-  justifyContent: "center", 
+  justifyContent: "center",
   alignItems: "center",
 };
 

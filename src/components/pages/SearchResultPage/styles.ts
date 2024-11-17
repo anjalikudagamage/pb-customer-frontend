@@ -7,7 +7,7 @@ export const rootContainerStyle: SxProps<Theme> = {
 export const filterSidebarGridItemStyle: SxProps<Theme> = {
   display: "flex",
   justifyContent: "flex-end",
-  mt: 12
+  mt: 12,
 };
 
 export const imageCarouselTitleStyleOverride: SxProps<Theme> = {

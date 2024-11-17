@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import ImageCarousel from "../../../components/organisms/ImageCarousel";
 import Image1 from "../../../assets/images/ImageCarousel/image3.jpg";
 import Image2 from "../../../assets/images/ImageCarousel/image4.jpg";
-import PhotographerCardList from "../../organisms/PhotographerCards";
+import PhotographerCardList from "../../organisms/PhotographerCardList";
 import Footer from "../../atoms/Footer";
-import FilterSidebar from "../../molecules/SearchResultPageFilters";
+import FilterSidebar from "../../molecules/FilterSidebar";
 import { Grid, Box } from "@mui/material";
 import {
   rootContainerStyle,
@@ -15,7 +15,7 @@ import Navbar from "../../organisms/Navbar";
 
 const imageUrls = [Image1, Image2];
 
-const SearchResult: React.FC = () => {
+const SearchResultPage: React.FC = () => {
   const [searchCount, setSearchCount] = useState(0);
   const formattedPackage = "Selected Package";
 
@@ -42,4 +42,4 @@ const SearchResult: React.FC = () => {
   );
 };
 
-export default SearchResult;
+export default SearchResultPage;

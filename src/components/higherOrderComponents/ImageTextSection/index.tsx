@@ -14,7 +14,7 @@ interface ImageTextProps {
   title: string;
   normalText?: string;
   photographerName?: string;
-  businessName?: string; 
+  businessName?: string;
   imageOnRight?: boolean;
   textContainerColor?: string;
   normalTextColor?: string;
@@ -26,7 +26,7 @@ const ImageTextSection: FC<ImageTextProps> = ({
   imageUrl,
   title,
   normalText = "",
-  photographerName = "", 
+  photographerName = "",
   imageOnRight = false,
   textContainerColor = "rgba(65, 48, 41, 1)",
   titleColor = "white",
@@ -50,13 +50,16 @@ const ImageTextSection: FC<ImageTextProps> = ({
         sx={textContainerStyle(imageOnRight, textContainerColor)}
       >
         <Box sx={getInnerContainerStyle(maxWidth)}>
-          <Typography sx={{ ...titleTextStyle, color: titleColor }} gutterBottom>
+          <Typography
+            sx={{ ...titleTextStyle, color: titleColor }}
+            gutterBottom
+          >
             {title}
           </Typography>
 
           {photographerName && (
             <Typography variant="h6" sx={{ color: normalText || "white" }}>
-               {photographerName}
+              {photographerName}
             </Typography>
           )}
 
