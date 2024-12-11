@@ -22,7 +22,7 @@ export const popupContainer = (_isError: boolean): SxProps<Theme> => ({
 export const popupMessage: SxProps<Theme> = {
   fontSize: "1.2rem",
   fontWeight: "bold",
-  color: "#4CAF50",
+  color: "white",
   marginBottom: "10px",
 };
 

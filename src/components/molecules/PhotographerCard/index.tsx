@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, Button, Grid, TextField, InputAdornment } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  Grid,
+  TextField,
+  InputAdornment,
+} from "@mui/material";
 import {
   cardContainer,
   imageStyle,
@@ -95,9 +102,12 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
               variant="standard"
               InputProps={{
                 endAdornment: (
-                  <InputAdornment position="end" sx={{
-                     marginLeft: "-5.5rem",
-                  }}>
+                  <InputAdornment
+                    position="end"
+                    sx={{
+                      marginLeft: "-5rem",
+                    }}
+                  >
                     <Typography
                       sx={{
                         fontWeight: "bold",
@@ -115,9 +125,9 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
               sx={{
                 ...priceStyle,
                 ".MuiInputBase-input": {
-                  fontWeight: "bold", 
-                  fontSize: "1.2rem", 
-                  color: "#1E88E5",  
+                  fontWeight: "bold",
+                  fontSize: "1.2rem",
+                  color: "#1E88E5",
                 },
               }}
             />
@@ -132,4 +142,3 @@ const PhotographerCard: React.FC<IPhotographerCardProps> = ({
 };
 
 export default PhotographerCard;
-
