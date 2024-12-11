@@ -235,9 +235,7 @@ const PackageBookingPage: React.FC = () => {
                                   },
                                 }}
                               >
-                                <MenuItem value="">
-                                  Select a Package
-                                </MenuItem>
+                                <MenuItem value="">Select a Package</MenuItem>
                                 <MenuItem value="package1">
                                   Wedding Package
                                 </MenuItem>
